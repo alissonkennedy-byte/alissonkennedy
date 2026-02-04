@@ -15,35 +15,39 @@ import alissonPhoto from "@/assets/alisson-kennedy.png";
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson.%20Quero%20solicitar%20triagem.%0A%0A1)%20Demanda%3A%20()%0A2)%20Prazo%20(data%2Fhora)%3A%20()%0A3)%20Cidade%3A%20()%0A4)%20Padr%C3%A3o%2FPrefer%C3%AAncias%3A%20()%0A5)%20Or%C3%A7amento%20ou%20limite%20de%20aprova%C3%A7%C3%A3o%3A%20()%0A6)%20Modelo%3A%20(Avulsa%20%2F%20Mensal%20%2F%20Exclusividade)%0A%0ASe%20for%20urgente%2C%20escreva%3A%20EMERGENCIAL.";
 
 const heroBullets = [
-  "Curadoria objetiva + execução ponta a ponta",
-  "Confirmação e reconfirmação para reduzir falhas",
-  "Um ponto único de confiança para rotina pessoal e executiva",
-  "Discrição como regra: rotina e preferências protegidas",
+  "Assistência pessoal e executiva sob demanda ou recorrente",
+  "Organização de agenda, viagens, reservas e logística",
+  "Coordenação com fornecedores e acompanhamento completo",
+  "Atendimento direto via WhatsApp, com processo claro",
 ];
 
 const targetAudience = [
   "Executivos, C-levels e diretores",
   "Empresários e investidores",
   "Famílias de alto padrão",
-  "Pessoas públicas (prioridade em discrição)",
+  "Pessoas públicas que exigem discrição absoluta",
 ];
 
 const services = [
   {
     icon: Calendar,
     title: "Agenda e logística executiva",
+    description: "Gestão de compromissos, deslocamentos, viagens, encaixes e follow-ups críticos.",
   },
   {
     icon: Users,
     title: "Assistência pessoal e familiar",
+    description: "Demandas do dia a dia, viagens familiares, compras, presentes e organização pessoal.",
   },
   {
     icon: Sparkles,
     title: "Concierge sob demanda",
+    description: "Reservas de hotéis, restaurantes, eventos, experiências e contratação de serviços.",
   },
   {
     icon: Car,
     title: "Mobilidade premium",
+    description: "Coordenação de motoristas, janelas de chegada, rotas e planos de contingência.",
   },
 ];
 
@@ -51,7 +55,7 @@ const pricingPlans = [
   {
     name: "Avulsa Simples",
     price: "R$ 500",
-    description: "Execução direta, poucas etapas, baixo risco.",
+    description: "Demandas pontuais, baixa complexidade e execução direta.",
   },
   {
     name: "Avulsa Média",
@@ -61,25 +65,25 @@ const pricingPlans = [
   {
     name: "Avulsa Emergencial",
     price: "R$ 2.000",
-    description: "Prazo crítico e prioridade operacional.",
+    description: "Prioridade operacional para prazos críticos.",
   },
   {
     name: "Mensal",
     price: "R$ 10.000/mês",
-    description: "Operação recorrente para reduzir fricção no dia a dia.",
+    description: "Assistência recorrente para reduzir fricção no dia a dia.",
     featured: true,
   },
   {
     name: "Mensal Exclusividade",
     price: "Sob consulta",
-    description: "Prioridade máxima + capacidade reservada.",
+    description: "Capacidade reservada, prioridade máxima e atuação contínua.",
     exclusive: true,
     limited: true,
   },
   {
     name: "Operação Internacional",
     price: "Sob consulta",
-    description: "Demandas que exijam viagem para representação ou operação internacional presencial. Custos de viagem pagos à parte.",
+    description: "Demandas que exigem deslocamento e atuação presencial fora do país.",
     international: true,
     limited: true,
     icon: Globe,
@@ -87,33 +91,33 @@ const pricingPlans = [
 ];
 
 const processSteps = [
-  "Briefing",
-  "Curadoria objetiva (até 2 opções quando necessário)",
-  "Aprovação",
-  "Confirmação e reconfirmação",
-  "Acompanhamento e pós-entrega",
+  "Triagem e briefing da demanda",
+  "Curadoria objetiva (até duas opções quando necessário)",
+  "Aprovação do cliente",
+  "Confirmação e reconfirmação com fornecedores",
+  "Acompanhamento até a entrega final",
 ];
 
 const faqItems = [
   {
-    question: "Você compra passagens e reservas?",
-    answer: "Eu coordeno e confirmo com aprovação do cliente; custos de terceiros são pagos à parte.",
+    question: "Você compra passagens e faz reservas?",
+    answer: "Atuo como intermediário e coordenação. As compras são realizadas com fornecedores terceiros, mediante aprovação.",
   },
   {
-    question: "Você é 24/7?",
-    answer: "Mensal Exclusividade tem janela estendida; demais modelos seguem atendimento combinado.",
+    question: "Você atende 24 horas?",
+    answer: "O atendimento segue o modelo contratado. Demandas emergenciais possuem prioridade específica.",
   },
   {
-    question: "O que é emergencial?",
-    answer: "Prazo crítico e risco imediato de agenda.",
+    question: "O que caracteriza uma demanda emergencial?",
+    answer: "Demandas com prazo crítico ou risco de impacto direto na agenda do cliente.",
   },
   {
-    question: "Você garante preço de fornecedor?",
-    answer: "Não. Eu intermedio/coordeno; valores e políticas são do fornecedor.",
+    question: "Você garante valores de fornecedores?",
+    answer: "Não. Valores dependem da disponibilidade e políticas dos fornecedores no momento da confirmação.",
   },
   {
-    question: "Como começo?",
-    answer: "Chame no WhatsApp e solicite triagem.",
+    question: "Como inicio o atendimento?",
+    answer: "Solicite a triagem pelo WhatsApp para enquadramento da demanda.",
   },
   {
     question: "O que é o aceite antes de iniciar?",
@@ -125,14 +129,14 @@ const Index = () => {
   const scrollRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Alisson Kennedy | Personal Assistant — Operação Premium";
+    document.title = "Assistente Pessoal Premium em São Paulo | Alisson Kennedy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Assistência pessoal e executiva premium com curadoria, discrição e execução ponta a ponta. Base São Paulo.");
+      metaDescription.setAttribute("content", "Assistente pessoal e executivo premium em São Paulo. Concierge para executivos, empresários e famílias. Agenda, viagens, reservas e logística com discrição e previsibilidade.");
     } else {
       const meta = document.createElement("meta");
       meta.name = "description";
-      meta.content = "Assistência pessoal e executiva premium com curadoria, discrição e execução ponta a ponta. Base São Paulo.";
+      meta.content = "Assistente pessoal e executivo premium em São Paulo. Concierge para executivos, empresários e famílias. Agenda, viagens, reservas e logística com discrição e previsibilidade.";
       document.head.appendChild(meta);
     }
   }, []);
@@ -151,10 +155,10 @@ const Index = () => {
               Assistência Premium
             </div>
             <h1 className="animate-fade-up font-display text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl text-foreground">
-              Execução impecável para quem não pode perder tempo.
+              Assistente Pessoal e Executivo Premium em São Paulo
             </h1>
             <p className="animate-fade-up-delay-1 mt-6 text-lg text-muted-foreground md:text-xl">
-              Assistência pessoal e executiva premium para quem exige discrição, previsibilidade e entrega sem ruído.
+              Concierge pessoal para executivos, empresários e famílias que precisam delegar com segurança, previsibilidade e discrição.
             </p>
 
             <ul className="mt-12 space-y-4 text-left md:mx-auto md:max-w-xl">
@@ -200,20 +204,24 @@ const Index = () => {
         <div className="container-premium">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-              Para quem
+              Para quem este serviço é indicado
             </h2>
+
+            <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground">
+              Este serviço é indicado para pessoas com rotina complexa, alto volume de decisões e pouco tempo para lidar com demandas operacionais.
+            </p>
 
             <ul className="mt-10 space-y-4 text-left md:mx-auto md:max-w-md">
               {targetAudience.map((item, index) => (
-                <li key={index} className={`scroll-reveal reveal-delay-${index + 1} flex items-start gap-3 hover-lift`}>
+                <li key={index} className={`scroll-reveal reveal-delay-${index + 2} flex items-start gap-3 hover-lift`}>
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span className="text-muted-foreground">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="scroll-reveal reveal-delay-5 mt-10 text-muted-foreground">
-              Não é serviço genérico. É operação pessoal e executiva premium.
+            <p className="scroll-reveal reveal-delay-6 mt-10 text-muted-foreground font-medium">
+              Não é serviço genérico. É assistência pessoal e executiva premium.
             </p>
 
             <a
@@ -234,7 +242,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
         <div className="container-premium relative">
           <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-            O que eu resolvo
+            Serviços de assistência pessoal e concierge executivo
           </h2>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -244,6 +252,7 @@ const Index = () => {
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-foreground">{service.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -271,10 +280,10 @@ const Index = () => {
         <div className="container-premium relative">
           <div className="text-center">
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-              Modelos de atendimento
+              Modelos de atendimento disponíveis
             </h2>
             <p className="scroll-reveal reveal-delay-1 mt-5 text-muted-foreground">
-              Avulso ou recorrente. Eu te encaixo no modelo ideal no WhatsApp.
+              O enquadramento correto é feito após a triagem, de acordo com urgência, complexidade e volume de demandas.
             </p>
           </div>
 
@@ -328,7 +337,7 @@ const Index = () => {
       <section id="como-funciona" className="section-spacing border-b border-border">
         <div className="container-premium">
           <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-            Como funciona
+            Como funciona o atendimento
           </h2>
 
           <div className="mt-14 grid gap-10 md:grid-cols-5">
@@ -381,15 +390,16 @@ const Index = () => {
             <div className="scroll-reveal-scale mb-8">
               <img 
                 src={alissonPhoto} 
-                alt="Alisson Kennedy" 
+                alt="Alisson Kennedy - Assistente Pessoal Premium em São Paulo" 
                 className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-primary/30 shadow-lg"
               />
             </div>
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-              Quem opera
+              Quem está por trás da operação
             </h2>
             <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
-              Alisson Kennedy atua com negociação, coordenação, execução e relacionamento com decisores. Operação orientada a padrão, previsibilidade e entrega.
+              Alisson atua diretamente na coordenação, negociação e execução das demandas.<br />
+              O atendimento é feito sem intermediação, com padrão definido, previsibilidade e comunicação objetiva.
             </p>
             <div className="scroll-reveal reveal-delay-2 mt-8 flex items-center justify-center gap-5">
               <a
