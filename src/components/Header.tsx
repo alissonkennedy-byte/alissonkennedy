@@ -18,9 +18,10 @@ export function Header() {
         {/* Logo */}
         <a 
           href="/" 
-          className="font-display text-lg font-semibold tracking-tight transition-opacity duration-300 hover:opacity-70"
+          className="flex flex-col transition-opacity duration-300 hover:opacity-70"
         >
-          Alisson Kennedy
+          <span className="font-display text-lg font-semibold tracking-tight">Alisson Kennedy</span>
+          <span className="text-xs text-primary font-medium tracking-wider">Premium Concierge</span>
         </a>
 
         {/* Desktop Navigation */}
