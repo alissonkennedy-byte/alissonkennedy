@@ -14,29 +14,36 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
       <div className="container-premium flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
-        <a href="/" className="font-display text-lg font-semibold tracking-tight">
+        <a 
+          href="/" 
+          className="font-display text-lg font-semibold tracking-tight transition-opacity duration-300 hover:opacity-70"
+        >
           Alisson Kennedy
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="link-muted">
+            <a 
+              key={link.label} 
+              href={link.href} 
+              className="relative text-sm text-muted-foreground transition-all duration-300 hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
+            >
               {link.label}
             </a>
           ))}
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-5 md:flex">
           <a
             href="https://www.instagram.com/alissonkennedy_/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:scale-110"
             aria-label="Instagram"
           >
             <Instagram className="h-5 w-5" />
@@ -45,19 +52,24 @@ export function Header() {
             href="https://www.linkedin.com/in/alisson-kennedy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:scale-110"
             aria-label="LinkedIn"
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary ml-2">
+          <a 
+            href={WHATSAPP_URL} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-primary ml-2"
+          >
             Solicitar orçamento
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden transition-all duration-300 hover:scale-110"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
@@ -66,48 +78,53 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="border-t border-border bg-background md:hidden">
-          <nav className="container-premium flex flex-col gap-4 py-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-4 pt-4">
-              <a
-                href="https://www.instagram.com/alissonkennedy_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/alisson-kennedy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
+      <div 
+        className={`border-t border-border bg-background md:hidden overflow-hidden transition-all duration-500 ease-out ${
+          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="container-premium flex flex-col gap-4 py-6">
+          {navLinks.map((link, index) => (
             <a
-              href={WHATSAPP_URL}
+              key={link.label}
+              href={link.href}
+              className="text-base font-medium transition-all duration-300 hover:translate-x-2"
+              onClick={() => setIsMenuOpen(false)}
+              style={{ transitionDelay: `${index * 50}ms` }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="flex items-center gap-5 pt-4">
+            <a
+              href="https://www.instagram.com/alissonkennedy_/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-2 w-full text-center"
+              aria-label="Instagram"
+              className="transition-all duration-300 hover:scale-110"
             >
-              Solicitar orçamento
+              <Instagram className="h-5 w-5" />
             </a>
-          </nav>
-        </div>
-      )}
+            <a
+              href="https://www.linkedin.com/in/alisson-kennedy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="transition-all duration-300 hover:scale-110"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mt-2 w-full text-center"
+          >
+            Solicitar orçamento
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
