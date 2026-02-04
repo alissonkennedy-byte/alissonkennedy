@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Calendar, Users, Sparkles, Car, ChevronDown, Instagram, Linkedin, MessageCircle, Star } from "lucide-react";
+import { ArrowRight, Check, Calendar, Users, Sparkles, Car, ChevronDown, Instagram, Linkedin, MessageCircle, Star, Globe } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
@@ -77,6 +77,14 @@ const pricingPlans = [
     exclusive: true,
     limited: true,
   },
+  {
+    name: "Operação Internacional",
+    price: "Sob consulta",
+    description: "Demandas que exijam viagem para representação ou operação internacional presencial. Custos de viagem pagos à parte.",
+    international: true,
+    limited: true,
+    icon: Globe,
+  },
 ];
 
 const processSteps = [
@@ -129,9 +137,14 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="section-spacing-lg border-b border-border">
-        <div className="container-premium">
+      <section className="section-spacing-lg border-b border-border relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 pointer-events-none" />
+        <div className="container-premium relative">
           <div className="mx-auto max-w-3xl text-center">
+            <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+              <Sparkles className="h-4 w-4" />
+              Assistência Premium
+            </div>
             <h1 className="animate-fade-up font-display text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               Execução impecável para quem não pode perder tempo.
             </h1>
@@ -146,7 +159,9 @@ const Index = () => {
                   className="animate-fade-up flex items-start gap-3"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-foreground" />
+                  <div className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Check className="h-3 w-3 text-primary" />
+                  </div>
                   <span className="text-muted-foreground">{bullet}</span>
                 </li>
               ))}
@@ -186,7 +201,7 @@ const Index = () => {
             <ul className="mt-10 space-y-4 text-left md:mx-auto md:max-w-md">
               {targetAudience.map((item, index) => (
                 <li key={index} className="flex items-start gap-3 hover-lift">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span className="text-muted-foreground">{item}</span>
                 </li>
               ))}
@@ -210,16 +225,19 @@ const Index = () => {
       </section>
 
       {/* O que eu faço */}
-      <section className="section-spacing border-b border-border">
-        <div className="container-premium">
+      <section className="section-spacing border-b border-border relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
+        <div className="container-premium relative">
           <h2 className="text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl">
             O que eu resolvo (ponta a ponta)
           </h2>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
-              <div key={index} className="card-premium-hover">
-                <service.icon className="h-6 w-6 text-foreground" />
+              <div key={index} className="card-premium-hover group">
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <service.icon className="h-6 w-6 text-primary" />
+                </div>
                 <h3 className="mt-5 font-display text-lg font-semibold">{service.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
@@ -244,8 +262,9 @@ const Index = () => {
       </section>
 
       {/* Modelos de atendimento */}
-      <section id="modelos" className="section-spacing border-b border-border bg-gradient-to-b from-secondary/30 to-background">
-        <div className="container-premium">
+      <section id="modelos" className="section-spacing border-b border-border bg-gradient-to-b from-secondary/50 to-background relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="container-premium relative">
           <div className="text-center">
             <h2 className="font-display text-2xl font-semibold md:text-3xl lg:text-4xl">
               Modelos de atendimento
@@ -260,7 +279,9 @@ const Index = () => {
               <div 
                 key={index} 
                 className={
-                  plan.exclusive 
+                  plan.international
+                    ? "pricing-card-international"
+                    : plan.exclusive 
                     ? "pricing-card-exclusive" 
                     : plan.featured 
                     ? "pricing-card-featured" 
@@ -270,9 +291,10 @@ const Index = () => {
                 <div>
                   <div className="flex items-center gap-3">
                     <h3 className="font-display text-lg font-semibold">{plan.name}</h3>
-                    {plan.exclusive && <Star className="h-4 w-4 text-foreground" />}
+                    {plan.exclusive && <Star className="h-4 w-4 text-primary" />}
+                    {plan.international && plan.icon && <plan.icon className="h-4 w-4 text-primary" />}
                   </div>
-                  <p className="mt-2 font-display text-2xl font-bold">{plan.price}</p>
+                  <p className="mt-2 font-display text-2xl font-bold text-primary">{plan.price}</p>
                   <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
                   {plan.limited && (
                     <div className="mt-4">
@@ -280,19 +302,11 @@ const Index = () => {
                     </div>
                   )}
                 </div>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary mt-6 w-full justify-center text-center"
-                >
-                  Solicitar orçamento
-                </a>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-14 text-center">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -335,42 +349,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Operação internacional */}
-      <section className="section-spacing border-b border-border bg-gradient-to-b from-background to-secondary/30">
-        <div className="container-premium">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-2xl font-semibold md:text-3xl lg:text-4xl">
-              Operação internacional
-            </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              Demandas que exijam viagem para representação ou operação internacional presencial.
-            </p>
-            <p className="mt-4 font-display text-2xl font-bold text-foreground">
-              Sob consulta
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Além de custos de viagem e despesas pagos à parte.
-            </p>
-            <div className="mt-6 flex justify-center">
-              <span className="badge-limited">Vagas limitadas</span>
-            </div>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-10"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Solicitar orçamento no WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Confidencialidade */}
-      <section id="confidencialidade" className="section-spacing border-b border-border">
-        <div className="container-premium">
+      <section id="confidencialidade" className="section-spacing border-b border-border relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+        <div className="container-premium relative">
           <div className="mx-auto max-w-2xl text-center">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-primary/10 mb-6">
+              <Star className="h-8 w-8 text-primary" />
+            </div>
             <h2 className="font-display text-2xl font-semibold md:text-3xl lg:text-4xl">
               Discrição é regra
             </h2>
@@ -396,7 +382,7 @@ const Index = () => {
                 href="https://www.instagram.com/alissonkennedy_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:scale-110"
+                className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -405,7 +391,7 @@ const Index = () => {
                 href="https://www.linkedin.com/in/alisson-kennedy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground transition-all duration-300 hover:text-foreground hover:scale-110"
+                className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -436,7 +422,7 @@ const Index = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="card-premium overflow-hidden border transition-all duration-300 hover:border-muted-foreground/20"
+                  className="card-premium overflow-hidden border transition-all duration-300 hover:border-primary/30"
                 >
                   <AccordionTrigger className="px-6 py-5 text-left font-display text-base font-semibold hover:no-underline">
                     {item.question}

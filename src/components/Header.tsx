@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Modelos", href: "#modelos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Confidencialidade", href: "#confidencialidade" },
-  { label: "Termos", href: "/termos" },
 ];
 
 export function Header() {
