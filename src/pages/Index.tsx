@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import alissonPhoto from "@/assets/alisson-kennedy.png";
 
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20quero%20solicitar%20or%C3%A7amento%20do%20servi%C3%A7o%20Alisson%20Kennedy%20%7C%20Personal%20Assistant.%20Minha%20demanda%20%C3%A9%3A%20%5Bdescreva%5D.%20Prazo%3A%20%5Bdata%2Fhora%5D.%20Cidade%3A%20S%C3%A3o%20Paulo.";
 
@@ -30,22 +31,18 @@ const services = [
   {
     icon: Calendar,
     title: "Agenda e logística executiva",
-    description: "deslocamentos, reservas, confirmações e follow-up",
   },
   {
     icon: Users,
     title: "Assistência pessoal e familiar",
-    description: "rotina, compras, presentes e viagens",
   },
   {
     icon: Sparkles,
     title: "Concierge sob demanda",
-    description: "experiências, reservas, contratações",
   },
   {
     icon: Car,
     title: "Mobilidade premium",
-    description: "coordenação terrestre e plano B",
   },
 ];
 
@@ -198,7 +195,7 @@ const Index = () => {
         <div className="container-premium">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-              Para quem tempo e erro custam caro
+              Para quem
             </h2>
 
             <ul className="mt-10 space-y-4 text-left md:mx-auto md:max-w-md">
@@ -232,7 +229,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
         <div className="container-premium relative">
           <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-            O que eu resolvo (ponta a ponta)
+            O que eu resolvo
           </h2>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -242,7 +239,6 @@ const Index = () => {
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-foreground">{service.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -374,6 +370,13 @@ const Index = () => {
       <section className="section-spacing border-b border-border">
         <div className="container-premium">
           <div className="mx-auto max-w-2xl text-center">
+            <div className="scroll-reveal-scale mb-8">
+              <img 
+                src={alissonPhoto} 
+                alt="Alisson Kennedy" 
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-primary/30 shadow-lg"
+              />
+            </div>
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
               Quem opera
             </h2>
