@@ -4,17 +4,14 @@ const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20quero%20sol
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary/30">
+    <footer className="border-t border-border bg-card">
       <div className="container-premium py-12 md:py-16">
         <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
           {/* Links */}
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
             <nav className="flex items-center gap-6">
-              <a href="/" className="link-muted">
+              <a href="/" className="link-muted hover:text-primary">
                 Home
-              </a>
-              <a href="/termos" className="link-muted">
-                Termos
               </a>
             </nav>
             <span className="hidden text-muted-foreground md:inline">|</span>
@@ -22,7 +19,7 @@ export function Footer() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-muted"
+              className="link-muted hover:text-primary"
             >
               WhatsApp +55 11 96738-5924
             </a>
@@ -34,7 +31,7 @@ export function Footer() {
               href="https://www.instagram.com/alissonkennedy_/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110"
               aria-label="Instagram"
             >
               <Instagram className="h-5 w-5" />
@@ -43,7 +40,7 @@ export function Footer() {
               href="https://www.linkedin.com/in/alisson-kennedy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
