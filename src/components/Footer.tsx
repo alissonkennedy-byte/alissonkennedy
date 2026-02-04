@@ -1,5 +1,4 @@
 import { Instagram, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20quero%20solicitar%20or%C3%A7amento%20do%20servi%C3%A7o%20Alisson%20Kennedy%20%7C%20Personal%20Assistant.%20Minha%20demanda%20%C3%A9%3A%20%5Bdescreva%5D.%20Prazo%3A%20%5Bdata%2Fhora%5D.%20Cidade%3A%20S%C3%A3o%20Paulo.";
 
@@ -11,12 +10,12 @@ export function Footer() {
           {/* Links */}
           <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
             <nav className="flex items-center gap-6">
-              <Link to="/" className="link-muted">
+              <a href="/" className="link-muted">
                 Home
-              </Link>
-              <Link to="/termos" className="link-muted">
+              </a>
+              <a href="/termos" className="link-muted">
                 Termos
-              </Link>
+              </a>
             </nav>
             <span className="hidden text-muted-foreground md:inline">|</span>
             <a

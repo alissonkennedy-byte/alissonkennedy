@@ -1,6 +1,5 @@
 import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20quero%20solicitar%20or%C3%A7amento%20do%20servi%C3%A7o%20Alisson%20Kennedy%20%7C%20Personal%20Assistant.%20Minha%20demanda%20%C3%A9%3A%20%5Bdescreva%5D.%20Prazo%3A%20%5Bdata%2Fhora%5D.%20Cidade%3A%20S%C3%A3o%20Paulo.";
 
@@ -18,23 +17,17 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-premium flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
-        <Link to="/" className="font-display text-lg font-semibold tracking-tight">
+        <a href="/" className="font-display text-lg font-semibold tracking-tight">
           Alisson Kennedy
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") ? (
-              <Link key={link.label} to={link.href} className="link-muted">
-                {link.label}
-              </Link>
-            ) : (
-              <a key={link.label} href={link.href} className="link-muted">
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link) => (
+            <a key={link.label} href={link.href} className="link-muted">
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* Desktop Actions */}
@@ -76,27 +69,16 @@ export function Header() {
       {isMenuOpen && (
         <div className="border-t border-border bg-background md:hidden">
           <nav className="container-premium flex flex-col gap-4 py-6">
-            {navLinks.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="text-base font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-base font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
             <div className="flex items-center gap-4 pt-4">
               <a
                 href="https://www.instagram.com/alissonkennedy_/"
