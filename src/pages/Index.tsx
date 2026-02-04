@@ -113,7 +113,11 @@ const faqItems = [
   },
   {
     question: "Como começo?",
-    answer: "Chame no WhatsApp e solicite onboarding.",
+    answer: "Chame no WhatsApp e solicite triagem.",
+  },
+  {
+    question: "O que é o aceite antes de iniciar?",
+    answer: "Antes de iniciar qualquer execução, envio no WhatsApp um aceite objetivo com: (1) intermediação e responsabilidade de fornecedores, (2) custos de terceiros pagos à parte, (3) multa de R$ 200 em cancelamento após início, (4) não reembolso após início da execução. A execução começa somente após você responder 'ACEITO'.",
   },
 ];
 
@@ -192,7 +196,7 @@ const Index = () => {
       </section>
 
       {/* Para quem é */}
-      <section className="section-spacing border-b border-border">
+      <section id="para-quem" className="section-spacing border-b border-border">
         <div className="container-premium">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
@@ -226,7 +230,7 @@ const Index = () => {
       </section>
 
       {/* O que eu faço */}
-      <section className="section-spacing border-b border-border relative overflow-hidden">
+      <section id="servicos" className="section-spacing border-b border-border relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
         <div className="container-premium relative">
           <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
@@ -371,7 +375,7 @@ const Index = () => {
       </section>
 
       {/* Quem opera */}
-      <section className="section-spacing border-b border-border">
+      <section id="quem-opera" className="section-spacing border-b border-border">
         <div className="container-premium">
           <div className="mx-auto max-w-2xl text-center">
             <div className="scroll-reveal-scale mb-8">
@@ -419,52 +423,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Aceite antes de iniciar */}
-      <section className="section-spacing border-b border-border">
-        <div className="container-premium">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl text-foreground">
-              Aceite antes de iniciar
-            </h2>
-            <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
-              Antes de iniciar qualquer execução, eu envio no WhatsApp um aceite objetivo com:
-            </p>
-            <ul className="scroll-reveal reveal-delay-2 mt-6 space-y-3 text-left md:mx-auto md:max-w-lg">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span className="text-muted-foreground text-sm">Intermediação e responsabilidade de fornecedores</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span className="text-muted-foreground text-sm">Custos de terceiros pagos à parte</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span className="text-muted-foreground text-sm">Multa de R$ 200 em cancelamento após início</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span className="text-muted-foreground text-sm">Não reembolso após início da execução</span>
-              </li>
-            </ul>
-            <p className="scroll-reveal reveal-delay-3 mt-6 text-sm text-primary font-medium">
-              A execução começa somente após você responder "ACEITO".
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="scroll-reveal reveal-delay-4 btn-primary mt-8"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Solicitar triagem no WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="section-spacing border-b border-border bg-gradient-to-b from-secondary/50 to-background">
+      <section id="faq" className="section-spacing border-b border-border bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-premium">
           <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
             Perguntas frequentes

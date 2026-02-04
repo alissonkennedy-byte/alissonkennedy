@@ -62,7 +62,7 @@ export function TestimonialsCarousel() {
   }, [isAutoPlaying, goToNext]);
 
   return (
-    <section className="section-spacing border-b border-border relative overflow-hidden">
+    <section id="depoimentos" className="section-spacing border-b border-border relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
       <div className="container-premium relative">
         <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground mb-14">
