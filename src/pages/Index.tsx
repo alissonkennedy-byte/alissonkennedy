@@ -382,49 +382,54 @@ const Index = () => {
       {/* Quem opera */}
       <section id="quem-opera" className="section-spacing border-b border-border">
         <div className="container-premium">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="scroll-reveal-scale mb-8">
+          <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-center">
+            {/* Texto à esquerda */}
+            <div className="order-2 lg:order-1 text-center lg:text-left">
+              <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
+                Quem está por trás da operação
+              </h2>
+              <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
+                Alisson atua diretamente na coordenação, negociação e execução das demandas.<br />
+                O atendimento é feito sem intermediação, com padrão definido, previsibilidade e comunicação objetiva.
+              </p>
+              <div className="scroll-reveal reveal-delay-2 mt-8 flex items-center justify-center lg:justify-start gap-5">
+                <a
+                  href="https://www.instagram.com/alissonkennedy_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 border border-primary/30"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/alisson-kennedy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 border border-primary/30"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="scroll-reveal reveal-delay-3 btn-primary mt-10 inline-flex"
+              >
+                Falar com o Alisson
+              </a>
+            </div>
+            
+            {/* Foto à direita */}
+            <div className="order-1 lg:order-2 scroll-reveal-scale flex justify-center lg:justify-end">
               <img 
                 src={alissonPhoto} 
                 alt="Alisson Kennedy - Assistente Pessoal Premium em São Paulo" 
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover border-4 border-primary/30 shadow-lg"
+                className="w-80 h-80 md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-2xl object-cover border-4 border-primary/30 shadow-2xl"
               />
             </div>
-            <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
-              Quem está por trás da operação
-            </h2>
-            <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
-              Alisson atua diretamente na coordenação, negociação e execução das demandas.<br />
-              O atendimento é feito sem intermediação, com padrão definido, previsibilidade e comunicação objetiva.
-            </p>
-            <div className="scroll-reveal reveal-delay-2 mt-8 flex items-center justify-center gap-5">
-              <a
-                href="https://www.instagram.com/alissonkennedy_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 border border-primary/30"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/alisson-kennedy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 border border-primary/30"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="scroll-reveal reveal-delay-3 btn-primary mt-10"
-            >
-              Falar com o Alisson
-            </a>
           </div>
         </div>
       </section>
