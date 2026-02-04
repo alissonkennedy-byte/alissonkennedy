@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import alissonPhoto from "@/assets/alisson-kennedy.png";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20quero%20solicitar%20or%C3%A7amento%20do%20servi%C3%A7o%20Alisson%20Kennedy%20%7C%20Personal%20Assistant.%20Minha%20demanda%20%C3%A9%3A%20%5Bdescreva%5D.%20Prazo%3A%20%5Bdata%2Fhora%5D.%20Cidade%3A%20S%C3%A3o%20Paulo.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson.%20Quero%20solicitar%20triagem.%0A%0A1)%20Demanda%3A%20()%0A2)%20Prazo%20(data%2Fhora)%3A%20()%0A3)%20Cidade%3A%20()%0A4)%20Padr%C3%A3o%2FPrefer%C3%AAncias%3A%20()%0A5)%20Or%C3%A7amento%20ou%20limite%20de%20aprova%C3%A7%C3%A3o%3A%20()%0A6)%20Modelo%3A%20(Avulsa%20%2F%20Mensal%20%2F%20Exclusividade)%0A%0ASe%20for%20urgente%2C%20escreva%3A%20EMERGENCIAL.";
 
 const heroBullets = [
   "Curadoria objetiva + execução ponta a ponta",
@@ -176,7 +176,7 @@ const Index = () => {
                 className="btn-primary w-full sm:w-auto"
               >
                 <MessageCircle className="h-4 w-4" />
-                Solicitar orçamento no WhatsApp
+                Solicitar triagem no WhatsApp
               </a>
               <a href="#modelos" className="btn-secondary w-full sm:w-auto">
                 Ver modelos de atendimento
@@ -218,7 +218,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="scroll-reveal link-subtle mt-8 inline-flex items-center gap-2 hover-lift"
             >
-              Falar no WhatsApp
+              Falar com o Alisson
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -255,7 +255,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Solicitar orçamento
+              Ver disponibilidade
             </a>
           </div>
         </div>
@@ -314,7 +314,7 @@ const Index = () => {
               className="btn-primary"
             >
               <MessageCircle className="h-4 w-4" />
-              Solicitar orçamento no WhatsApp
+              Solicitar triagem no WhatsApp
             </a>
           </div>
         </div>
@@ -343,7 +343,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Solicitar orçamento
+              Ver disponibilidade
             </a>
           </div>
         </div>
@@ -413,7 +413,51 @@ const Index = () => {
               rel="noopener noreferrer"
               className="scroll-reveal reveal-delay-3 btn-primary mt-10"
             >
-              Falar no WhatsApp
+              Falar com o Alisson
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Aceite antes de iniciar */}
+      <section className="section-spacing border-b border-border">
+        <div className="container-premium">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl text-foreground">
+              Aceite antes de iniciar
+            </h2>
+            <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
+              Antes de iniciar qualquer execução, eu envio no WhatsApp um aceite objetivo com:
+            </p>
+            <ul className="scroll-reveal reveal-delay-2 mt-6 space-y-3 text-left md:mx-auto md:max-w-lg">
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-sm">Intermediação e responsabilidade de fornecedores</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-sm">Custos de terceiros pagos à parte</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-sm">Multa de R$ 200 em cancelamento após início</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-sm">Não reembolso após início da execução</span>
+              </li>
+            </ul>
+            <p className="scroll-reveal reveal-delay-3 mt-6 text-sm text-primary font-medium">
+              A execução começa somente após você responder "ACEITO".
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="scroll-reveal reveal-delay-4 btn-primary mt-8"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Solicitar triagem no WhatsApp
             </a>
           </div>
         </div>
