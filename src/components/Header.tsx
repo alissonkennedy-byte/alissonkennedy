@@ -4,9 +4,13 @@ import { useState } from "react";
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson.%20Quero%20solicitar%20triagem.%0A%0A1)%20Demanda%3A%20()%0A2)%20Prazo%20(data%2Fhora)%3A%20()%0A3)%20Cidade%3A%20()%0A4)%20Padr%C3%A3o%2FPrefer%C3%AAncias%3A%20()%0A5)%20Or%C3%A7amento%20ou%20limite%20de%20aprova%C3%A7%C3%A3o%3A%20()%0A6)%20Modelo%3A%20(Avulsa%20%2F%20Mensal%20%2F%20Exclusividade)%0A%0ASe%20for%20urgente%2C%20escreva%3A%20EMERGENCIAL.";
 
 const navLinks = [
+  { label: "Para quem", href: "#para-quem" },
+  { label: "Serviços", href: "#servicos" },
   { label: "Modelos", href: "#modelos" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Confidencialidade", href: "#confidencialidade" },
+  { label: "Processo", href: "#como-funciona" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Quem opera", href: "#quem-opera" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Header() {
