@@ -54,35 +54,29 @@ const services = [
 const pricingPlans = [
   {
     name: "Avulsa Simples",
-    price: "R$ 500",
     description: "Demandas pontuais, baixa complexidade e execução direta.",
   },
   {
     name: "Avulsa Média",
-    price: "R$ 1.500",
     description: "Múltiplas etapas, curadoria e coordenação ponta a ponta.",
   },
   {
     name: "Avulsa Emergencial",
-    price: "R$ 2.000",
     description: "Prioridade operacional para prazos críticos.",
   },
   {
     name: "Mensal",
-    price: "R$ 10.000/mês",
     description: "Assistência recorrente para reduzir fricção no dia a dia.",
     featured: true,
   },
   {
     name: "Mensal Exclusividade",
-    price: "Sob consulta",
     description: "Capacidade reservada, prioridade máxima e atuação contínua.",
     exclusive: true,
     limited: true,
   },
   {
     name: "Operação Internacional",
-    price: "Sob consulta",
     description: "Demandas que exigem deslocamento e atuação presencial fora do país.",
     international: true,
     limited: true,
@@ -307,11 +301,13 @@ const Index = () => {
                     {plan.exclusive && <Star className="h-4 w-4 text-primary" />}
                     {plan.international && plan.icon && <plan.icon className="h-4 w-4 text-primary" />}
                   </div>
-                  <p className="mt-2 font-display text-2xl font-bold text-gold-gradient">{plan.price}</p>
-                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{plan.description}</p>
                   {plan.limited && (
                     <div className="mt-4">
-                      <span className="badge-limited">Vagas limitadas</span>
+                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-bold border border-primary/40 animate-pulse">
+                        <Star className="h-4 w-4" />
+                        Vagas limitadas
+                      </span>
                     </div>
                   )}
                 </div>
@@ -324,9 +320,9 @@ const Index = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary text-lg px-10 py-5"
             >
-              <MessageCircle className="h-4 w-4" />
+              <MessageCircle className="h-5 w-5" />
               Solicitar triagem no WhatsApp
             </a>
           </div>
