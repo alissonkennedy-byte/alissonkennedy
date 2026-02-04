@@ -155,7 +155,7 @@ const Index = () => {
               Assistência Premium
             </div>
             <h1 className="animate-fade-up font-display text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl text-foreground">
-              Assistente Pessoal e Executivo Premium em São Paulo
+              Assistente Pessoal e Executivo Premium
             </h1>
             <p className="animate-fade-up-delay-1 mt-6 text-lg text-muted-foreground md:text-xl">
               Concierge pessoal para executivos, empresários e famílias que precisam delegar com segurança, previsibilidade e discrição.
