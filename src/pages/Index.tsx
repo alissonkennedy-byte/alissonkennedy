@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Calendar, Users, Sparkles, Car, ChevronDown, Instagram, Linkedin, MessageCircle, Star, Globe } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import {
   Accordion,
   AccordionContent,
@@ -347,6 +348,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Depoimentos */}
+      <TestimonialsCarousel />
 
       {/* Confidencialidade */}
       <section id="confidencialidade" className="section-spacing border-b border-border relative overflow-hidden">
