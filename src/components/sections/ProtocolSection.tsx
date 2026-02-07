@@ -11,7 +11,7 @@ const steps = [
   {
     number: "02",
     title: "Diagnóstico de Perfil",
-    subtitle: "Validation",
+    subtitle: "Validação",
   },
   {
     number: "03",

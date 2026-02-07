@@ -15,14 +15,16 @@ export function HeroSection() {
           </div>
 
           <h1 className="animate-fade-up font-display text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl text-foreground">
-            Alisson Kennedy{" "}
-            <span className="text-gold-gradient">| Private Office</span>
+            Alisson Kennedy
+            <br />
+            <span className="text-gold-gradient">Private Office</span>
           </h1>
 
           <h2 className="animate-fade-up-delay-1 mt-6 font-display text-lg font-medium md:text-xl lg:text-2xl text-muted-foreground">
-            Lifestyle Strategy & Intelligence.{" "}
+            Lifestyle Strategy & Intelligence.
+            <br />
             <span className="text-foreground">
-              O Hub de gestão operacional para C-Levels e UHNWI em São Paulo.
+              O Hub de gestão operacional executiva e pessoal em São Paulo.
             </span>
           </h2>
 
