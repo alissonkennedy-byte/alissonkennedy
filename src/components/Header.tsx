@@ -1,16 +1,14 @@
 import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson.%20Quero%20solicitar%20triagem.%0A%0A1)%20Demanda%3A%20()%0A2)%20Prazo%20(data%2Fhora)%3A%20()%0A3)%20Cidade%3A%20()%0A4)%20Padr%C3%A3o%2FPrefer%C3%AAncias%3A%20()%0A5)%20Or%C3%A7amento%20ou%20limite%20de%20aprova%C3%A7%C3%A3o%3A%20()%0A6)%20Modelo%3A%20(Avulsa%20%2F%20Mensal%20%2F%20Exclusividade)%0A%0ASe%20for%20urgente%2C%20escreva%3A%20EMERGENCIAL.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office.";
 
 const navLinks = [
-  { label: "Para quem", href: "#para-quem" },
-  { label: "Serviços", href: "#servicos" },
+  { label: "Manifesto", href: "#manifesto" },
+  { label: "Ecossistema", href: "#ecossistema" },
   { label: "Modelos", href: "#modelos" },
-  { label: "Processo", href: "#como-funciona" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Quem opera", href: "#quem-opera" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Founder", href: "#founder" },
+  { label: "Protocolo", href: "#protocolo" },
 ];
 
 export function Header() {
@@ -20,20 +18,24 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
       <div className="container-premium flex h-16 items-center justify-between md:h-20">
         {/* Logo */}
-        <a 
-          href="/" 
+        <a
+          href="/"
           className="flex flex-col transition-opacity duration-300 hover:opacity-70"
         >
-          <span className="font-display text-lg font-semibold tracking-tight">Alisson Kennedy</span>
-          <span className="text-xs text-primary font-medium tracking-wider">Premium Concierge</span>
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Alisson Kennedy
+          </span>
+          <span className="text-xs text-primary font-medium tracking-wider">
+            Private Office
+          </span>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a 
-              key={link.label} 
-              href={link.href} 
+            <a
+              key={link.label}
+              href={link.href}
               className="relative text-sm text-muted-foreground transition-all duration-300 hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
@@ -61,13 +63,13 @@ export function Header() {
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a 
-            href={WHATSAPP_URL} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary ml-2"
           >
-            Solicitar triagem
+            Solicitar Triagem
           </a>
         </div>
 
@@ -77,12 +79,16 @@ export function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={`border-t border-border bg-background md:hidden overflow-hidden transition-all duration-500 ease-out ${
           isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
@@ -125,7 +131,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="btn-primary mt-2 w-full text-center"
           >
-            Solicitar triagem
+            Solicitar Triagem
           </a>
         </nav>
       </div>
