@@ -13,9 +13,6 @@ export function Footer() {
               </span>
               <span className="text-primary font-medium"> | Private Office</span>
             </div>
-            <span className="text-sm text-muted-foreground">
-              +55 11 96738-5924
-            </span>
           </div>
 
           {/* Social */}

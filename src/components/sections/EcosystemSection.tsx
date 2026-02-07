@@ -1,4 +1,4 @@
-import { PenTool, Car, Waves, Wine } from "lucide-react";
+import { PenTool, Car, Waves } from "lucide-react";
 
 const verticals = [
   {
@@ -6,24 +6,21 @@ const verticals = [
     title: "Concierge Signature",
     description:
       "O Core Business. Gestão integral de agenda, reservas, health concierge e demandas de alta complexidade. A inteligência por trás da sua rotina.",
+    link: null,
   },
   {
     icon: Car,
-    title: "Maiori Mobility",
+    title: "Maiori Mob",
     description:
       "Logística Executiva Blindada. Frota própria e parceira para transporte de diretoria e roadshows com segurança e pontualidade militar.",
+    link: "https://www.instagram.com/maiorimob/",
   },
   {
     icon: Waves,
     title: "Concierge Riviera",
     description:
       "Seasonal Management. Gestão de propriedades e experiências de lazer no Litoral Norte (Riviera de São Lourenço). O padrão da capital, pé na areia.",
-  },
-  {
-    icon: Wine,
-    title: "Dio Mio Events",
-    description:
-      "Social Connection. Curadoria gastronômica e networking estratégico através de experiências privadas e corporativas.",
+    link: "https://www.instagram.com/conciergeriviera/",
   },
 ];
 
@@ -39,26 +36,40 @@ export function EcosystemSection() {
           O Ecossistema
         </h2>
         <p className="scroll-reveal reveal-delay-1 mt-4 text-center text-muted-foreground max-w-xl mx-auto">
-          Quatro verticais integradas sob uma única gestão estratégica.
+          Três verticais integradas sob uma única gestão estratégica.
         </p>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {verticals.map((vertical, index) => (
-            <div
-              key={index}
-              className={`scroll-reveal-scale reveal-delay-${index + 1} card-premium-hover group`}
-            >
-              <div className="h-12 w-12 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-300 border border-primary/30">
-                <vertical.icon className="h-6 w-6 text-primary" />
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {verticals.map((vertical, index) => {
+            const content = (
+              <div
+                className={`scroll-reveal-scale reveal-delay-${index + 1} card-premium-hover group ${vertical.link ? "cursor-pointer" : ""}`}
+              >
+                <div className="h-12 w-12 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-300 border border-primary/30">
+                  <vertical.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="mt-5 font-display text-lg font-semibold text-foreground">
+                  {vertical.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {vertical.description}
+                </p>
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-foreground">
-                {vertical.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {vertical.description}
-              </p>
-            </div>
-          ))}
+            );
+
+            return vertical.link ? (
+              <a
+                key={index}
+                href={vertical.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={index}>{content}</div>
+            );
+          })}
         </div>
       </div>
     </section>
