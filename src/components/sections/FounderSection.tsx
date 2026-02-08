@@ -14,16 +14,28 @@ export function FounderSection() {
               A Estratégia por trás da Operação
             </h2>
             <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
-              Alisson Kennedy não atua apenas como concierge, mas como{" "}
+              Alisson Kennedy traz para a gestão de lifestyle o rigor e a{" "}
+              <span className="text-foreground font-medium">governança</span>{" "}
+              das grandes corporações. Com{" "}
               <span className="text-foreground font-medium">
-                estrategista pessoal
-              </span>
-              . Com background em Relações Públicas e Logística Executiva,
-              fundou o Private Office para preencher a lacuna entre o
-              secretariado comum e a gestão de grandes fortunas. É o ponto focal
-              de confiança para quem decide o futuro de grandes negócios.
+                MBA em Marketing
+              </span>{" "}
+              pela{" "}
+              <span className="text-foreground font-medium">
+                Universidade de São Paulo (USP)
+              </span>{" "}
+              e background em Relações Públicas, construiu sua trajetória
+              gerenciando ativos de alto valor e stakeholders estratégicos em
+              gigantes como Banco do Brasil Seguros e Prosegur.
             </p>
-            <div className="scroll-reveal reveal-delay-2 mt-8 flex items-center justify-center lg:justify-start gap-5">
+            <p className="scroll-reveal reveal-delay-2 mt-4 text-muted-foreground leading-relaxed">
+              Sua expertise não se limita a executar tarefas; é moldada pela
+              gestão de crises, negociações complexas e logística de eventos de
+              grande porte. Do agronegócio ao mercado de luxo, Alisson traduz a
+              eficiência corporativa para a vida privada, atuando como o ponto
+              focal de confiança para quem exige bastidores impecáveis.
+            </p>
+            <div className="scroll-reveal reveal-delay-3 mt-8 flex items-center justify-center lg:justify-start gap-5">
               <a
                 href="https://www.instagram.com/alissonkennedy_/"
                 target="_blank"
@@ -47,7 +59,7 @@ export function FounderSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="scroll-reveal reveal-delay-3 btn-primary mt-10 inline-flex"
+              className="scroll-reveal reveal-delay-4 btn-primary mt-10 inline-flex"
             >
               Solicitar Triagem
             </a>
