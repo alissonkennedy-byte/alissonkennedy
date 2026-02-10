@@ -42,10 +42,17 @@ export function ServiceTiersSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="container-premium relative">
         <div className="text-center">
-          <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
+          <p className="scroll-reveal text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
+            Investimento
+          </p>
+
+          <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
             Modelos de Atuação
           </h2>
-          <p className="scroll-reveal reveal-delay-1 mt-5 text-muted-foreground">
+
+          <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+          <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground tracking-wide">
             Três níveis de acesso desenhados para diferentes perfis de
             complexidade.
           </p>
@@ -65,31 +72,33 @@ export function ServiceTiersSection() {
             >
               <div>
                 <div className="flex items-center gap-3">
-                  <h3 className="font-display text-lg font-semibold text-foreground">
+                  <h3 className="font-display text-lg font-semibold text-foreground tracking-tight">
                     {tier.name}
                   </h3>
                   {tier.exclusive && <Star className="h-4 w-4 text-primary" />}
                 </div>
-                <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-wider uppercase">
+                <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-[0.2em] uppercase">
                   {tier.label}
                 </span>
 
-                <div className="mt-4">
-                  <span className="font-display text-2xl font-bold text-foreground">
+                <div className="mt-5 flex items-baseline gap-1">
+                  <span className="font-display text-3xl font-bold text-foreground tracking-tight">
                     {tier.price}
                   </span>
-                  <span className="text-sm text-muted-foreground ml-1">
+                  <span className="text-sm text-muted-foreground tracking-wide">
                     {tier.period}
                   </span>
                 </div>
 
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                <div className="mt-4 w-full h-px bg-border" />
+
+                <p className="mt-4 text-sm text-muted-foreground leading-[1.8] tracking-wide">
                   {tier.description}
                 </p>
                 {tier.limited && (
                   <div className="mt-5">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-bold border border-primary/40 animate-pulse">
-                      <Star className="h-4 w-4" />
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/40 tracking-wider uppercase animate-pulse">
+                      <Star className="h-3.5 w-3.5" />
                       Vagas limitadas
                     </span>
                   </div>
@@ -104,7 +113,7 @@ export function ServiceTiersSection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-lg px-10 py-5"
+            className="btn-primary text-base px-10 py-5 tracking-wide"
           >
             <MessageCircle className="h-5 w-5" />
             Solicitar Acesso ao Private Office

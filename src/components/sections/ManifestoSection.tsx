@@ -3,13 +3,19 @@ export function ManifestoSection() {
     <section id="manifesto" className="section-spacing border-b border-border">
       <div className="container-premium">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
+          <p className="scroll-reveal text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
+            Manifesto
+          </p>
+
+          <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
             O Novo Código do Luxo
           </h2>
 
+          <div className="scroll-reveal reveal-delay-1 mt-6 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
           <div className="scroll-reveal reveal-delay-1 mt-10 relative">
             <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent hidden md:block" />
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed md:leading-loose">
+            <p className="text-muted-foreground text-base md:text-lg leading-[1.85] tracking-wide">
               Em um mundo de excesso de acesso, a verdadeira exclusividade é a{" "}
               <span className="text-primary font-medium">curadoria</span>.
               Atuamos na intersecção entre a logística impecável e o acesso
