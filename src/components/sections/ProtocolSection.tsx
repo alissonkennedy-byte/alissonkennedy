@@ -33,10 +33,17 @@ export function ProtocolSection() {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 pointer-events-none" />
       <div className="container-premium relative">
-        <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
+        <p className="scroll-reveal text-center text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
+          Como funciona
+        </p>
+
+        <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
           Protocolo de Acesso
         </h2>
-        <p className="scroll-reveal reveal-delay-1 mt-4 text-center text-muted-foreground max-w-lg mx-auto">
+
+        <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+        <p className="scroll-reveal reveal-delay-1 mt-6 text-center text-muted-foreground max-w-lg mx-auto tracking-wide leading-relaxed">
           Um processo estruturado para garantir alinhamento e execução impecável.
         </p>
 
@@ -49,10 +56,10 @@ export function ProtocolSection() {
               <div className="step-indicator text-lg font-bold">
                 {step.number}
               </div>
-              <h3 className="mt-5 font-display text-base font-semibold text-foreground">
+              <h3 className="mt-5 font-display text-base font-semibold text-foreground tracking-tight">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-primary font-medium">
+              <p className="mt-2 text-sm text-primary font-medium tracking-wider">
                 {step.subtitle}
               </p>
             </div>
@@ -64,7 +71,7 @@ export function ProtocolSection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-lg px-10 py-5"
+            className="btn-primary text-base px-10 py-5 tracking-wide"
           >
             <MessageCircle className="h-5 w-5" />
             Solicitar Triagem

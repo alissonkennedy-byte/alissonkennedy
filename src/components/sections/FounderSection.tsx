@@ -10,10 +10,17 @@ export function FounderSection() {
         <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-center">
           {/* Texto à esquerda */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground">
+            <p className="scroll-reveal text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
+              Sobre o Founder
+            </p>
+
+            <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
               A Estratégia por trás da Operação
             </h2>
-            <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground leading-relaxed">
+
+            <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto lg:mx-0 w-16 h-px bg-gradient-to-r from-primary/50 via-primary/50 to-transparent" />
+
+            <p className="scroll-reveal reveal-delay-1 mt-8 text-muted-foreground leading-[1.85] tracking-wide">
               Alisson Kennedy traz para a gestão de lifestyle o rigor e a{" "}
               <span className="text-foreground font-medium">governança</span>{" "}
               das grandes corporações. Com{" "}
@@ -28,12 +35,15 @@ export function FounderSection() {
               gerenciando ativos de alto valor e stakeholders estratégicos em
               gigantes como Banco do Brasil Seguros e Prosegur.
             </p>
-            <p className="scroll-reveal reveal-delay-2 mt-4 text-muted-foreground leading-relaxed">
+            <p className="scroll-reveal reveal-delay-2 mt-5 text-muted-foreground leading-[1.85] tracking-wide">
               Sua expertise não se limita a executar tarefas; é moldada pela
               gestão de crises, negociações complexas e logística de eventos de
               grande porte. Do agronegócio ao mercado de luxo, Alisson traduz a
-              eficiência corporativa para a vida privada, atuando como o ponto
-              focal de confiança para quem exige bastidores impecáveis.
+              eficiência corporativa para a vida privada, atuando como o{" "}
+              <span className="text-foreground font-medium">
+                ponto focal de confiança
+              </span>{" "}
+              para quem exige bastidores impecáveis.
             </p>
             <div className="scroll-reveal reveal-delay-3 mt-8 flex items-center justify-center lg:justify-start gap-5">
               <a
@@ -59,7 +69,7 @@ export function FounderSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="scroll-reveal reveal-delay-4 btn-primary mt-10 inline-flex"
+              className="scroll-reveal reveal-delay-4 btn-primary mt-10 inline-flex tracking-wide"
             >
               Solicitar Triagem
             </a>
