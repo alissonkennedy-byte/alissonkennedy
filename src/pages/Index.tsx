@@ -6,6 +6,7 @@ import { EcosystemSection } from "@/components/sections/EcosystemSection";
 import { ServiceTiersSection } from "@/components/sections/ServiceTiersSection";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { ProtocolSection } from "@/components/sections/ProtocolSection";
+import { FilosofiaSection } from "@/components/sections/FilosofiaSection";
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -30,6 +31,7 @@ const Index = () => {
     <div ref={scrollRef} className="min-h-screen bg-background">
       <Header />
       <HeroSection />
+      <FilosofiaSection />
       <ManifestoSection />
       <EcosystemSection />
       <ServiceTiersSection />

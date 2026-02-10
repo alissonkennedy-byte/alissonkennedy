@@ -6,25 +6,28 @@ const tiers = [
   {
     name: "The Private Mission",
     label: "On-Demand",
+    price: "R$ 1.200",
+    period: "/ Demanda",
     description:
-      "Atuação cirúrgica para demandas pontuais. Logística de viagens curtas, aquisições complexas ou crises operacionais.",
-    detail: "Investimento único por missão",
+      "Resolução pontual de alta complexidade. Coordenação logística, acesso à rede de parceiros e acompanhamento remoto até a conclusão.",
   },
   {
-    name: "The Lifestyle Management",
+    name: "Lifestyle Membership",
     label: "Recorrência",
+    price: "R$ 6.900",
+    period: "/ Mês",
     description:
-      "Gestão contínua de rotina. Acesso ao Hub para organização de vida pessoal, familiar e agenda social.",
-    detail: "Membership Mensal — Vagas Limitadas",
+      "A assinatura de gestão de rotina. Centralização da sua agenda pessoal, travel design, gestão residencial básica e suporte via Hub.",
     featured: true,
     limited: true,
   },
   {
-    name: "The Signature Collection",
+    name: "Signature Collection",
     label: "Exclusividade",
+    price: "R$ 25.000",
+    period: "/ Mês + Blindado",
     description:
-      "O ápice do Private Office. Disponibilidade ampliada, gestão patrimonial leve e travel design global.",
-    detail: "Apenas 3 famílias — Lista de Espera",
+      "Estrutura de Family Office dedicada. Disponibilidade ampliada (finais de semana), gestão híbrida presencial e logística blindada exclusiva.",
     exclusive: true,
     limited: true,
   },
@@ -70,11 +73,18 @@ export function ServiceTiersSection() {
                 <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-wider uppercase">
                   {tier.label}
                 </span>
+
+                <div className="mt-4">
+                  <span className="font-display text-2xl font-bold text-foreground">
+                    {tier.price}
+                  </span>
+                  <span className="text-sm text-muted-foreground ml-1">
+                    {tier.period}
+                  </span>
+                </div>
+
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
                   {tier.description}
-                </p>
-                <p className="mt-4 text-xs text-muted-foreground/80 italic">
-                  {tier.detail}
                 </p>
                 {tier.limited && (
                   <div className="mt-5">
@@ -97,7 +107,7 @@ export function ServiceTiersSection() {
             className="btn-primary text-lg px-10 py-5"
           >
             <MessageCircle className="h-5 w-5" />
-            Solicitar Triagem
+            Solicitar Acesso ao Private Office
           </a>
         </div>
       </div>
