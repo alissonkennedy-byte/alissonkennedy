@@ -24,8 +24,8 @@ const tiers = [
   {
     name: "Signature Collection",
     label: "Exclusividade",
-    price: "R$ 25.000",
-    period: "/ Mês + Blindado",
+    price: "Sob consulta",
+    period: "",
     description:
       "Estrutura de Family Office dedicada. Disponibilidade ampliada (finais de semana), gestão híbrida presencial e logística blindada exclusiva.",
     exclusive: true,
