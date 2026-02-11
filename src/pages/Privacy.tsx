@@ -83,20 +83,14 @@ const Privacy = () => {
             <p className="mt-3 text-muted-foreground">
               Em caso de dúvidas sobre esta política, entre em contato:
             </p>
-            <div className="mt-6 flex flex-col items-center gap-3 text-sm">
+            <div className="mt-6">
               <a
-                href="mailto:contato@alissonkennedy.com"
-                className="text-primary transition-colors hover:text-primary/80"
-              >
-                contato@alissonkennedy.com
-              </a>
-              <a
-                href="https://wa.me/5511967385924"
+                href="https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary transition-colors hover:text-primary/80"
+                className="btn-primary inline-block"
               >
-                WhatsApp: +55 11 96738-5924
+                Falar via WhatsApp
               </a>
             </div>
           </section>
