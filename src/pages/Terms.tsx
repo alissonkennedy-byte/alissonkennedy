@@ -165,20 +165,14 @@ const Terms = () => {
             <p className="mt-3 text-muted-foreground">
               Em caso de dúvidas sobre estes termos, entre em contato através dos canais oficiais:
             </p>
-            <div className="mt-6 flex flex-col items-center gap-3 text-sm">
-              <a
-                href="mailto:contato@alissonkennedy.com"
-                className="text-primary transition-colors hover:text-primary/80"
-              >
-                contato@alissonkennedy.com
-              </a>
+            <div className="mt-6">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary transition-colors hover:text-primary/80"
+                className="btn-primary inline-block"
               >
-                WhatsApp: +55 11 96738-5924
+                Falar via WhatsApp
               </a>
             </div>
           </section>
