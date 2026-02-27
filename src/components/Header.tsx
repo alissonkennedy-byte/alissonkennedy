@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Modelos", href: "#modelos" },
   { label: "Founder", href: "#founder" },
   { label: "Protocolo", href: "#protocolo" },
+  { label: "Corporate", href: "/corporate" },
 ];
 
 export function Header() {
