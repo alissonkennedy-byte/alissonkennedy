@@ -1,12 +1,16 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const WHATSAPP_URL =
   "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20corporativo.";
 
 export default function Corporate() {
+  const scrollRef = useScrollReveal();
+
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Inter', 'Helvetica Neue', system-ui, sans-serif" }}>
+    <div ref={scrollRef} className="min-h-screen" style={{ fontFamily: "'Inter', 'Helvetica Neue', system-ui, sans-serif" }}>
       {/* Minimal Header */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 h-16 md:h-20"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 h-16 md:h-20"
         style={{ backgroundColor: "#000000", borderBottom: "1px solid rgba(255,255,255,0.08)" }}
       >
         <a href="/" className="text-sm tracking-[0.2em] uppercase" style={{ color: "#FFFFFF", letterSpacing: "0.2em" }}>
@@ -22,13 +26,13 @@ export default function Corporate() {
         className="flex items-center justify-start min-h-screen pt-20"
         style={{ backgroundColor: "#000000" }}
       >
-        <div className="w-full max-w-[900px] mx-auto px-8 md:px-16 py-24 md:py-32">
+        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
           <div
-            className="mb-12"
+            className="scroll-reveal mb-12"
             style={{ width: "48px", height: "1px", backgroundColor: "#FFFFFF" }}
           />
           <h1
-            className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight"
+            className="scroll-reveal reveal-delay-1 text-[1.75rem] md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight"
             style={{ color: "#FFFFFF" }}
           >
             Corporate Solutions:
@@ -38,7 +42,7 @@ export default function Corporate() {
             e Posicionamento de Elite.
           </h1>
           <p
-            className="mt-10 text-base md:text-lg leading-[1.9] max-w-[680px]"
+            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[680px]"
             style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
           >
             Não vendemos serviços genéricos. Orquestramos a presença digital, a
@@ -50,13 +54,13 @@ export default function Corporate() {
 
       {/* Section 2 — Engenharia Digital */}
       <section style={{ backgroundColor: "#FFFFFF" }}>
-        <div className="w-full max-w-[900px] mx-auto px-8 md:px-16 py-24 md:py-32">
+        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
           <div
-            className="mb-10"
+            className="scroll-reveal mb-10"
             style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
           />
           <h2
-            className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             style={{ color: "#000000" }}
           >
             Engenharia Digital e
@@ -64,7 +68,7 @@ export default function Corporate() {
             Automação de Processos
           </h2>
           <p
-            className="mt-10 text-base md:text-lg leading-[1.9] max-w-[640px]"
+            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
             style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
           >
             A lentidão operacional custa capital. Desenvolvemos plataformas de
@@ -79,13 +83,13 @@ export default function Corporate() {
 
       {/* Section 3 — Posicionamento */}
       <section style={{ backgroundColor: "#000000" }}>
-        <div className="w-full max-w-[900px] mx-auto px-8 md:px-16 py-24 md:py-32">
+        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
           <div
-            className="mb-10"
+            className="scroll-reveal mb-10"
             style={{ width: "32px", height: "1px", backgroundColor: "#FFFFFF" }}
           />
           <h2
-            className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             style={{ color: "#FFFFFF" }}
           >
             Arquitetura de Marca e
@@ -93,7 +97,7 @@ export default function Corporate() {
             Comunicação Visual Corporativa
           </h2>
           <p
-            className="mt-10 text-base md:text-lg leading-[1.9] max-w-[640px]"
+            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
             style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
           >
             A perceção do mercado dita o valor do seu contrato. Assumimos o
@@ -108,13 +112,13 @@ export default function Corporate() {
 
       {/* Section 4 — Logística e Eventos */}
       <section style={{ backgroundColor: "#FFFFFF" }}>
-        <div className="w-full max-w-[900px] mx-auto px-8 md:px-16 py-24 md:py-32">
+        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
           <div
-            className="mb-10"
+            className="scroll-reveal mb-10"
             style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
           />
           <h2
-            className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
             style={{ color: "#000000" }}
           >
             Gestão de Eventos Corporativos
@@ -122,7 +126,7 @@ export default function Corporate() {
             e Transfers Executivos
           </h2>
           <p
-            className="mt-10 text-base md:text-lg leading-[1.9] max-w-[640px]"
+            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
             style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
           >
             O controle total do seu terreno físico. Assumimos a curadoria de
@@ -138,25 +142,25 @@ export default function Corporate() {
 
       {/* Section 5 — CTA Footer */}
       <section style={{ backgroundColor: "#000000" }}>
-        <div className="w-full max-w-[900px] mx-auto px-8 md:px-16 py-24 md:py-32 text-center">
+        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32 text-center">
           <div
-            className="mb-12 mx-auto"
+            className="scroll-reveal mb-12 mx-auto"
             style={{ width: "48px", height: "1px", backgroundColor: "rgba(255,255,255,0.2)" }}
           />
           <h3
-            className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight"
+            className="scroll-reveal reveal-delay-1 text-lg md:text-2xl lg:text-3xl font-bold tracking-tight"
             style={{ color: "#FFFFFF" }}
           >
             A governança corporativa exige
             <br />
             bastidores controlados.
           </h3>
-          <div className="mt-14">
+          <div className="scroll-reveal reveal-delay-2 mt-12 md:mt-14">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-sm font-semibold tracking-[0.1em] uppercase px-10 py-4 transition-opacity duration-300 hover:opacity-80"
+              className="inline-block text-xs md:text-sm font-semibold tracking-[0.1em] uppercase px-8 md:px-10 py-4 transition-opacity duration-300 hover:opacity-80"
               style={{
                 backgroundColor: "#FFFFFF",
                 color: "#000000",
