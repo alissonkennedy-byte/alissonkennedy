@@ -14,17 +14,28 @@ const Index = () => {
   const scrollRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Alisson Kennedy | Private Office — Lifestyle Strategy & Intelligence";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Private Office de gestão operacional e lifestyle strategy para C-Levels e UHNWI em São Paulo. Concierge premium, logística executiva e curadoria de experiências com fluidez e discrição absoluta.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
+    document.title = "Alisson Kennedy | Private Office — Concierge Premium SP & Lifestyle Strategy";
+    const setMeta = (name: string, content: string, property?: boolean) => {
+      const attr = property ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.content = content;
+    };
+    setMeta("description", "Private Office de gestão operacional e lifestyle strategy para C-Levels e UHNWI em São Paulo. Concierge premium, logística executiva e curadoria de experiências com fluidez e discrição absoluta.");
+    setMeta("keywords", "concierge premium SP, concierge premium São Paulo, gestão de lifestyle, private office, concierge executivo, lifestyle strategy, UHNWI concierge, logística executiva São Paulo, family office concierge, curadoria de experiências");
+    
+    // Set canonical
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
     }
+    canonical.href = "https://alissonkennedy.lovable.app/";
   }, []);
 
   return (
