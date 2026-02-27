@@ -1,4 +1,8 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import heroImg from "@/assets/corporate-hero.jpg";
+import digitalImg from "@/assets/corporate-digital.jpg";
+import brandImg from "@/assets/corporate-brand.jpg";
+import eventsImg from "@/assets/corporate-events.jpg";
 
 const WHATSAPP_URL =
   "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20corporativo.";
@@ -21,12 +25,17 @@ export default function Corporate() {
         </span>
       </header>
 
-      {/* Section 1 — Hero */}
-      <section
-        className="flex items-center justify-start min-h-screen pt-20"
-        style={{ backgroundColor: "#000000" }}
-      >
-        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
+      {/* Section 1 — Hero with background image */}
+      <section className="relative min-h-screen flex items-end pt-20" style={{ backgroundColor: "#000000" }}>
+        <div className="absolute inset-0">
+          <img
+            src={heroImg}
+            alt="Corporate architecture"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #000000 15%, transparent 60%)" }} />
+        </div>
+        <div className="relative w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
           <div
             className="scroll-reveal mb-12"
             style={{ width: "48px", height: "1px", backgroundColor: "#FFFFFF" }}
@@ -54,89 +63,125 @@ export default function Corporate() {
 
       {/* Section 2 — Engenharia Digital */}
       <section style={{ backgroundColor: "#FFFFFF" }}>
-        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
-          <div
-            className="scroll-reveal mb-10"
-            style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
-          />
-          <h2
-            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
-            style={{ color: "#000000" }}
-          >
-            Engenharia Digital e
-            <br />
-            Automação de Processos
-          </h2>
-          <p
-            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
-            style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
-          >
-            A lentidão operacional custa capital. Desenvolvemos plataformas de
-            gestão sob medida, sites otimizados para ranqueamento avançado no
-            Google e integramos ferramentas de Inteligência Artificial para dar
-            velocidade à sua operação diária. Estruturamos a tecnologia dos
-            bastidores para que a sua linha de frente execute com precisão
-            militar.
-          </p>
+        <div className="w-full max-w-[1100px] mx-auto px-6 md:px-16 py-20 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div>
+              <div
+                className="scroll-reveal mb-10"
+                style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
+              />
+              <h2
+                className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+                style={{ color: "#000000" }}
+              >
+                Engenharia Digital e
+                <br />
+                Automação de Processos
+              </h2>
+              <p
+                className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
+                style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
+              >
+                A lentidão operacional custa capital. Desenvolvemos plataformas de
+                gestão sob medida, sites otimizados para ranqueamento avançado no
+                Google e integramos ferramentas de Inteligência Artificial para dar
+                velocidade à sua operação diária. Estruturamos a tecnologia dos
+                bastidores para que a sua linha de frente execute com precisão
+                militar.
+              </p>
+            </div>
+            <div className="scroll-reveal-scale reveal-delay-2">
+              <img
+                src={digitalImg}
+                alt="Digital engineering workspace"
+                className="w-full h-auto"
+                style={{ filter: "grayscale(100%) contrast(1.1)" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Section 3 — Posicionamento */}
       <section style={{ backgroundColor: "#000000" }}>
-        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
-          <div
-            className="scroll-reveal mb-10"
-            style={{ width: "32px", height: "1px", backgroundColor: "#FFFFFF" }}
-          />
-          <h2
-            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
-            style={{ color: "#FFFFFF" }}
-          >
-            Arquitetura de Marca e
-            <br />
-            Comunicação Visual Corporativa
-          </h2>
-          <p
-            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
-            style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
-          >
-            A perceção do mercado dita o valor do seu contrato. Assumimos o
-            desenvolvimento da identidade visual, roteiros corporativos e
-            estratégias de conteúdo para redes sociais. Garantimos uma estética
-            institucional de alto impacto (High-End), eliminando ruídos de
-            comunicação e posicionando a sua empresa no topo da cadeia do seu
-            setor.
-          </p>
+        <div className="w-full max-w-[1100px] mx-auto px-6 md:px-16 py-20 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div className="scroll-reveal-scale reveal-delay-1 order-2 md:order-1">
+              <img
+                src={brandImg}
+                alt="Brand identity materials"
+                className="w-full h-auto"
+                style={{ filter: "grayscale(100%) contrast(1.1)" }}
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <div
+                className="scroll-reveal mb-10"
+                style={{ width: "32px", height: "1px", backgroundColor: "#FFFFFF" }}
+              />
+              <h2
+                className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+                style={{ color: "#FFFFFF" }}
+              >
+                Arquitetura de Marca e
+                <br />
+                Comunicação Visual Corporativa
+              </h2>
+              <p
+                className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
+                style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
+              >
+                A perceção do mercado dita o valor do seu contrato. Assumimos o
+                desenvolvimento da identidade visual, roteiros corporativos e
+                estratégias de conteúdo para redes sociais. Garantimos uma estética
+                institucional de alto impacto (High-End), eliminando ruídos de
+                comunicação e posicionando a sua empresa no topo da cadeia do seu
+                setor.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Section 4 — Logística e Eventos */}
       <section style={{ backgroundColor: "#FFFFFF" }}>
-        <div className="w-full max-w-[900px] mx-auto px-6 md:px-16 py-20 md:py-32">
-          <div
-            className="scroll-reveal mb-10"
-            style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
-          />
-          <h2
-            className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
-            style={{ color: "#000000" }}
-          >
-            Gestão de Eventos Corporativos
-            <br />
-            e Transfers Executivos
-          </h2>
-          <p
-            className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[640px]"
-            style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
-          >
-            O controle total do seu terreno físico. Assumimos a curadoria de
-            fornecedores, o rigor dos orçamentos e a orquestração logística para
-            eventos empresariais. Através de uma rede de confiança, gerenciamos
-            transfers executivos, garantindo pontualidade, discrição e segurança
-            inegociável para a sua diretoria e stakeholders. O nosso papel é
-            intermediar o acesso às melhores soluções, cobrando exclusivamente
-            pela entrega de um cenário resolvido.
-          </p>
+        <div className="w-full max-w-[1100px] mx-auto px-6 md:px-16 py-20 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div>
+              <div
+                className="scroll-reveal mb-10"
+                style={{ width: "32px", height: "1px", backgroundColor: "#000000" }}
+              />
+              <h2
+                className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
+                style={{ color: "#000000" }}
+              >
+                Gestão de Eventos Corporativos
+                <br />
+                e Transfers Executivos
+              </h2>
+              <p
+                className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
+                style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
+              >
+                O controle total do seu terreno físico. Assumimos a curadoria de
+                fornecedores, o rigor dos orçamentos e a orquestração logística para
+                eventos empresariais. Através de uma rede de confiança, gerenciamos
+                transfers executivos, garantindo pontualidade, discrição e segurança
+                inegociável para a sua diretoria e stakeholders. O nosso papel é
+                intermediar o acesso às melhores soluções, cobrando exclusivamente
+                pela entrega de um cenário resolvido.
+              </p>
+            </div>
+            <div className="scroll-reveal-scale reveal-delay-2">
+              <img
+                src={eventsImg}
+                alt="Executive transport"
+                className="w-full h-auto"
+                style={{ filter: "grayscale(100%) contrast(1.1)" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
