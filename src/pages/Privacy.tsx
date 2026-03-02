@@ -4,7 +4,13 @@ import { useEffect } from "react";
 
 const Privacy = () => {
   useEffect(() => {
-    document.title = "Política de Privacidade | Alisson Kennedy Private Office";
+    document.title = "Política de Privacidade | Alisson Kennedy";
+    const setMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+      if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
+      el.content = content;
+    };
+    setMeta("description", "Saiba como protegemos os seus dados com rigor e discrição. Política de privacidade do Alisson Kennedy Private Office, em conformidade com a LGPD.");
     window.scrollTo(0, 0);
   }, []);
 

@@ -12,13 +12,13 @@ export default function Corporate() {
   const scrollRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Corporate Solutions | Alisson Kennedy — Inteligência, Automação e Posicionamento";
+    document.title = "Corporate Solutions SP | Alisson Kennedy Private Office";
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
       if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
       el.content = content;
     };
-    setMeta("description", "Corporate Solutions da Alisson Kennedy Private Office. Engenharia digital, automação de processos, comunicação visual corporativa e gestão de eventos executivos em São Paulo.");
+    setMeta("description", "Engenharia digital, automação e posicionamento de marca para empresas em São Paulo. Eleve a operação corporativa ao próximo nível. Solicite um diagnóstico.");
     setMeta("keywords", "corporate solutions São Paulo, engenharia digital, automação empresarial, comunicação visual corporativa, eventos corporativos, transfers executivos, posicionamento de marca");
     
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
