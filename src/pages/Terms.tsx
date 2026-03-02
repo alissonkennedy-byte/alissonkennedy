@@ -6,7 +6,13 @@ const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%
 
 const Terms = () => {
   useEffect(() => {
-    document.title = "Termos e Condições | Alisson Kennedy Private Office";
+    document.title = "Termos de Uso | Alisson Kennedy Private Office";
+    const setMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+      if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
+      el.content = content;
+    };
+    setMeta("description", "Consulte os termos e condições de uso do Private Office da Alisson Kennedy. Transparência e confiança para quem exige excelência. Leia agora.");
     window.scrollTo(0, 0);
   }, []);
 
