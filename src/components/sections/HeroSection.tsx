@@ -14,9 +14,9 @@ export function HeroSection() {
           </div>
 
           <h1 className="animate-fade-up font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-[3.5rem] leading-[1.15] text-foreground">
-            <span className="text-gold-gradient">Lifestyle Strategy</span>
+            <span className="text-gold-gradient">Você decide.</span>
             <br />
-            <span className="text-gold-gradient">& Intelligence.</span>
+            <span className="text-gold-gradient">Nós resolvemos.</span>
           </h1>
 
           <div className="animate-fade-up-delay-1 mt-8 mx-auto w-12 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
@@ -30,9 +30,8 @@ export function HeroSection() {
           </h2>
 
           <p className="animate-fade-up-delay-2 mt-8 text-base text-muted-foreground/80 md:text-lg leading-relaxed max-w-2xl mx-auto tracking-wide">
-            Uma estrutura de bastidores desenhada para garantir{" "}
-            <span className="text-primary font-medium">fluidez absoluta</span>{" "}
-            na vida de quem não pode parar.
+            Concierge pessoal e intermediação de demandas para executivos, empresários e famílias de alto padrão em São Paulo.{" "}
+            <span className="text-primary font-medium">Discrição total</span>. Execução impecável.
           </p>
 
           <div

@@ -5,14 +5,14 @@ const verticals = [
     icon: PenTool,
     title: "Concierge Signature",
     description:
-      "O Core Business. Gestão integral de agenda, reservas, health concierge e demandas de alta complexidade. A inteligência por trás da sua rotina.",
+      "O Core Business. Gestão integral de agenda, reservas, health concierge e demandas de alta complexidade. A inteligência por trás da sua rotina. O principal serviço de assistência pessoal em São Paulo.",
     link: null,
   },
   {
     icon: Car,
     title: "Maiori Mob",
     description:
-      "Logística Executiva Blindada. Frota própria e parceira para transporte de diretoria e roadshows com segurança e pontualidade militar.",
+      "Transporte executivo blindado para diretoria, roadshows e eventos em São Paulo. Frota própria e parceira com pontualidade e discrição absoluta.",
     link: "https://www.instagram.com/maiorimob/",
   },
   {

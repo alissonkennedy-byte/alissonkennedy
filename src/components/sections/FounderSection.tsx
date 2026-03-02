@@ -41,9 +41,9 @@ export function FounderSection() {
               grande porte. Do agronegócio ao mercado de luxo, Alisson traduz a
               eficiência corporativa para a vida privada, atuando como o{" "}
               <span className="text-foreground font-medium">
-                ponto focal de confiança
+                principal assistente pessoal e gestor de rotina
               </span>{" "}
-              para quem exige bastidores impecáveis.
+              para executivos e famílias que exigem bastidores impecáveis.
             </p>
             <div className="scroll-reveal reveal-delay-3 mt-8 flex items-center justify-center lg:justify-start gap-5">
               <a

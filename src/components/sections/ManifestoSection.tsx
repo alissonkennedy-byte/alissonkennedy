@@ -8,7 +8,7 @@ export function ManifestoSection() {
           </p>
 
           <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
-            O Novo Código do Luxo
+            Concierge de Alto Padrão: O Novo Código do Luxo
           </h2>
 
           <div className="scroll-reveal reveal-delay-1 mt-6 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -18,13 +18,11 @@ export function ManifestoSection() {
             <p className="text-muted-foreground text-base md:text-lg leading-[1.85] tracking-wide">
               Em um mundo de excesso de acesso, a verdadeira exclusividade é a{" "}
               <span className="text-primary font-medium">curadoria</span>.
-              Atuamos na intersecção entre a logística impecável e o acesso
-              restrito. Somos invisíveis na execução e inesquecíveis no
-              resultado. Para quem entende que a{" "}
+              Oferecemos assistência pessoal e concierge executivo para quem entende que{" "}
               <span className="text-foreground font-medium">
-                tranquilidade é o único ativo inegociável
+                tempo e tranquilidade são os únicos ativos inegociáveis
               </span>
-              .
+              . Somos invisíveis na execução e inesquecíveis no resultado.
             </p>
           </div>
         </div>
