@@ -9,7 +9,7 @@ const tiers = [
     price: "R$ 1.200",
     period: "/ Demanda",
     description:
-      "Resolução pontual de alta complexidade. Coordenação logística, acesso à rede de parceiros e acompanhamento remoto até a conclusão.",
+      "Um problema complexo, resolvido do início ao fim. Você descreve — nós coordenamos, acionamos e entregamos. Sem você precisar aparecer.",
   },
   {
     name: "Lifestyle Membership",
@@ -17,7 +17,7 @@ const tiers = [
     price: "R$ 6.900",
     period: "/ Mês",
     description:
-      "A assinatura de gestão de rotina. Centralização da sua agenda pessoal, travel design, gestão residencial básica e suporte via Hub.",
+      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato. Você só decide o que importa.",
     featured: true,
     limited: true,
   },
@@ -27,7 +27,7 @@ const tiers = [
     price: "Sob consulta",
     period: "",
     description:
-      "Estrutura de Family Office dedicada. Disponibilidade ampliada (finais de semana), gestão híbrida presencial e logística blindada exclusiva.",
+      "Presença dedicada, disponibilidade ampliada e logística exclusiva para famílias que exigem o mais alto padrão — dentro e fora de São Paulo.",
     exclusive: true,
     limited: true,
   },

@@ -15,7 +15,7 @@ const steps = [
   },
   {
     number: "03",
-    title: "Setup & Onboarding",
+    title: "Estruturação e Início",
     subtitle: "Início Imediato",
   },
   {
