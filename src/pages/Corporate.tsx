@@ -68,11 +68,9 @@ export default function Corporate() {
             className="scroll-reveal reveal-delay-1 text-[1.75rem] md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight"
             style={{ color: "#FFFFFF" }}
           >
-            Soluções Corporativas de Alto
+            Soluções Empresariais
             <br />
-            Padrão para Empresas que Não
-            <br />
-            Aceitam Mediocridade.
+            e Corporativas
           </h1>
           <p
             className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[680px]"
