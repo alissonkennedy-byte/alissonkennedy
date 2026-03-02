@@ -14,7 +14,7 @@ const Index = () => {
   const scrollRef = useScrollReveal();
 
   useEffect(() => {
-    document.title = "Concierge Premium SP | Alisson Kennedy Private Office";
+    document.title = "Alisson Kennedy | Private Office — São Paulo";
     const setMeta = (name: string, content: string, property?: boolean) => {
       const attr = property ? "property" : "name";
       let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
@@ -25,7 +25,7 @@ const Index = () => {
       }
       el.content = content;
     };
-    setMeta("description", "Gestão operacional e lifestyle strategy para C-Levels e UHNWI em São Paulo. Descubra um concierge premium com discrição absoluta. Fale conosco.");
+    setMeta("description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
     setMeta("keywords", "concierge premium SP, concierge premium São Paulo, gestão de lifestyle, private office, concierge executivo, lifestyle strategy, UHNWI concierge, logística executiva São Paulo, family office concierge, curadoria de experiências");
     
     // Set canonical
