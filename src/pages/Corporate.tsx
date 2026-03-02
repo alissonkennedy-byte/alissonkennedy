@@ -13,17 +13,25 @@ export default function Corporate() {
 
   useEffect(() => {
     document.title = "Corporate Solutions SP | Alisson Kennedy Private Office";
-    const setMeta = (name: string, content: string) => {
-      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
-      if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
+    const setMeta = (name: string, content: string, property?: boolean) => {
+      const attr = property ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.content = content;
     };
     setMeta("description", "Engenharia digital, automação e posicionamento de marca para empresas em São Paulo. Eleve a operação corporativa ao próximo nível. Solicite um diagnóstico.");
     setMeta("keywords", "corporate solutions São Paulo, engenharia digital, automação empresarial, comunicação visual corporativa, eventos corporativos, transfers executivos, posicionamento de marca");
+    setMeta("og:title", "Corporate Solutions SP | Alisson Kennedy", true);
+    setMeta("og:description", "Engenharia digital, automação e posicionamento de marca para empresas em São Paulo. Solicite um diagnóstico.", true);
+    setMeta("og:url", "https://alissonkennedy.com.br/corporate", true);
+    setMeta("og:image", "https://alissonkennedy.com.br/og-image.jpg", true);
+    setMeta("twitter:title", "Corporate Solutions SP | Alisson Kennedy");
+    setMeta("twitter:description", "Engenharia digital, automação e posicionamento de marca para empresas em São Paulo. Solicite um diagnóstico.");
+    setMeta("twitter:image", "https://alissonkennedy.com.br/og-image.jpg");
     
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) { canonical = document.createElement("link"); canonical.rel = "canonical"; document.head.appendChild(canonical); }
-    canonical.href = "https://alissonkennedy.lovable.app/corporate";
+    canonical.href = "https://alissonkennedy.com.br/corporate";
   }, []);
 
   return (

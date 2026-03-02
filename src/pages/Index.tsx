@@ -27,6 +27,13 @@ const Index = () => {
     };
     setMeta("description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
     setMeta("keywords", "concierge premium SP, concierge premium São Paulo, gestão de lifestyle, private office, concierge executivo, lifestyle strategy, UHNWI concierge, logística executiva São Paulo, family office concierge, curadoria de experiências");
+    setMeta("og:title", "Alisson Kennedy | Private Office — São Paulo", true);
+    setMeta("og:description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.", true);
+    setMeta("og:url", "https://alissonkennedy.com.br/", true);
+    setMeta("og:image", "https://alissonkennedy.com.br/og-image.jpg", true);
+    setMeta("twitter:title", "Alisson Kennedy | Private Office — São Paulo");
+    setMeta("twitter:description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
+    setMeta("twitter:image", "https://alissonkennedy.com.br/og-image.jpg");
     
     // Set canonical
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
