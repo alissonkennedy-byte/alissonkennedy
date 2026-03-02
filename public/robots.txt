@@ -1,3 +1,6 @@
+User-agent: *
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,7 +13,10 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: GPTBot
 Allow: /
 
-Sitemap: https://alissonkennedy.lovable.app/sitemap.xml
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://alissonkennedy.com.br/sitemap.xml
