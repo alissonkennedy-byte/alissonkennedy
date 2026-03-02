@@ -68,19 +68,19 @@ export default function Corporate() {
             className="scroll-reveal reveal-delay-1 text-[1.75rem] md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] tracking-tight"
             style={{ color: "#FFFFFF" }}
           >
-            Corporate Solutions:
+            Soluções Corporativas de Alto
             <br />
-            Inteligência, Automação
+            Padrão para Empresas que Não
             <br />
-            e Posicionamento de Elite.
+            Aceitam Mediocridade.
           </h1>
           <p
             className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-lg leading-[1.9] max-w-[680px]"
             style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
           >
-            Não vendemos serviços genéricos. Orquestramos a presença digital, a
-            comunicação visual e a logística corporativa para empresas que exigem
-            previsibilidade e rigor técnico.
+            Presença digital, identidade visual, logística executiva e automação
+            de processos — estruturados para empresas em São Paulo que exigem
+            previsibilidade, rigor e resultado.
           </p>
         </div>
       </section>
@@ -98,20 +98,19 @@ export default function Corporate() {
                 className="scroll-reveal reveal-delay-1 text-xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight"
                 style={{ color: "#000000" }}
               >
-                Engenharia Digital e
+                Automação de Processos e
                 <br />
-                Automação de Processos
+                Desenvolvimento de Plataformas Corporativas
               </h2>
               <p
                 className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
                 style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
               >
                 A lentidão operacional custa capital. Desenvolvemos plataformas de
-                gestão sob medida, sites otimizados para ranqueamento avançado no
-                Google e integramos ferramentas de Inteligência Artificial para dar
-                velocidade à sua operação diária. Estruturamos a tecnologia dos
-                bastidores para que a sua linha de frente execute com precisão
-                militar.
+                gestão sob medida, sites otimizados para ranqueamento no Google e
+                integramos Inteligência Artificial para dar velocidade à operação.
+                Para empresas em São Paulo que querem tecnologia funcionando nos
+                bastidores — enquanto a linha de frente executa com precisão.
               </p>
             </div>
             <div className="scroll-reveal-scale reveal-delay-2">
@@ -155,12 +154,11 @@ export default function Corporate() {
                 className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
                 style={{ color: "rgba(255,255,255,0.6)", fontWeight: 400 }}
               >
-                A perceção do mercado dita o valor do seu contrato. Assumimos o
-                desenvolvimento da identidade visual, roteiros corporativos e
-                estratégias de conteúdo para redes sociais. Garantimos uma estética
-                institucional de alto impacto (High-End), eliminando ruídos de
-                comunicação e posicionando a sua empresa no topo da cadeia do seu
-                setor.
+                Desenvolvemos a identidade visual, materiais institucionais e
+                estratégia de conteúdo para empresas que precisam transmitir
+                autoridade antes mesmo de abrir a boca. Branding high-end e
+                posicionamento de marca em São Paulo — para quem compete no topo
+                da cadeia do seu setor.
               </p>
             </div>
           </div>
@@ -188,13 +186,11 @@ export default function Corporate() {
                 className="scroll-reveal reveal-delay-2 mt-8 md:mt-10 text-sm md:text-base leading-[1.9]"
                 style={{ color: "rgba(0,0,0,0.6)", fontWeight: 400 }}
               >
-                O controle total do seu terreno físico. Assumimos a curadoria de
-                fornecedores, o rigor dos orçamentos e a orquestração logística para
-                eventos empresariais. Através de uma rede de confiança, gerenciamos
-                transfers executivos, garantindo pontualidade, discrição e segurança
-                inegociável para a sua diretoria e stakeholders. O nosso papel é
-                intermediar o acesso às melhores soluções, cobrando exclusivamente
-                pela entrega de um cenário resolvido.
+                Curadoria completa de fornecedores, orçamentos e logística para
+                eventos corporativos em São Paulo. Gerenciamos transfers executivos
+                blindados para diretoria, roadshows e stakeholders — com
+                pontualidade e discrição garantidas. Você descreve o cenário. Nós
+                entregamos resolvido.
               </p>
             </div>
             <div className="scroll-reveal-scale reveal-delay-2">
@@ -236,7 +232,7 @@ export default function Corporate() {
                 borderRadius: "2px",
               }}
             >
-              Solicitar Diagnóstico Corporativo
+              SOLICITAR DIAGNÓSTICO GRATUITO
             </a>
           </div>
           <p
