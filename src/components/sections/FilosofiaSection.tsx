@@ -1,6 +1,6 @@
 export function FilosofiaSection() {
   return (
-    <section className="section-spacing border-b border-border relative overflow-hidden">
+    <section className="section-spacing border-b border-border relative overflow-hidden section-dark">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       <div className="container-premium relative">
         <div className="mx-auto max-w-3xl text-center">

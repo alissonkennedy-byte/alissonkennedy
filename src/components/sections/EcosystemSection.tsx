@@ -29,14 +29,19 @@ export function EcosystemSection() {
     <section
       id="ecossistema"
       className="section-spacing border-b border-border relative overflow-hidden"
+      style={{ backgroundColor: "hsl(0 0% 6%)" }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
       <div className="container-premium relative">
-        <p className="scroll-reveal text-center text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
+        <p className="scroll-reveal text-center text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-4">
           Ecossistema
         </p>
 
-        <h2 className="scroll-reveal text-center font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
+        <p className="scroll-reveal text-center text-[0.65rem] font-semibold tracking-[0.4em] uppercase text-muted-foreground mb-6">
+          Três verticais integradas
+        </p>
+
+        <h2 className="scroll-reveal text-center font-display text-3xl font-semibold md:text-4xl lg:text-5xl text-foreground leading-tight">
           O Ecossistema
         </h2>
 
@@ -50,10 +55,11 @@ export function EcosystemSection() {
           {verticals.map((vertical, index) => {
             const content = (
               <div
-                className={`scroll-reveal-scale reveal-delay-${index + 1} card-premium-hover group ${vertical.link ? "cursor-pointer" : ""}`}
+                className={`scroll-reveal-scale reveal-delay-${index + 1} card-premium group border-primary/30 hover:border-primary/60 transition-all duration-500 hover:-translate-y-1 ${vertical.link ? "cursor-pointer" : ""}`}
+                style={{ boxShadow: "var(--shadow-card)" }}
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-300 border border-primary/30">
-                  <vertical.icon className="h-6 w-6 text-primary" />
+                <div className="h-14 w-14 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-300 border border-primary/30">
+                  <vertical.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-foreground tracking-tight">
                   {vertical.title}
