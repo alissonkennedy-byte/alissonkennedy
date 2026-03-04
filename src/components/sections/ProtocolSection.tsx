@@ -47,23 +47,60 @@ export function ProtocolSection() {
           Um processo estruturado para garantir alinhamento e execução impecável.
         </p>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-4">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`scroll-reveal reveal-delay-${index + 1} flex flex-col items-center text-center hover-lift`}
-            >
-              <div className="step-indicator text-lg font-bold">
-                {step.number}
-              </div>
-              <h3 className="mt-5 font-display text-base font-semibold text-foreground tracking-tight">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-primary font-medium tracking-wider">
-                {step.subtitle}
-              </p>
+        {/* Desktop: Horizontal Timeline */}
+        <div className="mt-14 hidden md:block">
+          <div className="relative">
+            {/* Gold connecting line */}
+            <div className="absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/40 via-primary/60 to-primary/40" />
+
+            <div className="grid grid-cols-4">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`scroll-reveal reveal-delay-${index + 1} flex flex-col items-center text-center`}
+                >
+                  <div className="step-indicator text-lg font-bold relative z-10">
+                    {step.number}
+                  </div>
+                  <h3 className="mt-5 font-display text-base font-semibold text-foreground tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-primary font-medium tracking-wider">
+                    {step.subtitle}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Mobile: Vertical Timeline */}
+        <div className="mt-14 md:hidden">
+          <div className="relative pl-8">
+            {/* Vertical gold line */}
+            <div className="absolute left-[15px] top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/40 to-primary/20" />
+
+            <div className="space-y-10">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`scroll-reveal reveal-delay-${index + 1} relative flex items-start gap-5`}
+                >
+                  <div className="step-indicator text-lg font-bold shrink-0 relative z-10 -ml-8">
+                    {step.number}
+                  </div>
+                  <div className="pt-2">
+                    <h3 className="font-display text-base font-semibold text-foreground tracking-tight">
+                      {step.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-primary font-medium tracking-wider">
+                      {step.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="scroll-reveal mt-14 text-center">

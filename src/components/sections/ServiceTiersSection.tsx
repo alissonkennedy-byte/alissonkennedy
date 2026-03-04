@@ -58,54 +58,62 @@ export function ServiceTiersSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {tiers.map((tier, index) => (
-            <div
-              key={index}
-              className={`scroll-reveal-scale reveal-delay-${index + 1} ${
-                tier.exclusive
-                  ? "pricing-card-exclusive"
-                  : tier.featured
-                    ? "pricing-card-featured"
-                    : "pricing-card"
-              }`}
-            >
-              <div>
-                <div className="flex items-center gap-3">
-                  <h3 className="font-display text-lg font-semibold text-foreground tracking-tight">
-                    {tier.name}
-                  </h3>
-                  {tier.exclusive && <Star className="h-4 w-4 text-primary" />}
-                </div>
-                <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-[0.2em] uppercase">
-                  {tier.label}
-                </span>
-
-                <div className="mt-5 flex items-baseline gap-1">
-                  <span className="font-display text-3xl font-bold text-foreground tracking-tight">
-                    {tier.price}
+        <div className="mt-14 grid gap-6 md:grid-cols-3 items-center">
+          {tiers.map((tier, index) => {
+            const isFeatured = tier.featured;
+            return (
+              <div
+                key={index}
+                className={`scroll-reveal-scale reveal-delay-${index + 1} ${
+                  tier.exclusive
+                    ? "pricing-card-exclusive"
+                    : isFeatured
+                      ? "pricing-card-featured border-primary/60"
+                      : "pricing-card"
+                } ${isFeatured ? "md:scale-105 md:z-10" : ""}`}
+                style={{
+                  boxShadow: "var(--shadow-card)",
+                  minHeight: "320px",
+                  padding: "2rem",
+                }}
+              >
+                <div>
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-display text-lg font-semibold text-foreground tracking-tight">
+                      {tier.name}
+                    </h3>
+                    {tier.exclusive && <Star className="h-4 w-4 text-primary" />}
+                  </div>
+                  <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-[0.2em] uppercase">
+                    {tier.label}
                   </span>
-                  <span className="text-sm text-muted-foreground tracking-wide">
-                    {tier.period}
-                  </span>
-                </div>
 
-                <div className="mt-4 w-full h-px bg-border" />
-
-                <p className="mt-4 text-sm text-muted-foreground leading-[1.8] tracking-wide">
-                  {tier.description}
-                </p>
-                {tier.limited && (
-                  <div className="mt-5">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/40 tracking-wider uppercase animate-pulse">
-                      <Star className="h-3.5 w-3.5" />
-                      Vagas limitadas
+                  <div className="mt-5 flex items-baseline gap-1">
+                    <span className="font-display text-4xl font-bold text-foreground tracking-tight">
+                      {tier.price}
+                    </span>
+                    <span className="text-xs text-muted-foreground tracking-wide">
+                      {tier.period}
                     </span>
                   </div>
-                )}
+
+                  <div className="mt-5 w-full h-px bg-border" />
+
+                  <p className="mt-5 text-sm text-muted-foreground leading-[1.8] tracking-wide">
+                    {tier.description}
+                  </p>
+                  {tier.limited && (
+                    <div className="mt-5">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/40 tracking-wider uppercase animate-pulse">
+                        <Star className="h-3.5 w-3.5" />
+                        Vagas limitadas
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="scroll-reveal mt-14 text-center">

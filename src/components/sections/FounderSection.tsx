@@ -20,10 +20,14 @@ export function FounderSection() {
 
             <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto lg:mx-0 w-16 h-px bg-gradient-to-r from-primary/50 via-primary/50 to-transparent" />
 
-            <p className="scroll-reveal reveal-delay-1 mt-8 text-muted-foreground leading-[1.85] tracking-wide">
-              Alisson Kennedy traz para a gestão de lifestyle o rigor e a{" "}
-              <span className="text-foreground font-medium">governança</span>{" "}
-              das grandes corporações. Com{" "}
+            <div className="scroll-reveal reveal-delay-1 mt-8">
+              <p className="text-foreground font-display text-xl md:text-2xl leading-relaxed italic border-l-2 border-primary/50 pl-5">
+                Alisson Kennedy traz para a gestão de lifestyle o rigor e a governança das grandes corporações.
+              </p>
+            </div>
+
+            <p className="scroll-reveal reveal-delay-2 mt-6 text-muted-foreground leading-[1.85] tracking-wide">
+              Com{" "}
               <span className="text-foreground font-medium">
                 MBA em Marketing
               </span>{" "}
@@ -35,7 +39,7 @@ export function FounderSection() {
               gerenciando ativos de alto valor e stakeholders estratégicos em
               gigantes como Banco do Brasil Seguros e Prosegur.
             </p>
-            <p className="scroll-reveal reveal-delay-2 mt-5 text-muted-foreground leading-[1.85] tracking-wide">
+            <p className="scroll-reveal reveal-delay-3 mt-5 text-muted-foreground leading-[1.85] tracking-wide">
               Sua expertise não se limita a executar tarefas; é moldada pela
               gestão de crises, negociações complexas e logística de eventos de
               grande porte. Do agronegócio ao mercado de luxo, Alisson traduz a
@@ -45,7 +49,7 @@ export function FounderSection() {
               </span>{" "}
               para executivos e famílias que exigem bastidores impecáveis.
             </p>
-            <div className="scroll-reveal reveal-delay-3 mt-8 flex items-center justify-center lg:justify-start gap-5">
+            <div className="scroll-reveal reveal-delay-4 mt-8 flex items-center justify-center lg:justify-start gap-5">
               <a
                 href="https://www.instagram.com/alissonkennedy_/"
                 target="_blank"
@@ -69,19 +73,24 @@ export function FounderSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="scroll-reveal reveal-delay-4 btn-primary mt-10 inline-flex tracking-wide"
+              className="scroll-reveal reveal-delay-5 btn-primary mt-10 inline-flex tracking-wide"
             >
               Solicitar Triagem
             </a>
           </div>
 
-          {/* Foto à direita */}
+          {/* Foto à direita com moldura dourada */}
           <div className="order-1 lg:order-2 scroll-reveal-scale flex justify-center lg:justify-end">
-            <img
-              src={alissonPhoto}
-              alt="Alisson Kennedy — Founder, Private Office"
-              className="w-80 h-80 md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-2xl object-cover border-4 border-primary/30 shadow-2xl"
-            />
+            <div className="relative">
+              {/* Gold accent borders */}
+              <div className="absolute -left-3 top-6 bottom-6 w-px bg-gradient-to-b from-primary/60 via-primary/40 to-transparent" />
+              <div className="absolute left-6 right-6 -bottom-3 h-px bg-gradient-to-r from-primary/60 via-primary/40 to-transparent" />
+              <img
+                src={alissonPhoto}
+                alt="Alisson Kennedy — Founder, Private Office"
+                className="w-96 h-96 md:w-[440px] md:h-[440px] lg:w-[500px] lg:h-[500px] rounded-2xl object-cover border-4 border-primary/30 shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
