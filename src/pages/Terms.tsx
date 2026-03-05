@@ -25,7 +25,7 @@ const Terms = () => {
             Termos e Condições <span className="text-gold-gradient">de Uso</span>
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">
-            Última atualização: Fevereiro de 2026
+            Última atualização: Março de 2026
           </p>
         </header>
 
@@ -36,12 +36,12 @@ const Terms = () => {
               Bem-vindo ao <span className="text-foreground font-medium">Alisson Kennedy | Private Office</span>.
             </p>
             <p>
-              Estes Termos e Condições regem o uso dos serviços de consultoria, concierge e gestão de lifestyle oferecidos pelo{" "}
+              Estes Termos e Condições regem o uso dos serviços de gestão executiva, assessoria pessoal e familiar, soluções empresariais, comunicação, eventos, mobilidade e relações institucionais oferecidos pelo{" "}
               <span className="text-foreground font-medium">ALISSON KENNEDY PRIVATE OFFICE</span>{" "}
               ("Nós", "Nosso" ou "Contratada") através do site alissonkennedy.com e seus canais oficiais de atendimento.
             </p>
             <p>
-              Ao contratar qualquer serviço (seja na modalidade On-Demand ou Membership) ou efetuar o pagamento de taxas de ativação, o Cliente ("Você" ou "Contratante") declara ter lido, compreendido e aceito integralmente as cláusulas abaixo.
+              Ao contratar qualquer serviço (seja na modalidade On-Demand, Membership ou Signature Collection) ou efetuar o pagamento de taxas de ativação, o Cliente ("Você" ou "Contratante") declara ter lido, compreendido e aceito integralmente as cláusulas abaixo.
             </p>
           </section>
 
@@ -74,7 +74,11 @@ const Terms = () => {
               Gestão recorrente de agenda, viagens e rotina residencial.
             </p>
             <p>
-              <span className="text-foreground font-medium">2.3. Política de Uso Justo (Fair Usage Policy):</span>{" "}
+              <span className="text-foreground font-medium">2.3. Signature Collection (Exclusividade):</span>{" "}
+              Modalidade de dedicação exclusiva com presença ampliada e logística personalizada. Limitada a 2 (dois) contratos simultâneos ativos. Condições, escopo e valor definidos mediante proposta personalizada.
+            </p>
+            <p>
+              <span className="text-foreground font-medium">2.4. Política de Uso Justo (Fair Usage Policy):</span>{" "}
               Os planos mensais cobrem a manutenção da rotina padrão. Demandas extraordinárias que exijam dedicação exclusiva ou fujam do escopo de manutenção (ex: organização de grandes eventos, mudanças de residência, gestão de obras complexas) estarão sujeitas a uma{" "}
               <span className="text-foreground font-medium">Taxa de Excesso (Over-Demand) de R$ 500,00</span> por demanda.
             </p>
@@ -93,6 +97,11 @@ const Terms = () => {
               <span className="text-foreground font-medium">3.2. Validade das Propostas:</span>{" "}
               Para demandas pontuais (On-Demand), os links de pagamento ou dados bancários enviados têm validade de{" "}
               <span className="text-foreground font-medium">30 (trinta) minutos</span> para garantir a disponibilidade na agenda.
+            </p>
+            <p>
+              <span className="text-foreground font-medium">3.3. Multa por Cancelamento em Andamento:</span>{" "}
+              O cancelamento de demanda já iniciada sujeita o Contratante ao pagamento de multa no valor de{" "}
+              <span className="text-foreground font-medium">R$ 500,00 (quinhentos reais)</span>, independentemente do estágio de execução, a título de ressarcimento pelos custos operacionais e relacionais incorridos, nos termos do art. 402 e 473 do Código Civil Brasileiro.
             </p>
           </section>
 
@@ -138,8 +147,8 @@ const Terms = () => {
             </h2>
             <p>
               <span className="text-foreground font-medium">6.1.</span>{" "}
-              Todas as informações, dados pessoais, rotinas e segredos de negócio compartilhados conosco são tratados com{" "}
-              <span className="text-foreground font-medium">Sigilo Absoluto</span>, em conformidade com a Lei Geral de Proteção de Dados (LGPD).
+              Todas as informações, dados pessoais, rotinas, contatos e segredos de negócio compartilhados conosco são tratados com{" "}
+              <span className="text-foreground font-medium">Sigilo Absoluto</span>, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), pelo prazo de 5 (cinco) anos após o encerramento do vínculo contratual.
             </p>
             <p>
               <span className="text-foreground font-medium">6.2.</span>{" "}
@@ -158,8 +167,8 @@ const Terms = () => {
             </p>
             <p>
               <span className="text-foreground font-medium">7.2.</span>{" "}
-              O cancelamento de planos mensais deve ser comunicado com aviso prévio de{" "}
-              <span className="text-foreground font-medium">30 (trinta) dias</span>.
+              O cancelamento de planos mensais e de exclusividade deve ser comunicado com aviso prévio mínimo de{" "}
+              <span className="text-foreground font-medium">15 (quinze) dias corridos</span>, por escrito, através dos canais oficiais.
             </p>
           </section>
 
