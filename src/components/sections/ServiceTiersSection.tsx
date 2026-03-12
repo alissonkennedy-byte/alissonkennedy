@@ -5,30 +5,29 @@ const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%
 const tiers = [
   {
     name: "The Private Mission",
-    label: "On-Demand",
+    label: "ON-DEMAND",
     price: "R$ 1.200",
     period: "/ Demanda",
     description:
-      "Um problema complexo, resolvido do início ao fim. Você descreve — nós coordenamos, acionamos e entregamos. Sem você precisar aparecer.",
+      "Um problema complexo, resolvido do início ao fim. Você descreve — nós coordenamos, acionamos e entregamos.",
   },
   {
     name: "Lifestyle Membership",
-    label: "Recorrência",
+    label: "RECORRÊNCIA",
     price: "R$ 6.900",
     period: "/ Mês",
     description:
-      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato. Você só decide o que importa.",
+      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato.",
     featured: true,
     limited: true,
   },
   {
     name: "Signature Collection",
-    label: "Exclusividade",
+    label: "EXCLUSIVIDADE",
     price: "Sob consulta",
     period: "",
     description:
-      "Presença dedicada, disponibilidade ampliada e logística exclusiva para famílias que exigem o mais alto padrão — dentro e fora de São Paulo.",
-    exclusive: true,
+      "Presença dedicada, disponibilidade ampliada e logística exclusiva para quem exige o mais alto padrão — dentro e fora de São Paulo.",
     limited: true,
   },
 ];
@@ -37,80 +36,76 @@ export function ServiceTiersSection() {
   return (
     <section
       id="modelos"
-      className="section-spacing border-b border-border bg-gradient-to-b from-secondary/80 to-background relative overflow-hidden"
+      className="section-spacing"
+      style={{ backgroundColor: "hsl(0 0% 17%)" }}
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="container-premium relative">
+      <div className="container-premium">
         <div className="text-center">
-          <p className="scroll-reveal text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
-            Investimento
-          </p>
-
-          <h2 className="scroll-reveal font-display text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground leading-tight">
+          <h2 className="scroll-reveal font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
             Modelos de Atuação
           </h2>
 
-          <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-primary/50" />
 
-          <p className="scroll-reveal reveal-delay-1 mt-6 text-muted-foreground tracking-wide">
-            Três níveis de acesso desenhados para diferentes perfis de
-            complexidade.
+          <p className="scroll-reveal reveal-delay-1 mt-6 text-primary text-sm md:text-base tracking-wide font-medium">
+            Três níveis de acesso desenhados para diferentes perfis de complexidade.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3 items-center">
+        <div className="mt-14 grid gap-6 md:grid-cols-3 items-stretch">
           {tiers.map((tier, index) => {
             const isFeatured = tier.featured;
             return (
               <div
                 key={index}
-                className={`scroll-reveal-scale reveal-delay-${index + 1} ${
-                  tier.exclusive
-                    ? "pricing-card-exclusive"
-                    : isFeatured
-                      ? "pricing-card-featured border-primary/60"
-                      : "pricing-card"
-                } ${isFeatured ? "md:scale-105 md:z-10" : ""}`}
+                className={`scroll-reveal-scale reveal-delay-${index + 1} flex flex-col justify-between rounded-lg border p-8 transition-all duration-500 ${
+                  isFeatured
+                    ? "border-primary/60 md:scale-105 md:z-10"
+                    : "border-primary/25 hover:border-primary/40"
+                }`}
                 style={{
+                  backgroundColor: isFeatured ? "hsl(0 0% 12%)" : "hsl(0 0% 14%)",
                   boxShadow: "var(--shadow-card)",
-                  minHeight: "320px",
-                  padding: "2rem",
+                  minHeight: "340px",
                 }}
               >
                 <div>
-                  <div className="flex items-center gap-3">
-                    <h3 className="font-display text-lg font-semibold text-foreground tracking-tight">
-                      {tier.name}
-                    </h3>
-                    {tier.exclusive && <Star className="h-4 w-4 text-primary" />}
-                  </div>
-                  <span className="inline-block mt-2 text-xs text-primary font-semibold tracking-[0.2em] uppercase">
+                  <span className="text-xs text-primary font-semibold tracking-[0.2em] uppercase">
                     {tier.label}
                   </span>
 
+                  <h3 className="mt-3 font-display text-xl font-bold text-foreground tracking-tight">
+                    {tier.name}
+                  </h3>
+
                   <div className="mt-5 flex items-baseline gap-1">
-                    <span className="font-display text-4xl font-bold text-foreground tracking-tight">
+                    <span className="font-display text-3xl md:text-4xl font-bold text-foreground">
                       {tier.price}
                     </span>
-                    <span className="text-xs text-muted-foreground tracking-wide">
-                      {tier.period}
-                    </span>
+                    {tier.period && (
+                      <span className="text-xs text-muted-foreground tracking-wide">
+                        {tier.period}
+                      </span>
+                    )}
                   </div>
 
                   <div className="mt-5 w-full h-px bg-border" />
 
-                  <p className="mt-5 text-sm text-muted-foreground leading-[1.8] tracking-wide">
+                  <p className="mt-5 text-sm text-muted-foreground leading-[1.9] tracking-wide">
                     {tier.description}
                   </p>
-                  {tier.limited && (
-                    <div className="mt-5">
-                      <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/40 tracking-wider uppercase animate-pulse">
-                        <Star className="h-3.5 w-3.5" />
-                        Vagas limitadas
-                      </span>
-                    </div>
-                  )}
                 </div>
+
+                {tier.limited && (
+                  <div className="mt-6">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase border border-primary/40 text-primary"
+                      style={{ backgroundColor: "hsl(43 78% 46% / 0.12)" }}
+                    >
+                      <Star className="h-3.5 w-3.5" />
+                      Vagas Limitadas
+                    </span>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -121,10 +116,10 @@ export function ServiceTiersSection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-base px-10 py-5 tracking-wide"
+            className="btn-primary text-base px-10 py-5"
           >
             <MessageCircle className="h-5 w-5" />
-            Solicitar Acesso ao Private Office
+            Solicitar Acesso
           </a>
         </div>
       </div>
