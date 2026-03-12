@@ -9,7 +9,7 @@ const tiers = [
     price: "R$ 1.200",
     period: "/ Demanda",
     description:
-      "Um problema complexo, resolvido do início ao fim. Você descreve — nós coordenamos, acionamos e entregamos.",
+      "Um problema complexo, resolvido do início ao fim. Você descreve — eu coordeno, aciono e entrego. Sem você precisar aparecer.",
   },
   {
     name: "Lifestyle Membership",
