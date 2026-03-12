@@ -51,16 +51,8 @@ export default function Corporate() {
 
       <Header />
 
-      {/* Hero — fullscreen with uploaded photo */}
+      {/* Hero — fullscreen, transparent to show background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Alisson Kennedy — Corporate"
-            className="w-full h-full object-cover object-top grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
-        </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="animate-fade-up font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground uppercase">
             Soluções Empresariais
