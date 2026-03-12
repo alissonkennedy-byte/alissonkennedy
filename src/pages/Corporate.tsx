@@ -129,7 +129,7 @@ export default function Corporate() {
       </section>
 
       {/* Section — Logística e Eventos */}
-      <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 14%)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "hsla(0, 0%, 14%, 0.85)" }}>
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
