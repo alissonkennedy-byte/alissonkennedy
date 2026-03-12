@@ -23,11 +23,11 @@ export function CasesSection() {
             Por política de discrição, os nomes das instituições e autoridades são preservados.
           </p>
 
-          <div className="mt-12 space-y-6">
+          <div className="scroll-reveal reveal-delay-2 mt-12 space-y-6">
             {cases.map((item, index) => (
               <div
                 key={index}
-                className={`scroll-reveal reveal-delay-${index + 1} flex items-start gap-4`}
+                className="flex items-start gap-4"
               >
                 <div className="mt-2 w-8 h-px bg-primary shrink-0" />
                 <p className="text-muted-foreground text-base leading-relaxed tracking-wide">
