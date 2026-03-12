@@ -7,7 +7,7 @@ const cases = [
 
 export function CasesSection() {
   return (
-    <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 12%)" }}>
+    <section id="cases" className="section-spacing" style={{ backgroundColor: "hsl(0 0% 12%)" }}>
       <div className="container-premium">
         <div className="max-w-3xl mx-auto">
           <h2 className="scroll-reveal text-center font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
