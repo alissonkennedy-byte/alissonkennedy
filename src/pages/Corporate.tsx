@@ -38,19 +38,21 @@ export default function Corporate() {
   }, []);
 
   return (
-    <div ref={scrollRef} className="min-h-screen bg-background">
+    <div ref={scrollRef} className="relative min-h-screen">
+      {/* Faria Lima background fixed behind entire page */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src={heroImg}
+          alt=""
+          className="w-full h-full object-cover grayscale"
+        />
+        <div className="absolute inset-0 bg-black/80" />
+      </div>
+
       <Header />
 
-      {/* Hero — fullscreen with uploaded photo */}
+      {/* Hero — fullscreen, transparent to show background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Alisson Kennedy — Corporate"
-            className="w-full h-full object-cover object-top grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
-        </div>
         <div className="relative z-10 text-center px-6">
           <h1 className="animate-fade-up font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground uppercase">
             Soluções Empresariais
@@ -67,7 +69,7 @@ export default function Corporate() {
       </section>
 
       {/* Section — Engenharia Digital */}
-      <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 14%)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "hsla(0, 0%, 14%, 0.85)" }}>
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
@@ -97,7 +99,7 @@ export default function Corporate() {
       </section>
 
       {/* Section — Posicionamento */}
-      <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 10%)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "hsla(0, 0%, 10%, 0.85)" }}>
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="scroll-reveal-scale reveal-delay-1 order-2 md:order-1">
@@ -127,7 +129,7 @@ export default function Corporate() {
       </section>
 
       {/* Section — Logística e Eventos */}
-      <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 14%)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "hsla(0, 0%, 14%, 0.85)" }}>
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div>
