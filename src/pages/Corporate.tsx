@@ -78,9 +78,9 @@ export default function Corporate() {
                 Desenvolvimento de Plataformas Corporativas
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
-                A lentidão operacional custa capital. Desenvolvemos plataformas de
+                A lentidão operacional custa capital. Desenvolvo plataformas de
                 gestão sob medida, sites otimizados para ranqueamento no Google e
-                integramos Inteligência Artificial para dar velocidade à operação.
+                integro Inteligência Artificial para dar velocidade à operação.
                 Para empresas em São Paulo que querem tecnologia funcionando nos
                 bastidores — enquanto a linha de frente executa com precisão.
               </p>
@@ -115,7 +115,7 @@ export default function Corporate() {
                 Comunicação Visual Corporativa
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
-                Desenvolvemos a identidade visual, materiais institucionais e
+                Desenvolvo a identidade visual, materiais institucionais e
                 estratégia de conteúdo para empresas que precisam transmitir
                 autoridade antes mesmo de abrir a boca. Branding high-end e
                 posicionamento de marca em São Paulo — para quem compete no topo
@@ -139,10 +139,10 @@ export default function Corporate() {
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
                 Curadoria completa de fornecedores, orçamentos e logística para
-                eventos corporativos em São Paulo. Gerenciamos transfers executivos
+                eventos corporativos em São Paulo. Gerencio transfers executivos
                 blindados para diretoria, roadshows e stakeholders — com
-                pontualidade e discrição garantidas. Você descreve o cenário. Nós
-                entregamos resolvido.
+                pontualidade e discrição garantidas. Você descreve o cenário. Eu
+                entrego resolvido.
               </p>
             </div>
             <div className="scroll-reveal-scale reveal-delay-2">

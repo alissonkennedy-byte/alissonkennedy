@@ -9,7 +9,7 @@ const tiers = [
     price: "R$ 1.200",
     period: "/ Demanda",
     description:
-      "Um problema complexo, resolvido do início ao fim. Você descreve — nós coordenamos, acionamos e entregamos.",
+      "Um problema complexo, resolvido do início ao fim. Você descreve — eu coordeno, aciono e entrego. Sem você precisar aparecer.",
   },
   {
     name: "Lifestyle Membership",
@@ -17,7 +17,7 @@ const tiers = [
     price: "R$ 6.900",
     period: "/ Mês",
     description:
-      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato.",
+      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato — eu.",
     featured: true,
     limited: true,
   },
@@ -27,7 +27,7 @@ const tiers = [
     price: "Sob consulta",
     period: "",
     description:
-      "Presença dedicada, disponibilidade ampliada e logística exclusiva para quem exige o mais alto padrão — dentro e fora de São Paulo.",
+      "Minha presença dedicada, disponibilidade ampliada e logística exclusiva para quem exige o mais alto padrão — dentro e fora de São Paulo.",
     limited: true,
   },
 ];
