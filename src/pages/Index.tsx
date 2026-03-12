@@ -1,12 +1,12 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ManifestoSection } from "@/components/sections/ManifestoSection";
-import { EcosystemSection } from "@/components/sections/EcosystemSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { ServiceTiersSection } from "@/components/sections/ServiceTiersSection";
-import { FounderSection } from "@/components/sections/FounderSection";
-import { ProtocolSection } from "@/components/sections/ProtocolSection";
-import { FilosofiaSection } from "@/components/sections/FilosofiaSection";
+import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
+import { CasesSection } from "@/components/sections/CasesSection";
+import { CtaSection } from "@/components/sections/CtaSection";
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -25,37 +25,36 @@ const Index = () => {
       }
       el.content = content;
     };
-    setMeta("description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
-    setMeta("keywords", "concierge premium SP, concierge premium São Paulo, gestão de lifestyle, private office, concierge executivo, lifestyle strategy, UHNWI concierge, logística executiva São Paulo, family office concierge, curadoria de experiências");
+    setMeta("description", "Gestão executiva e empresarial para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
+    setMeta("keywords", "concierge premium SP, concierge premium São Paulo, gestão executiva, private office, concierge executivo, lifestyle strategy, UHNWI concierge, logística executiva São Paulo, family office concierge, curadoria de experiências");
     setMeta("og:title", "Alisson Kennedy | Private Office — São Paulo", true);
-    setMeta("og:description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.", true);
+    setMeta("og:description", "Gestão executiva e empresarial para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.", true);
     setMeta("og:url", "https://alissonkennedy.com.br/", true);
     setMeta("og:image", "https://alissonkennedy.com.br/og-image.jpg", true);
     setMeta("twitter:title", "Alisson Kennedy | Private Office — São Paulo");
-    setMeta("twitter:description", "Gestão pessoal e corporativa para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
+    setMeta("twitter:description", "Gestão executiva e empresarial para executivos e famílias de alto padrão em São Paulo. Solicite sua triagem.");
     setMeta("twitter:image", "https://alissonkennedy.com.br/og-image.jpg");
-    
-    // Set canonical
+
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement("link");
       canonical.rel = "canonical";
       document.head.appendChild(canonical);
     }
-    canonical.href = "https://alissonkennedy.lovable.app/";
+    canonical.href = "https://alissonkennedy.com.br/";
   }, []);
 
   return (
     <div ref={scrollRef} className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <FilosofiaSection />
-      <ManifestoSection />
-      <EcosystemSection />
+      <AboutSection />
       <ServiceTiersSection />
-      <FounderSection />
-      <ProtocolSection />
+      <DifferentialsSection />
+      <CasesSection />
+      <CtaSection />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
