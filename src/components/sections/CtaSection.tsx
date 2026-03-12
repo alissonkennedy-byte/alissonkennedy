@@ -10,13 +10,13 @@ export function CtaSection() {
         <h2 className="scroll-reveal font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
           style={{ color: "hsl(0 0% 5%)" }}
         >
-          Pronto para ter alguém que resolve?
+          Pronto para ter alguém que resolve pessoalmente?
         </h2>
 
         <p className="scroll-reveal reveal-delay-1 mt-6 text-base md:text-lg font-medium tracking-wide"
           style={{ color: "hsl(0 0% 15%)" }}
         >
-          Atendimento por triagem. Vagas limitadas.
+          Atendimento direto comigo. Por triagem. Vagas limitadas.
         </p>
 
         <div className="scroll-reveal reveal-delay-2 mt-10">
