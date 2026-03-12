@@ -38,7 +38,17 @@ export default function Corporate() {
   }, []);
 
   return (
-    <div ref={scrollRef} className="min-h-screen bg-background">
+    <div ref={scrollRef} className="relative min-h-screen">
+      {/* Faria Lima background fixed behind entire page */}
+      <div className="fixed inset-0 -z-10">
+        <img
+          src={heroImg}
+          alt=""
+          className="w-full h-full object-cover grayscale"
+        />
+        <div className="absolute inset-0 bg-black/80" />
+      </div>
+
       <Header />
 
       {/* Hero — fullscreen with uploaded photo */}
