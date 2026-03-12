@@ -17,7 +17,7 @@ const tiers = [
     price: "R$ 6.900",
     period: "/ Mês",
     description:
-      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato.",
+      "Sua rotina gerenciada por completo. Agenda, viagens, residência e demandas do dia a dia centralizadas em um único ponto de contato — eu.",
     featured: true,
     limited: true,
   },
