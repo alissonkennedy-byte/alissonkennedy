@@ -115,7 +115,7 @@ export default function Corporate() {
                 Comunicação Visual Corporativa
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
-                Desenvolvemos a identidade visual, materiais institucionais e
+                Desenvolvo a identidade visual, materiais institucionais e
                 estratégia de conteúdo para empresas que precisam transmitir
                 autoridade antes mesmo de abrir a boca. Branding high-end e
                 posicionamento de marca em São Paulo — para quem compete no topo
