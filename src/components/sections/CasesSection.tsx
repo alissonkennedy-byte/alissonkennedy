@@ -16,7 +16,10 @@ export function CasesSection() {
 
           <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-primary/50" />
 
-          <p className="scroll-reveal reveal-delay-1 mt-6 text-center text-primary/80 text-sm italic tracking-wide">
+          <p className="scroll-reveal reveal-delay-1 mt-6 text-center text-muted-foreground text-sm md:text-base leading-relaxed tracking-wide">
+            Ao longo da minha trajetória, executei pessoalmente demandas de alto nível para pessoas e instituições que exigiam o mais absoluto sigilo e precisão.
+          </p>
+          <p className="scroll-reveal reveal-delay-1 mt-3 text-center text-primary/80 text-sm italic tracking-wide">
             Por política de discrição, os nomes das instituições e autoridades são preservados.
           </p>
 

@@ -27,7 +27,7 @@ const tiers = [
     price: "Sob consulta",
     period: "",
     description:
-      "Presença dedicada, disponibilidade ampliada e logística exclusiva para quem exige o mais alto padrão — dentro e fora de São Paulo.",
+      "Minha presença dedicada, disponibilidade ampliada e logística exclusiva para quem exige o mais alto padrão — dentro e fora de São Paulo.",
     limited: true,
   },
 ];

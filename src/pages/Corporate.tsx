@@ -139,10 +139,10 @@ export default function Corporate() {
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
                 Curadoria completa de fornecedores, orçamentos e logística para
-                eventos corporativos em São Paulo. Gerenciamos transfers executivos
+                eventos corporativos em São Paulo. Gerencio transfers executivos
                 blindados para diretoria, roadshows e stakeholders — com
-                pontualidade e discrição garantidas. Você descreve o cenário. Nós
-                entregamos resolvido.
+                pontualidade e discrição garantidas. Você descreve o cenário. Eu
+                entrego resolvido.
               </p>
             </div>
             <div className="scroll-reveal-scale reveal-delay-2">

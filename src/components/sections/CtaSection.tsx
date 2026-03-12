@@ -26,7 +26,7 @@ export function CtaSection() {
             rel="noopener noreferrer"
             className="btn-dark text-base px-12 py-5"
           >
-            Falar pelo WhatsApp
+            Falar com Alisson
           </a>
         </div>
       </div>

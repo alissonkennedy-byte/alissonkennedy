@@ -9,7 +9,7 @@ export function AboutSection() {
 
             <div>
               <p className="scroll-reveal text-xs font-semibold tracking-[0.3em] uppercase text-primary mb-6">
-                Quem somos
+                Quem sou
               </p>
 
               <h2 className="scroll-reveal font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight">

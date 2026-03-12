@@ -15,7 +15,7 @@ export function DifferentialsSection() {
       <div className="container-premium">
         <div className="text-center mb-14">
           <h2 className="scroll-reveal font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-            Diferenciais
+            Por que eu
           </h2>
           <div className="scroll-reveal reveal-delay-1 mt-4 mx-auto w-16 h-px bg-primary/50" />
         </div>
