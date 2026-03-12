@@ -99,7 +99,7 @@ export default function Corporate() {
       </section>
 
       {/* Section — Posicionamento */}
-      <section className="section-spacing" style={{ backgroundColor: "hsl(0 0% 10%)" }}>
+      <section className="section-spacing" style={{ backgroundColor: "hsla(0, 0%, 10%, 0.85)" }}>
         <div className="container-premium">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="scroll-reveal-scale reveal-delay-1 order-2 md:order-1">
