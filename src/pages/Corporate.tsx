@@ -78,9 +78,9 @@ export default function Corporate() {
                 Desenvolvimento de Plataformas Corporativas
               </h2>
               <p className="scroll-reveal reveal-delay-2 mt-8 text-muted-foreground text-sm md:text-base leading-[1.9] tracking-wide">
-                A lentidão operacional custa capital. Desenvolvemos plataformas de
+                A lentidão operacional custa capital. Desenvolvo plataformas de
                 gestão sob medida, sites otimizados para ranqueamento no Google e
-                integramos Inteligência Artificial para dar velocidade à operação.
+                integro Inteligência Artificial para dar velocidade à operação.
                 Para empresas em São Paulo que querem tecnologia funcionando nos
                 bastidores — enquanto a linha de frente executa com precisão.
               </p>
