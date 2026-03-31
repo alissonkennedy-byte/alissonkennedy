@@ -22,6 +22,7 @@ const solutions = [
     body: "Transporte executivo com cobertura nacional via Velux Mobility e Maiori Mob. Motoristas treinados, veículos premium, atendimento corporativo.",
     tag: "Nacional",
     cta: "Solicitar",
+    whatsapp: "mobilidade" as const,
   },
   {
     icon: TrendingUp,
