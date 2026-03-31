@@ -30,6 +30,7 @@ const solutions = [
     body: "Prospecção, parcerias estratégicas e desenvolvimento comercial. Atuação ativa em expansão de marcas e abertura de canais.",
     tag: "Parcerias",
     cta: "Conversar",
+    whatsapp: "negocios" as const,
   },
 ];
 
