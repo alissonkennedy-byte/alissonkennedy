@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 const partners = [
   {
     name: "Velux Mobility",
-    desc: "Mobilidade executiva, cobertura nacional",
+    desc: "Operação regional SP, padrão Velux",
   },
   {
     name: "Maiori Mob",
-    desc: "Operação regional SP, padrão Velux",
+    desc: "Mobilidade executiva, cobertura nacional",
   },
   {
     name: "Dio Mio Gelato",

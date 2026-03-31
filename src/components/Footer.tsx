@@ -11,7 +11,7 @@ export function Footer() {
               AK
             </span>
             <p className="mt-1 text-xs text-muted-foreground tracking-[0.2em] uppercase">
-              Alisson Kennedy Private Office
+              Alisson Kennedy Company
             </p>
           </div>
 

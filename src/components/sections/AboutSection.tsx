@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Trophy, Wrench, Handshake } from "lucide-react";
+import perfilImg from "@/assets/perfil-about.png";
 
 const highlights = [
   {

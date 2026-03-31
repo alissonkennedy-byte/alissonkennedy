@@ -85,7 +85,7 @@ export function SolutionsSection() {
               </p>
 
               <a
-                href={WHATSAPP_URL}
+                href={WHATSAPP_URLS[s.whatsapp]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm font-semibold text-primary tracking-wide uppercase transition-colors hover:text-foreground"
