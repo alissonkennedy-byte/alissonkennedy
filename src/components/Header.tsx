@@ -1,84 +1,69 @@
-import { Instagram, Linkedin, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20Alisson.";
 
-const sectionLinks = [
+const navLinks = [
   { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#modelos" },
-  { label: "Cases", href: "#cases" },
-  { label: "Corporate", href: "/corporate" },
+  { label: "Soluções", href: "#solucoes" },
+  { label: "Parceiros", href: "#parceiros" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isMenuOpen]);
 
-  const navLinks = isHome
-    ? sectionLinks
-    : sectionLinks.map((l) =>
-        l.href.startsWith("#") ? { ...l, href: `/${l.href}` } : l
-      );
-
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[60] border-b border-border/50 bg-background/90 backdrop-blur-md">
+      <header
+        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-border"
+            : "bg-transparent"
+        }`}
+      >
         <div className="container-premium flex h-16 items-center justify-between md:h-20">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-70">
-            <span className="font-display text-xl md:text-2xl font-bold tracking-tight text-foreground">
-              AK
-            </span>
-            <div className="hidden sm:flex flex-col">
-              <span className="text-xs font-semibold tracking-wide text-foreground leading-none">
-                Alisson Kennedy
-              </span>
-              <span className="text-[10px] text-primary font-medium tracking-wider uppercase">
-                Private Office
-              </span>
-            </div>
+          <a href="/" className="font-display text-2xl md:text-3xl font-bold text-primary tracking-tight transition-opacity hover:opacity-80">
+            AK Co.
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-10 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground tracking-wide"
+                className="font-body text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground tracking-wide"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA + socials */}
-          <div className="hidden items-center gap-5 md:flex">
-            <a href="https://www.instagram.com/alissonkennedy_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-all duration-300 hover:text-foreground" aria-label="Instagram">
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a href="https://www.linkedin.com/in/alisson-kennedy/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-all duration-300 hover:text-foreground" aria-label="LinkedIn">
-              <Linkedin className="h-4 w-4" />
-            </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-xs px-5 py-2.5">
-              Solicitar Triagem
+          <div className="hidden md:flex">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-xs px-6 py-3"
+            >
+              Falar com Alisson
             </a>
           </div>
 
-          {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-2 -mr-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
@@ -87,36 +72,33 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-16 z-[70] md:hidden" style={{ backgroundColor: "hsl(0 0% 8%)" }}>
-          <nav className="px-6 flex flex-col gap-1 py-8 h-full overflow-y-auto">
+        <div className="fixed inset-0 z-[70] bg-background md:hidden">
+          <div className="flex h-16 items-center justify-between px-6">
+            <span className="font-display text-2xl font-bold text-primary">AK Co.</span>
+            <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2" aria-label="Fechar menu">
+              <X className="h-6 w-6 text-foreground" />
+            </button>
+          </div>
+          <nav className="flex flex-col items-center justify-center gap-8 pt-20">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-lg font-medium text-foreground py-3 border-b border-border/30"
+                className="font-display text-2xl text-foreground"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-
-            <div className="flex items-center gap-6 pt-6 mt-4 border-t border-border/30">
-              <a href="https://www.instagram.com/alissonkennedy_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Instagram className="h-5 w-5 text-foreground" />
-              </a>
-              <a href="https://www.linkedin.com/in/alisson-kennedy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-foreground" />
-              </a>
-            </div>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-6 w-full text-center"
+              className="btn-primary mt-4 px-10 py-4"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Solicitar Triagem
+              Falar com Alisson
             </a>
           </nav>
         </div>

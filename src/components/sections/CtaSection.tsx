@@ -1,34 +1,55 @@
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office.";
+import { motion } from "framer-motion";
+
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20Alisson.";
 
 export function CtaSection() {
   return (
-    <section
-      className="py-24 md:py-32"
-      style={{ backgroundColor: "hsl(43 78% 46%)" }}
-    >
-      <div className="container-premium text-center">
-        <h2 className="scroll-reveal font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-          style={{ color: "hsl(0 0% 5%)" }}
-        >
-          Pronto para ter alguém que resolve pessoalmente?
-        </h2>
+    <section id="contato" className="relative section-spacing overflow-hidden">
+      {/* Gold glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-15 blur-[100px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(43 55% 53%) 0%, transparent 70%)" }}
+      />
 
-        <p className="scroll-reveal reveal-delay-1 mt-6 text-base md:text-lg font-medium tracking-wide"
-          style={{ color: "hsl(0 0% 15%)" }}
+      <div className="relative z-10 container-premium text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground max-w-3xl mx-auto"
         >
-          Atendimento direto comigo. Por triagem. Vagas limitadas.
-        </p>
+          Tem uma demanda.{" "}
+          <span className="text-primary">Eu tenho a solução.</span>
+        </motion.h2>
 
-        <div className="scroll-reveal reveal-delay-2 mt-10">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-6 text-muted-foreground text-base md:text-lg font-body"
+        >
+          Sem formulários longos. Sem espera. Uma mensagem resolve.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10"
+        >
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-dark text-base px-12 py-5"
+            className="btn-primary px-12 py-5 text-base"
+            style={{ animation: "pulse-gold 3s ease-in-out infinite" }}
           >
-            Falar com Alisson
+            Falar com Alisson no WhatsApp
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
