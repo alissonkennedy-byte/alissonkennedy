@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Trophy, Wrench, Handshake } from "lucide-react";
+import perfilImg from "@/assets/perfil-about.png";
 
 const highlights = [
   {
@@ -33,7 +34,7 @@ export function AboutSection() {
             className="relative aspect-[3/4] md:aspect-[4/5] rounded-lg overflow-hidden bg-secondary flex items-center justify-center"
           >
             <img
-              src="/placeholder.svg"
+              src={perfilImg}
               alt="Alisson Kennedy"
               className="w-full h-full object-cover"
             />

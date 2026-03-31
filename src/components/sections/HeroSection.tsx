@@ -31,8 +31,6 @@ export function HeroSection() {
           className="mt-6 md:mt-8 text-muted-foreground text-base md:text-lg lg:text-xl max-w-2xl mx-auto font-body leading-relaxed"
         >
           Mobilidade. Lifestyle. Novos negócios.
-          <br className="hidden sm:block" />
-          Uma pessoa certa para cada problema.
         </motion.p>
 
         <motion.div

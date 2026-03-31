@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Sparkles, Car, TrendingUp } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20Alisson.";
+const WHATSAPP_URLS = {
+  privateOffice: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office.",
+  mobilidade: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20Mobilidade%20Executiva.",
+  negocios: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20Novos%20Neg%C3%B3cios.",
+};
 
 const solutions = [
   {
@@ -10,6 +14,7 @@ const solutions = [
     body: "Gestão de agenda, viagens, eventos e demandas pessoais de alto padrão. Atendimento em São Paulo e Riviera de São Lourenço.",
     tag: "Sob demanda",
     cta: "Solicitar",
+    whatsapp: "privateOffice" as const,
   },
   {
     icon: Car,
@@ -17,6 +22,7 @@ const solutions = [
     body: "Transporte executivo com cobertura nacional via Velux Mobility e Maiori Mob. Motoristas treinados, veículos premium, atendimento corporativo.",
     tag: "Nacional",
     cta: "Solicitar",
+    whatsapp: "mobilidade" as const,
   },
   {
     icon: TrendingUp,
@@ -24,6 +30,7 @@ const solutions = [
     body: "Prospecção, parcerias estratégicas e desenvolvimento comercial. Atuação ativa em expansão de marcas e abertura de canais.",
     tag: "Parcerias",
     cta: "Conversar",
+    whatsapp: "negocios" as const,
   },
 ];
 
@@ -78,7 +85,7 @@ export function SolutionsSection() {
               </p>
 
               <a
-                href={WHATSAPP_URL}
+                href={WHATSAPP_URLS[s.whatsapp]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm font-semibold text-primary tracking-wide uppercase transition-colors hover:text-foreground"
