@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Sparkles, Car, TrendingUp } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20Alisson.";
+const WHATSAPP_URLS = {
+  privateOffice: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20acesso%20ao%20Private%20Office.",
+  mobilidade: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20Mobilidade%20Executiva.",
+  negocios: "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20Novos%20Neg%C3%B3cios.",
+};
 
 const solutions = [
   {
