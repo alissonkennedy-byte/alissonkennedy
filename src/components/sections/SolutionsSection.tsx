@@ -14,6 +14,7 @@ const solutions = [
     body: "Gestão de agenda, viagens, eventos e demandas pessoais de alto padrão. Atendimento em São Paulo e Riviera de São Lourenço.",
     tag: "Sob demanda",
     cta: "Solicitar",
+    whatsapp: "privateOffice" as const,
   },
   {
     icon: Car,
