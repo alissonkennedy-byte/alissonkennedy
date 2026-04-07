@@ -1,44 +1,46 @@
 import { motion } from "framer-motion";
-import { Trophy, Wrench, Handshake } from "lucide-react";
+import { GraduationCap, UserCheck, MapPin } from "lucide-react";
 import perfilImg from "@/assets/perfil-about.png";
 
 const highlights = [
   {
-    icon: Trophy,
-    title: "Liderança comprovada",
-    desc: "Experiências em grandes corporações",
+    icon: GraduationCap,
+    title: "Formação Técnica",
+    text: "Relações Públicas e MBA em Marketing",
   },
   {
-    icon: Wrench,
-    title: "Execução direta",
-    desc: "Sem equipe intermediária, você fala com quem resolve",
+    icon: UserCheck,
+    title: "Atendimento Direto",
+    text: "Você fala com quem executa, do início ao fim",
   },
   {
-    icon: Handshake,
-    title: "Rede qualificada",
-    desc: "Parceiros estratégicos em mobilidade e negócios",
+    icon: MapPin,
+    title: "Atuação Nacional",
+    text: "Eventos em qualquer cidade do Brasil",
   },
 ];
 
 export function AboutSection() {
   return (
-    <section id="sobre" className="section-spacing" style={{ backgroundColor: "hsl(220 26% 9%)" }}>
+    <section id="sobre" className="section-spacing" style={{ backgroundColor: "hsl(0 0% 8%)" }}>
       <div className="container-premium">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Photo placeholder */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.7 }}
-            className="relative aspect-[3/4] md:aspect-[4/5] rounded-lg overflow-hidden bg-secondary flex items-center justify-center"
+            transition={{ duration: 0.6 }}
+            className="relative"
           >
             <img
               src={perfilImg}
-              alt="Alisson Kennedy"
-              className="w-full h-full object-cover"
+              alt="Alisson Kennedy — especialista em eventos corporativos e sociais em São Paulo"
+              className="w-full max-w-md mx-auto rounded-lg object-cover"
+              width={500}
+              height={600}
+              loading="lazy"
             />
-            {/* Replace with real photo */}
           </motion.div>
 
           {/* Text */}
@@ -50,7 +52,7 @@ export function AboutSection() {
               transition={{ duration: 0.5 }}
               className="label-accent mb-4"
             >
-              Quem está por trás
+              Especialista
             </motion.p>
 
             <motion.h2
@@ -63,44 +65,50 @@ export function AboutSection() {
               Alisson Kennedy
             </motion.h2>
 
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 space-y-4"
+              className="mt-6 text-muted-foreground text-base leading-relaxed max-w-lg"
             >
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-lg">
-                Com passagens por Itaú, Cargill, BTG Pactual, Nestlé, Disney, Adidas e Shopee,
-                Alisson Kennedy construiu uma trajetória sólida em Recursos Humanos,
-                Comunicação Corporativa e Desenvolvimento de Negócios.
-              </p>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-lg">
-                Hoje, opera como ponto único de contato para quem precisa de execução
-                real — sem intermediários, sem ruído, com o padrão de quem conhece
-                os dois lados do balcão.
-              </p>
-            </motion.div>
+              Formado em Relações Públicas e com MBA em Marketing, Alisson Kennedy
+              acumula mais de uma década de atuação na produção e gestão de eventos
+              corporativos e sociais em todo o Brasil. Cada projeto é conduzido
+              diretamente por ele — sem intermediários, sem ruídos e sem espaço para
+              improviso.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-4 text-muted-foreground text-base leading-relaxed max-w-lg"
+            >
+              Sua trajetória inclui eventos para grandes empresas nacionais e
+              multinacionais, personalidades de expressão nacional, figuras do cenário
+              federal e convidados internacionais. Um histórico construído na prática,
+              com metodologia, discrição e entrega real.
+            </motion.p>
           </div>
         </div>
 
-        {/* 3 highlight cards */}
-        <div className="grid sm:grid-cols-3 gap-6 mt-16 md:mt-20">
-          {highlights.map((item, i) => (
+        {/* Highlight blocks */}
+        <div className="grid sm:grid-cols-3 gap-6 mt-16">
+          {highlights.map((h, i) => (
             <motion.div
-              key={item.title}
+              key={h.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-start gap-4 p-6 rounded-lg bg-background/50 border border-border"
+              className="flex items-start gap-4 p-6 rounded-lg border border-border bg-card"
             >
-              <div className="h-10 w-10 rounded-full flex items-center justify-center bg-primary/10 shrink-0">
-                <item.icon className="h-5 w-5 text-primary" />
-              </div>
+              <h.icon className="h-6 w-6 text-primary shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-body text-sm font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
+                <h3 className="font-display text-lg font-bold text-foreground">{h.title}</h3>
+                <p className="text-muted-foreground text-sm mt-1">{h.text}</p>
               </div>
             </motion.div>
           ))}
