@@ -42,10 +42,7 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           className="mt-6 md:mt-8 text-muted-foreground text-base md:text-lg max-w-3xl mx-auto font-body leading-relaxed"
         >
-          Planejamento completo, produção integrada e logística de ponta a ponta.
-          Do primeiro contato à última entrega, cada detalhe conduzido por quem
-          fez isso para Hinode Group, Prosegur, doTERRA, BB Seguros, Etapa
-          Educacional e personalidades de expressão nacional e internacional.
+          Planejamento completo, produção integrada e logística de ponta a ponta. Do primeiro contato à última entrega.
         </motion.p>
 
         <motion.div
