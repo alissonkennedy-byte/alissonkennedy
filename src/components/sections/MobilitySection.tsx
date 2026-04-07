@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import executiveCarImg from "@/assets/executive-car.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20transfer%20executivo.";
 
@@ -7,7 +8,6 @@ export function MobilitySection() {
     <section id="mobilidade" className="section-spacing" style={{ backgroundColor: "hsl(0 0% 8%)" }}>
       <div className="container-premium">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Text */}
           <div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export function MobilitySection() {
               className="mt-6 text-muted-foreground text-base leading-relaxed max-w-lg"
             >
               Para garantir que a experiência comece antes mesmo da chegada,
-              a Alisson Kennedy Company atua em parceria com a Maiori Mobilidade —
+              a Alisson Kennedy Company atua em parceria com a Maiori Mobilidade,
               referência nacional em transporte executivo e transfer corporativo.
             </motion.p>
 
@@ -71,7 +71,6 @@ export function MobilitySection() {
             </motion.div>
           </div>
 
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -79,11 +78,11 @@ export function MobilitySection() {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=1920&q=80"
-              alt="Transfer executivo para eventos corporativos — veículo premium"
+              src={executiveCarImg}
+              alt="Transfer executivo para eventos corporativos, veículo premium"
               className="w-full rounded-lg object-cover aspect-[4/3]"
-              width={800}
-              height={600}
+              width={1280}
+              height={960}
               loading="lazy"
             />
           </motion.div>

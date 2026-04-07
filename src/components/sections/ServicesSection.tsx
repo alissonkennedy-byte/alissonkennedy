@@ -65,7 +65,7 @@ export function ServicesSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-4 text-muted-foreground text-center max-w-2xl mx-auto"
         >
-          Da pré-produção ao encerramento — cada fase gerenciada com
+          Da pré-produção ao encerramento, cada fase gerenciada com
           precisão, foco no resultado e zero margem para improvisos.
         </motion.p>
 

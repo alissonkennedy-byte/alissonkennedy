@@ -75,7 +75,7 @@ export function AboutSection() {
               Formado em Relações Públicas e com MBA em Marketing, Alisson Kennedy
               acumula mais de uma década de atuação na produção e gestão de eventos
               corporativos e sociais em todo o Brasil. Cada projeto é conduzido
-              diretamente por ele — sem intermediários, sem ruídos e sem espaço para
+              diretamente por ele, sem intermediários, sem ruídos e sem espaço para
               improviso.
             </motion.p>
 
