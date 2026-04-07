@@ -52,11 +52,8 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© 2026 Alisson Kennedy Company — Todos os direitos reservados.</p>
+          <p>© 2026 Alisson Kennedy Company, Todos os direitos reservados.</p>
           <p>São Paulo, SP · Atuação nacional · Brasil</p>
-          <a href="/terms" className="hover:text-foreground transition-colors">
-            Política de Privacidade
-          </a>
         </div>
       </div>
     </footer>
