@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20Alisson.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
 
 const navLinks = [
+  { label: "Eventos", href: "#servicos" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Soluções", href: "#solucoes" },
-  { label: "Parceiros", href: "#parceiros" },
+  { label: "Clientes", href: "#clientes" },
+  { label: "Mobilidade", href: "#mobilidade" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -58,7 +59,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-primary text-xs px-6 py-3"
             >
-              Falar com Alisson
+              Solicitar Orçamento
             </a>
           </div>
 
@@ -98,7 +99,7 @@ export function Header() {
               className="btn-primary mt-4 px-10 py-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Falar com Alisson
+              Solicitar Orçamento
             </a>
           </nav>
         </div>
