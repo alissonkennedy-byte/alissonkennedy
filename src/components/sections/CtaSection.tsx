@@ -7,7 +7,7 @@ export function CtaSection() {
     <section id="contato" className="section-spacing relative overflow-hidden">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-15 blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(var(--emerald)) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(var(--neon)) 0%, transparent 70%)" }}
       />
 
       <div className="relative z-10 container-premium text-center">
@@ -18,7 +18,7 @@ export function CtaSection() {
           transition={{ duration: 0.5 }}
           className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground max-w-3xl mx-auto"
         >
-          Sua loja merece mais do que uma vitrine genérica.
+          Pronto para transformar o seu negócio?
         </motion.h2>
 
         <motion.p
@@ -43,9 +43,9 @@ export function CtaSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta px-12 py-5 text-sm w-full sm:w-auto"
-            style={{ animation: "pulse-emerald 3s ease-in-out infinite" }}
+            style={{ animation: "pulse-neon 3s ease-in-out infinite" }}
           >
-            Falar com Alisson no WhatsApp
+            Falar com o Alisson no WhatsApp
           </a>
         </motion.div>
       </div>

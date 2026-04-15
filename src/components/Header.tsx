@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20quero%20blindar%20minha%20opera%C3%A7%C3%A3o.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20quero%20saber%20mais.";
 
 const navLinks = [
-  { label: "Arsenal", href: "#arsenal" },
-  { label: "Sobre", href: "#sobre" },
+  { label: "Dores", href: "#dores" },
+  { label: "Solução", href: "#solucao" },
   { label: "Investimento", href: "#investimento" },
+  { label: "Extras", href: "#extras" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -35,8 +36,8 @@ export function Header() {
         }`}
       >
         <div className="container-premium flex h-16 items-center justify-between md:h-20">
-          <a href="/" className="font-display text-2xl md:text-3xl font-bold text-accent tracking-tight transition-opacity hover:opacity-80">
-            AK Co.
+          <a href="/" className="font-display text-2xl md:text-3xl font-extrabold text-primary tracking-tight transition-opacity hover:opacity-80">
+            AK
           </a>
 
           <nav className="hidden items-center gap-10 md:flex">
@@ -58,7 +59,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-cta text-xs px-6 py-3"
             >
-              Quero Blindar Minha Operação
+              Falar no WhatsApp
             </a>
           </div>
 
@@ -75,7 +76,7 @@ export function Header() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[70] bg-background md:hidden">
           <div className="flex h-16 items-center justify-between px-6">
-            <span className="font-display text-2xl font-bold text-accent">AK Co.</span>
+            <span className="font-display text-2xl font-extrabold text-primary">AK</span>
             <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2" aria-label="Fechar menu">
               <X className="h-6 w-6 text-foreground" />
             </button>
@@ -98,7 +99,7 @@ export function Header() {
               className="btn-cta mt-4 px-10 py-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Quero Blindar Minha Operação
+              Falar no WhatsApp
             </a>
           </nav>
         </div>

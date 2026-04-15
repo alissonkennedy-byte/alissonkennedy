@@ -4,41 +4,40 @@
 
 @layer base {
   :root {
-    --background: 210 60% 11%;
+    --background: 220 40% 8%;
     --foreground: 0 0% 96%;
 
-    --card: 210 50% 14%;
+    --card: 220 35% 12%;
     --card-foreground: 0 0% 96%;
 
-    --popover: 210 50% 14%;
+    --popover: 220 35% 12%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 145 45% 49%;
-    --primary-foreground: 210 60% 11%;
+    --primary: 25 95% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 16%;
+    --secondary: 220 30% 15%;
     --secondary-foreground: 0 0% 96%;
 
-    --muted: 210 30% 20%;
-    --muted-foreground: 210 10% 55%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 43 70% 52%;
-    --accent-foreground: 210 60% 11%;
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 20%;
-    --input: 210 30% 20%;
-    --ring: 145 45% 49%;
+    --border: 220 25% 18%;
+    --input: 220 25% 18%;
+    --ring: 25 95% 55%;
 
     --radius: 0.75rem;
 
-    --gold: 43 70% 52%;
-    --gold-hover: 43 75% 60%;
-    --emerald: 145 45% 49%;
-    --emerald-hover: 145 50% 55%;
-    --glass: 210 50% 14%;
+    --neon: 25 95% 55%;
+    --neon-hover: 25 100% 62%;
+    --neon-glow: 25 95% 55%;
+    --glass: 220 35% 12%;
   }
 }
 
@@ -57,7 +56,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Inter', system-ui, sans-serif;
     @apply font-bold tracking-tight;
   }
 }
@@ -73,27 +72,28 @@
 
   .label-accent {
     font-family: 'Inter', sans-serif;
-    @apply text-xs font-medium tracking-[0.2em] uppercase text-accent;
+    @apply text-xs font-semibold tracking-[0.2em] uppercase;
+    color: hsl(var(--neon));
   }
 
   .glass-card {
     background: hsl(var(--glass) / 0.6);
-    backdrop-filter: blur(16px);
-    border: 1px solid hsl(var(--border) / 0.5);
-    @apply rounded-xl;
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.6);
+    @apply rounded-2xl;
   }
 
   .btn-cta {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-lg px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-300 ease-out;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-300 ease-out;
     font-family: 'Inter', sans-serif;
-    background: hsl(var(--emerald));
+    background: hsl(var(--neon));
     color: hsl(var(--background));
   }
 
   .btn-cta:hover {
     @apply scale-[1.03];
-    background: hsl(var(--emerald-hover));
-    box-shadow: 0 0 40px hsl(var(--emerald) / 0.35);
+    background: hsl(var(--neon-hover));
+    box-shadow: 0 0 40px hsl(var(--neon-glow) / 0.4);
   }
 
   .btn-cta:active {
@@ -101,39 +101,33 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-lg border px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all duration-300 ease-out;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl border px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all duration-300 ease-out;
     font-family: 'Inter', sans-serif;
-    border-color: hsl(var(--gold));
-    color: hsl(var(--gold));
+    border-color: hsl(var(--neon) / 0.5);
+    color: hsl(var(--neon));
   }
 
   .btn-outline:hover {
     @apply scale-[1.02];
-    background: hsl(var(--gold) / 0.1);
+    background: hsl(var(--neon) / 0.1);
+    border-color: hsl(var(--neon));
   }
 
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
+  .neon-glow {
+    box-shadow: 0 0 30px hsl(var(--neon-glow) / 0.15), 0 0 60px hsl(var(--neon-glow) / 0.05);
   }
 }
 
-@keyframes pulse-emerald {
+@keyframes pulse-neon {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(145 45% 49% / 0.3);
+    box-shadow: 0 0 20px hsl(25 95% 55% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(145 45% 49% / 0.5);
+    box-shadow: 0 0 45px hsl(25 95% 55% / 0.55);
   }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
