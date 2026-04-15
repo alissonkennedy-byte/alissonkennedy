@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20quero%20blindar%20minha%20opera%C3%A7%C3%A3o.";
 
 const navLinks = [
-  { label: "Eventos", href: "#servicos" },
+  { label: "Arsenal", href: "#arsenal" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Clientes", href: "#clientes" },
-  { label: "Mobilidade", href: "#mobilidade" },
+  { label: "Investimento", href: "#investimento" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -36,7 +35,7 @@ export function Header() {
         }`}
       >
         <div className="container-premium flex h-16 items-center justify-between md:h-20">
-          <a href="/" className="font-display text-2xl md:text-3xl font-bold text-primary tracking-tight transition-opacity hover:opacity-80">
+          <a href="/" className="font-display text-2xl md:text-3xl font-bold text-accent tracking-tight transition-opacity hover:opacity-80">
             AK Co.
           </a>
 
@@ -57,9 +56,9 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-xs px-6 py-3"
+              className="btn-cta text-xs px-6 py-3"
             >
-              Solicitar Orçamento
+              Quero Blindar Minha Operação
             </a>
           </div>
 
@@ -76,7 +75,7 @@ export function Header() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[70] bg-background md:hidden">
           <div className="flex h-16 items-center justify-between px-6">
-            <span className="font-display text-2xl font-bold text-primary">AK Co.</span>
+            <span className="font-display text-2xl font-bold text-accent">AK Co.</span>
             <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2" aria-label="Fechar menu">
               <X className="h-6 w-6 text-foreground" />
             </button>
@@ -96,10 +95,10 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-4 px-10 py-4"
+              className="btn-cta mt-4 px-10 py-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Solicitar Orçamento
+              Quero Blindar Minha Operação
             </a>
           </nav>
         </div>

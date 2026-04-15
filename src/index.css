@@ -4,40 +4,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
+    --background: 210 60% 11%;
     --foreground: 0 0% 96%;
 
-    --card: 0 0% 10%;
+    --card: 210 50% 14%;
     --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 10%;
+    --popover: 210 50% 14%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 38 38% 60%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 145 45% 49%;
+    --primary-foreground: 210 60% 11%;
 
-    --secondary: 0 0% 8%;
+    --secondary: 210 40% 16%;
     --secondary-foreground: 0 0% 96%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 210 30% 20%;
+    --muted-foreground: 210 10% 55%;
 
-    --accent: 38 20% 15%;
-    --accent-foreground: 0 0% 96%;
+    --accent: 43 70% 52%;
+    --accent-foreground: 210 60% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 38 38% 60%;
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 145 45% 49%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gold: 38 38% 60%;
-    --gold-hover: 38 45% 69%;
-    --gold-divider: 38 38% 60%;
-    --section-alt: 0 0% 8%;
+    --gold: 43 70% 52%;
+    --gold-hover: 43 75% 60%;
+    --emerald: 145 45% 49%;
+    --emerald-hover: 145 50% 55%;
+    --glass: 210 50% 14%;
   }
 }
 
@@ -72,28 +73,35 @@
 
   .label-accent {
     font-family: 'Inter', sans-serif;
-    @apply text-xs font-medium tracking-[0.2em] uppercase text-primary;
+    @apply text-xs font-medium tracking-[0.2em] uppercase text-accent;
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-md px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all duration-300 ease-out;
+  .glass-card {
+    background: hsl(var(--glass) / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    @apply rounded-xl;
+  }
+
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-lg px-8 py-4 text-sm font-bold tracking-wider uppercase transition-all duration-300 ease-out;
     font-family: 'Inter', sans-serif;
-    background: hsl(var(--gold));
-    color: hsl(var(--primary-foreground));
+    background: hsl(var(--emerald));
+    color: hsl(var(--background));
   }
 
-  .btn-primary:hover {
-    @apply scale-[1.02];
-    background: hsl(var(--gold-hover));
-    box-shadow: 0 0 30px hsl(var(--gold) / 0.3);
+  .btn-cta:hover {
+    @apply scale-[1.03];
+    background: hsl(var(--emerald-hover));
+    box-shadow: 0 0 40px hsl(var(--emerald) / 0.35);
   }
 
-  .btn-primary:active {
+  .btn-cta:active {
     @apply scale-[0.98];
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-md border px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all duration-300 ease-out;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-lg border px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all duration-300 ease-out;
     font-family: 'Inter', sans-serif;
     border-color: hsl(var(--gold));
     color: hsl(var(--gold));
@@ -102,10 +110,6 @@
   .btn-outline:hover {
     @apply scale-[1.02];
     background: hsl(var(--gold) / 0.1);
-  }
-
-  .btn-outline:active {
-    @apply scale-[0.98];
   }
 
   .scroll-reveal {
@@ -118,26 +122,18 @@
     opacity: 1;
     transform: translateY(0);
   }
-
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-  .reveal-delay-6 { transition-delay: 0.6s; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@keyframes pulse-gold {
+@keyframes pulse-emerald {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(38 38% 60% / 0.3);
+    box-shadow: 0 0 20px hsl(145 45% 49% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(38 38% 60% / 0.5);
+    box-shadow: 0 0 40px hsl(145 45% 49% / 0.5);
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

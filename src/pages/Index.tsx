@@ -3,11 +3,8 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { ClientsSection } from "@/components/sections/ClientsSection";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { MobilitySection } from "@/components/sections/MobilitySection";
-
+import { ArsenalSection } from "@/components/sections/ArsenalSection";
+import { PricingSection } from "@/components/sections/PricingSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 
 const Index = () => {
@@ -17,11 +14,8 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <ServicesSection />
-        <ClientsSection />
-        <StatsSection />
-        <MobilitySection />
-        
+        <ArsenalSection />
+        <PricingSection />
         <CtaSection />
       </main>
       <Footer />

@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 
-const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.";
+const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Quero%20conversar%20sobre%20meu%20aplicativo.";
 
 export function CtaSection() {
   return (
     <section id="contato" className="section-spacing relative overflow-hidden">
-      {/* Gold glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-15 blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(var(--gold)) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, hsl(var(--emerald)) 0%, transparent 70%)" }}
       />
 
       <div className="relative z-10 container-premium text-center">
@@ -19,7 +18,7 @@ export function CtaSection() {
           transition={{ duration: 0.5 }}
           className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground max-w-3xl mx-auto"
         >
-          Seu próximo evento começa com uma conversa.
+          Sua loja merece mais do que uma vitrine genérica.
         </motion.h2>
 
         <motion.p
@@ -27,10 +26,9 @@ export function CtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-6 text-muted-foreground text-base max-w-xl mx-auto"
+          className="mt-6 text-muted-foreground text-base max-w-xl mx-auto font-body"
         >
-          Sem formulários longos. Sem espera. Entre em contato diretamente
-          e receba uma proposta alinhada à sua demanda.
+          Fale diretamente comigo e descubra como ter um aplicativo próprio, com estoque blindado e vendas no automático.
         </motion.p>
 
         <motion.div
@@ -44,8 +42,8 @@ export function CtaSection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary px-12 py-5 text-sm w-full sm:w-auto"
-            style={{ animation: "pulse-gold 3s ease-in-out infinite" }}
+            className="btn-cta px-12 py-5 text-sm w-full sm:w-auto"
+            style={{ animation: "pulse-emerald 3s ease-in-out infinite" }}
           >
             Falar com Alisson no WhatsApp
           </a>
