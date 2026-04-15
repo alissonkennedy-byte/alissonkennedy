@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const WHATSAPP_URL = "https://wa.me/5511967385924?text=Ol%C3%A1%2C%20Alisson!%20Vim%20pelo%20site%20e%20quero%20saber%20mais.";
 
@@ -35,12 +36,12 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="container-premium flex h-16 items-center justify-between md:h-20">
-          <a href="/" className="font-display text-2xl md:text-3xl font-extrabold text-primary tracking-tight transition-opacity hover:opacity-80">
+        <div className="container-premium flex h-14 items-center justify-between md:h-20">
+          <a href="/" className="font-display text-xl md:text-3xl font-extrabold text-primary tracking-tight transition-opacity hover:opacity-80">
             AK
           </a>
 
-          <nav className="hidden items-center gap-10 md:flex">
+          <nav className="hidden items-center gap-8 lg:gap-10 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -57,7 +58,7 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cta text-xs px-6 py-3"
+              className="btn-cta text-xs px-6 py-2.5"
             >
               Falar no WhatsApp
             </a>
@@ -68,42 +69,57 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </header>
 
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-[70] bg-background md:hidden">
-          <div className="flex h-16 items-center justify-between px-6">
-            <span className="font-display text-2xl font-extrabold text-primary">AK</span>
-            <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2" aria-label="Fechar menu">
-              <X className="h-6 w-6 text-foreground" />
-            </button>
-          </div>
-          <nav className="flex flex-col items-center justify-center gap-8 pt-20">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-display text-2xl text-foreground"
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[70] bg-background/98 backdrop-blur-lg md:hidden"
+          >
+            <div className="flex h-14 items-center justify-between px-6">
+              <span className="font-display text-xl font-extrabold text-primary">AK</span>
+              <button onClick={() => setIsMenuOpen(false)} className="p-2 -mr-2" aria-label="Fechar menu">
+                <X className="h-5 w-5 text-foreground" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col items-center justify-center gap-6 pt-16">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.06 }}
+                  className="font-display text-xl font-bold text-foreground"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <motion.a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.06 }}
+                className="btn-cta mt-4 px-10 py-4 text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-cta mt-4 px-10 py-4"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Falar no WhatsApp
-            </a>
-          </nav>
-        </div>
-      )}
+                Falar no WhatsApp
+              </motion.a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
