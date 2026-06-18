@@ -202,9 +202,9 @@ export default function Index() {
         <div className="container-tight reveal">
           <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">01 — O problema</p>
           <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white">
-            A tarifa subiu.<br />
-            A bandeira voltou.<br />
-            <span className="text-white/40">A sua conta não cabe mais no orçamento.</span>
+            Sua conta de luz<br />
+            sobe quase todo ano.<br />
+            <span className="text-white/40">E continua pesando no fim do mês.</span>
           </h2>
         </div>
       </section>
