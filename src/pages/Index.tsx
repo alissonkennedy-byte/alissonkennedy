@@ -336,7 +336,7 @@ export default function Index() {
               <Home size={32} className="text-hive mb-6" />
               <h3 className="font-display text-3xl text-white mb-3">Residências</h3>
               <p className="text-white/65 mb-6 leading-relaxed">
-                Para casa ou apartamento. Conta acima de R$ 200 já costuma compensar muito.
+                Para casa ou apartamento. Quanto maior a sua conta de energia, mais você pode economizar.
               </p>
               <ul className="space-y-2.5 text-sm text-white/75">
                 {["Desconto todo mês na conta", "Sem mexer na fiação", "Cancele quando quiser"].map((i) => (
