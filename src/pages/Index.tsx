@@ -270,7 +270,7 @@ export default function Index() {
               <p className="text-white/65 leading-relaxed mb-6">
                 Continua chegando, só que bem menor. Cobre uso da rede, iluminação pública e impostos obrigatórios.
               </p>
-              <div className="font-display text-5xl font-black text-white">R$ 120<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-white/90">Bem menor que hoje</div>
             </div>
 
             <div className="card-glass-accent">
