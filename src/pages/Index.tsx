@@ -127,7 +127,7 @@ export default function Index() {
         <div className="container-x py-2 flex items-center justify-center gap-2 text-center">
           <Bolt size={12} className="text-energy flex-shrink-0" />
           <span>
-            Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado. Este não é um canal oficial da Hive.
+            Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
           </span>
         </div>
       </div>
