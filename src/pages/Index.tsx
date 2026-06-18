@@ -158,10 +158,10 @@ export default function Index() {
             </div>
 
             <h1 className="font-display text-[2.75rem] sm:text-7xl lg:text-[7.5rem] text-white">
-              Sua conta de luz<br />
-              <span className="text-gradient-hive">não precisa</span><br />
-              ser <span className="relative inline-block">
-                essa.
+              Pague <span className="text-hive">menos</span> na sua<br />
+              conta de luz.<br />
+              <span className="relative inline-block">
+                Todo mês.
                 <Bolt size={48} className="text-energy absolute -top-2 -right-12 sm:-right-16 float-slow" />
               </span>
             </h1>
@@ -176,8 +176,11 @@ export default function Index() {
                 Como funciona <ChevronDown size={16} />
               </a>
             </div>
+            <p className="mt-5 text-sm text-white/60 max-w-xl">
+              Não custa nada para começar. Você só passa a pagar menos na sua conta.
+            </p>
 
-            <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl">
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl">
               {["Sem obra", "Sem trocar de distribuidora", "Sem fidelidade", "100% digital"].map((t) => (
                 <div key={t} className="flex items-start gap-2 text-sm text-white/80 font-medium">
                   <Bolt size={14} className="text-energy mt-1 flex-shrink-0" />
@@ -199,9 +202,9 @@ export default function Index() {
         <div className="container-tight reveal">
           <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">01 — O problema</p>
           <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white">
-            A tarifa subiu.<br />
-            A bandeira voltou.<br />
-            <span className="text-white/40">A sua conta não cabe mais no orçamento.</span>
+            Sua conta de luz<br />
+            sobe quase todo ano.<br />
+            <span className="text-white/40">E continua pesando no fim do mês.</span>
           </h2>
         </div>
       </section>
@@ -267,7 +270,7 @@ export default function Index() {
               <p className="text-white/65 leading-relaxed mb-6">
                 Continua chegando, só que bem menor. Cobre uso da rede, iluminação pública e impostos obrigatórios.
               </p>
-              <div className="font-display text-5xl font-black text-white">R$ 120<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-white/90">Bem menor que hoje</div>
             </div>
 
             <div className="card-glass-accent">
@@ -281,7 +284,7 @@ export default function Index() {
               <p className="text-white/65 leading-relaxed mb-6">
                 A energia que você consumiu, já com desconto. Sem adesão e sem fidelidade.
               </p>
-              <div className="font-display text-5xl font-black text-white">R$ 264<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-white/90">Energia com desconto</div>
             </div>
           </div>
 
@@ -289,27 +292,27 @@ export default function Index() {
             <div className="rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
               <Bolt size={120} className="absolute -top-6 -right-6 opacity-10" />
               <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] mb-3 font-bold">Somando os dois</p>
-              <div className="font-display text-5xl sm:text-7xl font-black leading-none">
-                R$ 384 <span className="text-2xl sm:text-3xl font-bold opacity-60">em vez de R$ 480</span>
+              <div className="font-display text-3xl sm:text-5xl font-black leading-none max-w-3xl mx-auto">
+                Os dois boletos juntos saem menos do que a sua conta cheia de hoje.
               </div>
               <p className="mt-4 font-semibold max-w-2xl mx-auto">
-                Mais barato que a conta cheia que você paga hoje. Exemplo ilustrativo, a economia exata varia por estado e distribuidora.
+                A economia exata varia por estado, distribuidora e perfil de consumo. Eu calculo a sua quando você me chamar no WhatsApp.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ATÉ 25% — single bold stat */}
+      {/* ECONOMIA — no big numbers, just clarity */}
       <section className="relative py-28 sm:py-40 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))" }}>
         <div className="glow-purple" style={{ width: 700, height: 700, top: "50%", left: "50%", transform: "translate(-50%,-50%)", opacity: 0.45 }} />
         <div className="container-tight relative text-center reveal">
           <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">04 — Sua economia</p>
-          <div className="font-display font-black text-white leading-[0.85] tracking-tighter" style={{ fontSize: "clamp(5rem, 22vw, 18rem)" }}>
-            até <span className="text-gradient-hive">25%</span>
-          </div>
+          <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white max-w-4xl mx-auto leading-[0.95]">
+            Você pode pagar menos na parte de energia da sua conta, <span className="text-gradient-hive">todo mês.</span>
+          </h2>
           <p className="mt-8 text-xl sm:text-2xl text-white/75 max-w-2xl mx-auto font-light leading-snug">
-            de desconto na parte de energia da sua conta. A economia exata varia por estado e distribuidora, eu calculo a sua quando você me chama.
+            A economia é de até 25%, mas varia conforme sua distribuidora, estado e perfil de consumo. O cálculo exato a gente faz juntos, de forma transparente, no WhatsApp.
           </p>
           <div className="mt-10">
             <WaButton size="lg" pulse>Calcular minha economia</WaButton>
@@ -333,7 +336,7 @@ export default function Index() {
               <Home size={32} className="text-hive mb-6" />
               <h3 className="font-display text-3xl text-white mb-3">Residências</h3>
               <p className="text-white/65 mb-6 leading-relaxed">
-                Para casa ou apartamento. Conta acima de R$ 200 já costuma compensar muito.
+                Para casa ou apartamento. Quanto maior a sua conta de energia, mais você pode economizar.
               </p>
               <ul className="space-y-2.5 text-sm text-white/75">
                 {["Desconto todo mês na conta", "Sem mexer na fiação", "Cancele quando quiser"].map((i) => (
