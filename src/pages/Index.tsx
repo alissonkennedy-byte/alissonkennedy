@@ -176,8 +176,11 @@ export default function Index() {
                 Como funciona <ChevronDown size={16} />
               </a>
             </div>
+            <p className="mt-5 text-sm text-white/60 max-w-xl">
+              Não custa nada para começar. Você só passa a pagar menos na sua conta.
+            </p>
 
-            <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl">
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl">
               {["Sem obra", "Sem trocar de distribuidora", "Sem fidelidade", "100% digital"].map((t) => (
                 <div key={t} className="flex items-start gap-2 text-sm text-white/80 font-medium">
                   <Bolt size={14} className="text-energy mt-1 flex-shrink-0" />
