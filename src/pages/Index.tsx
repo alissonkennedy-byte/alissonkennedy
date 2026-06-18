@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   MessageCircle,
   CheckCircle2,
@@ -6,19 +6,16 @@ import {
   Zap,
   Home,
   Building2,
-  UserPlus,
   Receipt,
-  PiggyBank,
   ChevronDown,
-  Sparkles,
-  HeartHandshake,
-  FileText,
 } from "lucide-react";
 import { HiveLogo } from "@/components/HiveLogo";
 import alissonAsset from "@/assets/alisson.jpg.asset.json";
 
 const WA =
   "https://wa.me/5511934698384?text=Oi,%20Alisson!%20Vi%20seu%20site%20e%20quero%20saber%20quanto%20posso%20economizar%20na%20minha%20conta%20de%20luz.";
+
+const LICENSEE_NAME = "Alisson";
 
 const WaButton = ({
   children = "Falar no WhatsApp",
@@ -35,12 +32,41 @@ const WaButton = ({
     href={WA}
     target="_blank"
     rel="noopener noreferrer"
-    className={`btn-wa ${size === "lg" ? "btn-wa-lg" : ""} ${size === "sm" ? "!px-4 !py-2 !text-sm" : ""} ${pulse ? "pulse-cta" : ""} ${className}`}
+    className={`btn-wa ${size === "lg" ? "btn-wa-lg" : ""} ${
+      size === "sm" ? "!px-4 !py-2.5 !text-sm" : ""
+    } ${pulse ? "pulse-cta" : ""} ${className}`}
   >
     <MessageCircle size={size === "lg" ? 22 : 18} />
     {children}
   </a>
 );
+
+/* Decorative bolt SVG */
+const Bolt = ({ className = "", size = 18 }: { className?: string; size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" />
+  </svg>
+);
+
+/* Scroll reveal */
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+}
 
 const faqs = [
   { q: "Preciso fazer obra ou instalar algo na minha casa?", a: "Não. Você não instala nada, não faz nenhuma obra e não precisa colocar placa solar no telhado. Tudo é 100% digital." },
@@ -55,22 +81,34 @@ const faqs = [
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="space-y-3">
+    <div className="divide-y" style={{ borderColor: "hsl(var(--border))" }}>
       {faqs.map((f, i) => {
         const isOpen = open === i;
         return (
-          <div key={i} className="rounded-2xl border bg-white shadow-sm overflow-hidden" style={{ borderColor: "hsl(var(--border))" }}>
+          <div key={i} className="border-b" style={{ borderColor: "hsl(var(--border))" }}>
             <button
               onClick={() => setOpen(isOpen ? null : i)}
-              className="w-full flex items-center justify-between gap-4 p-5 text-left"
+              className="w-full flex items-center justify-between gap-4 py-5 text-left group"
               aria-expanded={isOpen}
             >
-              <span className="font-bold text-base sm:text-lg" style={{ color: "hsl(var(--hive-dark))" }}>{f.q}</span>
-              <ChevronDown size={20} className={`flex-shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} style={{ color: "hsl(var(--primary))" }} />
+              <span className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-energy transition-colors">
+                {f.q}
+              </span>
+              <span
+                className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all ${
+                  isOpen ? "bg-energy text-[#160F1F] rotate-180" : "bg-white/5 text-white/70"
+                }`}
+              >
+                <ChevronDown size={18} />
+              </span>
             </button>
-            {isOpen && (
-              <div className="px-5 pb-5 text-muted-foreground leading-relaxed">{f.a}</div>
-            )}
+            <div
+              className={`grid transition-all duration-300 ease-out ${
+                isOpen ? "grid-rows-[1fr] pb-6 opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden text-white/70 leading-relaxed text-base pr-12">{f.a}</div>
+            </div>
           </div>
         );
       })}
@@ -79,12 +117,27 @@ function Faq() {
 }
 
 export default function Index() {
+  useReveal();
+  const heroRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-hive-darker text-white">
+      {/* COMPLIANCE BAR (independent licensee notice — discreet but legible) */}
+      <div className="w-full text-[11px] sm:text-xs font-medium text-white/70 border-b" style={{ background: "#0A0710", borderColor: "hsl(var(--border))" }}>
+        <div className="container-x py-2 flex items-center justify-center gap-2 text-center">
+          <Bolt size={12} className="text-energy flex-shrink-0" />
+          <span>
+            Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado. Este não é um canal oficial da Hive.
+          </span>
+        </div>
+      </div>
+
       {/* HEADER */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-white/85 border-b" style={{ borderColor: "hsl(var(--border))" }}>
+      <header className="sticky top-0 z-40 backdrop-blur-xl border-b" style={{ background: "rgba(14,10,20,0.75)", borderColor: "hsl(var(--border))" }}>
         <div className="container-x flex h-16 sm:h-20 items-center justify-between">
-          <a href="#top" aria-label="hive Energy"><HiveLogo /></a>
+          <a href="#top" aria-label="hive Energy">
+            <HiveLogo variant="dark" />
+          </a>
           <WaButton size="sm" className="!rounded-full">
             <span className="hidden sm:inline">Falar no WhatsApp</span>
             <span className="sm:hidden">WhatsApp</span>
@@ -92,339 +145,361 @@ export default function Index() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section id="top" className="relative overflow-hidden bg-hive-soft">
-        <div className="absolute inset-0 grid-radial pointer-events-none" />
-        <div className="container-x relative py-14 sm:py-20 lg:py-28">
-          <div className="grid gap-10 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="chip mb-5" style={{ background: "hsl(var(--accent) / 0.25)", color: "hsl(var(--hive-dark))" }}>
-                <Sparkles size={14} /> Energia por assinatura, regulamentada por lei
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05]" style={{ color: "hsl(var(--hive-dark))" }}>
-                Pague menos na <span className="text-hive">conta de luz</span> todo mês.{" "}
-                <span className="text-energy">Sem obra. Sem dor de cabeça.</span>
-              </h1>
-              <p className="mt-5 text-lg sm:text-xl text-muted-foreground max-w-2xl">
-                Eu sou o Alisson, consultor da Hive Energy. Te ajudo a colocar desconto na sua conta de energia, com atendimento humano do começo ao fim. É rápido, 100% digital e você fala direto comigo.
-              </p>
+      {/* HERO — editorial, massive typography */}
+      <section id="top" ref={heroRef} className="relative overflow-hidden">
+        <div className="absolute inset-0 grid-lines opacity-60" />
+        <div className="glow-purple" style={{ width: 600, height: 600, top: -150, right: -100 }} />
+        <div className="glow-yellow" style={{ width: 400, height: 400, bottom: -100, left: -80 }} />
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <WaButton size="lg" pulse>Quero economizar (WhatsApp)</WaButton>
-                <a href="#como-funciona" className="inline-flex items-center gap-2 px-5 py-3 font-semibold text-hive hover:underline">
-                  Como funciona <ChevronDown size={18} />
-                </a>
-              </div>
-
-              <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium" style={{ color: "hsl(var(--hive-dark))" }}>
-                {["Sem obra", "Sem trocar de distribuidora", "Sem fidelidade", "100% digital"].map(t => (
-                  <span key={t} className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 size={16} className="text-hive" /> {t}
-                  </span>
-                ))}
-              </div>
+        <div className="container-x relative pt-20 pb-24 sm:pt-28 sm:pb-32 lg:pt-36 lg:pb-40">
+          <div className="reveal max-w-5xl">
+            <div className="chip mb-8" style={{ background: "hsl(var(--primary) / 0.15)", color: "hsl(var(--primary))", border: "1px solid hsl(var(--primary) / 0.3)" }}>
+              <Bolt size={12} className="text-energy" /> Energia por assinatura, Lei 14.300/2022
             </div>
 
-            {/* Visual: bill comparison card */}
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="card-soft p-6 sm:p-8 rounded-[28px]" style={{ boxShadow: "0 30px 80px -30px hsl(var(--primary) / 0.45)" }}>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Sua conta hoje</span>
-                    <Receipt size={20} className="text-muted-foreground" />
-                  </div>
-                  <div className="text-4xl font-extrabold line-through" style={{ color: "hsl(var(--hive-dark) / 0.35)" }}>R$ 480,00</div>
+            <h1 className="font-display text-[2.75rem] sm:text-7xl lg:text-[7.5rem] text-white">
+              Sua conta de luz<br />
+              <span className="text-gradient-hive">não precisa</span><br />
+              ser <span className="relative inline-block">
+                essa.
+                <Bolt size={48} className="text-energy absolute -top-2 -right-12 sm:-right-16 float-slow" />
+              </span>
+            </h1>
 
-                  <div className="my-6 h-px bg-border" />
-
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-hive">Com Hive Energy</span>
-                    <Zap size={20} className="text-energy" fill="currentColor" />
-                  </div>
-                  <div className="text-5xl font-black text-hive">R$ 384,00*</div>
-                  <p className="mt-2 text-sm text-muted-foreground">*Exemplo ilustrativo. A economia exata varia por estado e distribuidora.</p>
-
-                  <div className="mt-6 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-bold" style={{ background: "hsl(var(--accent) / 0.3)", color: "hsl(var(--hive-dark))" }}>
-                    <PiggyBank size={14} /> Até 25% de desconto na energia
-                  </div>
-                </div>
-                <div className="absolute -top-4 -right-4 rounded-2xl px-4 py-2 text-xs font-bold shadow-lg" style={{ background: "hsl(var(--primary))", color: "white" }}>
-                  Regulamentado pela Lei 14.300/2022
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DOR + VIRADA */}
-      <section className="py-16 sm:py-20">
-        <div className="container-x grid gap-10 md:grid-cols-2 items-center">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Conta de luz pesando?</p>
-            <h2 className="text-3xl sm:text-4xl mb-5" style={{ color: "hsl(var(--hive-dark))" }}>
-              Você não está sozinho. E existe uma saída <span className="text-hive">legal, simples e sem obra.</span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              A tarifa de energia subiu, as bandeiras vermelhas voltaram e a conta no fim do mês não cabe mais no orçamento. A boa notícia: hoje você pode receber energia mais barata em casa ou na sua empresa, sem mudar nada na sua instalação.
+            <p className="mt-8 text-lg sm:text-2xl text-white/70 max-w-2xl font-light leading-snug">
+              Energia mais barata, sem obra, sem trocar de distribuidora. Atendimento humano, do começo ao fim.
             </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { v: "Até 25%", l: "de desconto na energia" },
-              { v: "0 obras", l: "nada muda na sua casa" },
-              { v: "0 fidelidade", l: "cancele quando quiser" },
-              { v: "100%", l: "digital, sem burocracia" },
-            ].map(s => (
-              <div key={s.l} className="card-soft text-center !p-5">
-                <div className="text-3xl font-black text-hive">{s.v}</div>
-                <div className="text-xs mt-1 font-semibold text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* COMO FUNCIONA */}
-      <section id="como-funciona" className="py-16 sm:py-24 bg-hive-soft">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Como funciona</p>
-            <h2 className="text-3xl sm:text-4xl" style={{ color: "hsl(var(--hive-dark))" }}>
-              3 passos simples para começar a <span className="text-hive">economizar</span>
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              { icon: UserPlus, t: "Você se cadastra", d: "Me chama no WhatsApp. Eu te explico tudo e cuido do cadastro com você. Leva poucos minutos." },
-              { icon: Zap, t: "Recebe energia com desconto", d: "Você passa a consumir energia de fontes limpas, com tarifa mais barata do que a da distribuidora." },
-              { icon: Home, t: "Continua na mesma distribuidora", d: "Sem obra, sem técnico na sua casa, sem placa solar. A luz que chega na sua tomada é a mesma." },
-            ].map((s, i) => (
-              <div key={s.t} className="card-soft relative">
-                <div className="absolute -top-4 left-6 rounded-full px-3 py-1 text-xs font-black text-white" style={{ background: "hsl(var(--primary))" }}>
-                  Passo {i + 1}
-                </div>
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4" style={{ background: "hsl(var(--primary) / 0.12)" }}>
-                  <s.icon size={24} className="text-hive" />
-                </div>
-                <h3 className="text-xl mb-2" style={{ color: "hsl(var(--hive-dark))" }}>{s.t}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DOIS BOLETOS */}
-      <section className="py-16 sm:py-24 bg-hive-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 grid-radial-dark pointer-events-none" />
-        <div className="container-x relative">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-energy mb-3">Transparência total</p>
-            <h2 className="text-3xl sm:text-4xl text-white">
-              Você vai receber <span className="text-energy">dois boletos</span>. E ainda assim vai pagar menos.
-            </h2>
-            <p className="mt-4 text-white/70 text-lg">
-              Eu explico do jeito mais simples possível, sem letra miúda.
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 max-w-4xl mx-auto">
-            <div className="card-dark">
-              <div className="flex items-center gap-2 mb-3"><Receipt size={20} className="text-energy" /><span className="text-xs font-bold uppercase tracking-wider text-energy">Boleto 1</span></div>
-              <h3 className="text-2xl mb-2 text-white">Sua distribuidora</h3>
-              <p className="text-white/70 mb-4">Continua chegando, só que bem menor. Cobre o uso da rede, a iluminação pública e os impostos obrigatórios.</p>
-              <div className="text-3xl font-black text-white">R$ 120 <span className="text-base font-medium text-white/60">(exemplo)</span></div>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <WaButton size="lg" pulse>Quero economizar agora</WaButton>
+              <a href="#como" className="btn-ghost-dark">
+                Como funciona <ChevronDown size={16} />
+              </a>
             </div>
-            <div className="card-dark" style={{ borderColor: "hsl(var(--accent) / 0.6)" }}>
-              <div className="flex items-center gap-2 mb-3"><Zap size={20} className="text-energy" fill="currentColor" /><span className="text-xs font-bold uppercase tracking-wider text-energy">Boleto 2</span></div>
-              <h3 className="text-2xl mb-2 text-white">Hive Energy</h3>
-              <p className="text-white/70 mb-4">A energia que você consumiu, já com desconto. Sem taxa de adesão e sem fidelidade.</p>
-              <div className="text-3xl font-black text-white">R$ 264 <span className="text-base font-medium text-white/60">(exemplo)</span></div>
-            </div>
-          </div>
 
-          <div className="mt-8 max-w-4xl mx-auto rounded-3xl p-6 sm:p-8 text-center" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
-            <p className="text-sm font-bold uppercase tracking-widest mb-2">Somando os dois</p>
-            <div className="text-4xl sm:text-5xl font-black">R$ 384 <span className="text-xl font-bold">em vez de R$ 480</span></div>
-            <p className="mt-2 font-semibold">Mais barato que a conta cheia que você paga hoje. Exemplo ilustrativo, a economia exata depende da sua região.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* QUANTO ECONOMIZO */}
-      <section className="py-16 sm:py-24">
-        <div className="container-x grid gap-10 md:grid-cols-2 items-center">
-          <div className="card-soft" style={{ background: "linear-gradient(135deg, hsl(var(--primary) / 0.06), hsl(var(--accent) / 0.08))" }}>
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Quanto eu economizo?</p>
-            <div className="text-6xl sm:text-7xl font-black text-hive leading-none">até 25%</div>
-            <p className="mt-3 text-lg font-semibold" style={{ color: "hsl(var(--hive-dark))" }}>de desconto na parte de energia da sua conta.</p>
-            <p className="mt-4 text-muted-foreground">A economia exata varia conforme seu estado e sua distribuidora, eu calculo a sua quando você me chama.</p>
-            <div className="mt-6"><WaButton>Calcular minha economia</WaButton></div>
-          </div>
-          <div>
-            <h2 className="text-3xl sm:text-4xl mb-4" style={{ color: "hsl(var(--hive-dark))" }}>
-              Sem promessa milagrosa. <span className="text-hive">Conta honesta.</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Não acredito em prometer percentual fixo na internet. Cada cidade tem uma tarifa, cada distribuidora tem uma regra. O que eu te garanto é que, se valer a pena, eu te mostro o cálculo real, com transparência.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Se não fizer sentido pra você, eu mesmo te digo. Atendimento humano é isso.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* PARA QUEM É */}
-      <section className="py-16 sm:py-24 bg-hive-soft">
-        <div className="container-x">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Para quem é</p>
-            <h2 className="text-3xl sm:text-4xl" style={{ color: "hsl(var(--hive-dark))" }}>
-              Serve pra sua <span className="text-hive">casa</span> e pro seu <span className="text-hive">negócio.</span>
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-            <div className="card-soft">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style={{ background: "hsl(var(--primary) / 0.12)" }}>
-                <Home size={26} className="text-hive" />
-              </div>
-              <h3 className="text-2xl mb-2" style={{ color: "hsl(var(--hive-dark))" }}>Residências</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">Para a sua casa ou apartamento. Conta de luz acima de R$ 200 já costuma compensar muito.</p>
-              <ul className="space-y-2 text-sm">
-                {["Desconto todo mês na conta", "Sem mexer na fiação", "Cancele quando quiser"].map(i => (
-                  <li key={i} className="flex items-center gap-2"><CheckCircle2 size={16} className="text-hive" /> {i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="card-soft">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style={{ background: "hsl(var(--accent) / 0.25)" }}>
-                <Building2 size={26} style={{ color: "hsl(var(--hive-dark))" }} />
-              </div>
-              <h3 className="text-2xl mb-2" style={{ color: "hsl(var(--hive-dark))" }}>Pequenas e médias empresas</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">Comércios, escritórios, clínicas, indústrias leves. Reduza um custo fixo importante todo mês.</p>
-              <ul className="space-y-2 text-sm">
-                {["Mais margem no seu negócio", "Energia limpa, bom pro ESG", "Sem investimento inicial"].map(i => (
-                  <li key={i} className="flex items-center gap-2"><CheckCircle2 size={16} className="text-hive" /> {i}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* É SEGURO */}
-      <section className="py-16 sm:py-24">
-        <div className="container-x">
-          <div className="max-w-4xl mx-auto card-soft p-8 sm:p-12 text-center" style={{ borderColor: "hsl(var(--primary) / 0.3)" }}>
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-5" style={{ background: "hsl(var(--primary) / 0.12)" }}>
-              <ShieldCheck size={32} className="text-hive" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl mb-4" style={{ color: "hsl(var(--hive-dark))" }}>
-              É seguro? É <span className="text-hive">legalizado?</span> É golpe?
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-5">
-              Não é golpe. Energia por assinatura é um modelo <strong>regulamentado pela Lei 14.300/2022</strong> (marco da geração distribuída no Brasil). É legítimo, transparente, sem custo de adesão e sem fidelidade.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-4 mt-8 text-left">
-              {[
-                { i: FileText, t: "Lei 14.300/2022", d: "Marco da geração distribuída" },
-                { i: ShieldCheck, t: "Sem fidelidade", d: "Cancele a qualquer momento" },
-                { i: HeartHandshake, t: "Sem custo de adesão", d: "Você não paga nada para entrar" },
-              ].map(item => (
-                <div key={item.t} className="rounded-2xl p-4" style={{ background: "hsl(var(--secondary))" }}>
-                  <item.i size={20} className="text-hive mb-2" />
-                  <div className="font-bold" style={{ color: "hsl(var(--hive-dark))" }}>{item.t}</div>
-                  <div className="text-sm text-muted-foreground">{item.d}</div>
+            <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl">
+              {["Sem obra", "Sem trocar de distribuidora", "Sem fidelidade", "100% digital"].map((t) => (
+                <div key={t} className="flex items-start gap-2 text-sm text-white/80 font-medium">
+                  <Bolt size={14} className="text-energy mt-1 flex-shrink-0" />
+                  <span>{t}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Bolt divider into next section */}
+        <div className="container-x pb-6">
+          <div className="bolt-divider"><Bolt size={20} /></div>
+        </div>
       </section>
 
-      {/* ATENDIMENTO HUMANO - ALISSON */}
-      <section className="py-16 sm:py-24 bg-hive-soft">
-        <div className="container-x grid gap-10 md:grid-cols-2 items-center">
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl max-w-sm mx-auto" style={{ boxShadow: "0 30px 80px -30px hsl(var(--primary) / 0.5)" }}>
-              <img
-                src={alissonAsset.url}
-                alt="Alisson, consultor da Hive Energy, atendimento humano por WhatsApp"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
+      {/* MANIFESTO — one idea per section */}
+      <section className="relative py-24 sm:py-36">
+        <div className="container-tight reveal">
+          <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">01 — O problema</p>
+          <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white">
+            A tarifa subiu.<br />
+            A bandeira voltou.<br />
+            <span className="text-white/40">A sua conta não cabe mais no orçamento.</span>
+          </h2>
+        </div>
+      </section>
+
+      {/* COMO FUNCIONA — vertical editorial */}
+      <section id="como" className="relative py-24 sm:py-32 border-t" style={{ borderColor: "hsl(var(--border))" }}>
+        <div className="glow-purple" style={{ width: 500, height: 500, top: 100, left: -200, opacity: 0.5 }} />
+        <div className="container-tight relative">
+          <div className="reveal mb-16 max-w-3xl">
+            <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">02 — Como funciona</p>
+            <h2 className="font-display text-4xl sm:text-6xl text-white">
+              Três passos.<br />
+              <span className="text-gradient-hive">Zero obra.</span>
+            </h2>
+          </div>
+
+          <div className="space-y-px">
+            {[
+              { n: "01", t: "Você me chama no WhatsApp", d: "Eu te escuto, calculo sua economia real e cuido do cadastro com você. Leva poucos minutos." },
+              { n: "02", t: "Recebe energia com desconto", d: "Energia de fontes limpas, tarifa mais barata que a da distribuidora. Sem investimento inicial." },
+              { n: "03", t: "Continua na mesma distribuidora", d: "Sem obra, sem técnico, sem placa no telhado. A luz que chega na tomada é a mesma." },
+            ].map((s) => (
+              <div
+                key={s.n}
+                className="reveal group grid grid-cols-[auto_1fr] gap-6 sm:gap-12 py-8 sm:py-10 border-t hover:border-energy/50 transition-colors"
+                style={{ borderColor: "hsl(var(--border))" }}
+              >
+                <div className="font-display text-3xl sm:text-5xl font-black text-white/20 group-hover:text-energy transition-colors">
+                  {s.n}
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl sm:text-3xl text-white mb-2">{s.t}</h3>
+                  <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-xl">{s.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DOIS BOLETOS — transparency, big numbers */}
+      <section className="relative py-24 sm:py-32 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))", background: "#0A0710" }}>
+        <div className="glow-yellow" style={{ width: 500, height: 500, top: 50, right: -150 }} />
+        <div className="container-tight relative">
+          <div className="reveal mb-14 max-w-3xl">
+            <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">03 — Transparência</p>
+            <h2 className="font-display text-4xl sm:text-6xl text-white">
+              Dois boletos.<br />
+              <span className="text-energy">Conta menor.</span>
+            </h2>
+            <p className="mt-6 text-lg text-white/65 max-w-2xl">Sem letra miúda. É assim que funciona, de verdade.</p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 reveal">
+            <div className="card-glass">
+              <div className="flex items-center justify-between mb-5">
+                <span className="chip" style={{ background: "hsl(var(--muted))", color: "white" }}>
+                  <Receipt size={12} /> Boleto 1
+                </span>
+                <span className="font-mono-grotesk text-xs text-white/40">Distribuidora</span>
+              </div>
+              <h3 className="font-display text-3xl text-white mb-3">Sua distribuidora</h3>
+              <p className="text-white/65 leading-relaxed mb-6">
+                Continua chegando, só que bem menor. Cobre uso da rede, iluminação pública e impostos obrigatórios.
+              </p>
+              <div className="font-display text-5xl font-black text-white">R$ 120<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
             </div>
-            <div className="absolute -bottom-4 -right-4 sm:right-12 rounded-2xl px-4 py-3 shadow-lg" style={{ background: "hsl(var(--accent))" }}>
-              <div className="text-xs font-bold uppercase tracking-wider" style={{ color: "hsl(var(--hive-dark))" }}>Atendimento</div>
-              <div className="text-lg font-black" style={{ color: "hsl(var(--hive-dark))" }}>100% humano</div>
+
+            <div className="card-glass-accent">
+              <div className="flex items-center justify-between mb-5">
+                <span className="chip" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
+                  <Bolt size={12} /> Boleto 2
+                </span>
+                <span className="font-mono-grotesk text-xs text-energy">Hive Energy</span>
+              </div>
+              <h3 className="font-display text-3xl text-white mb-3">Hive Energy</h3>
+              <p className="text-white/65 leading-relaxed mb-6">
+                A energia que você consumiu, já com desconto. Sem adesão e sem fidelidade.
+              </p>
+              <div className="font-display text-5xl font-black text-white">R$ 264<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
             </div>
           </div>
-          <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Quem te atende</p>
-            <h2 className="text-3xl sm:text-4xl mb-4" style={{ color: "hsl(var(--hive-dark))" }}>
-              Oi, eu sou o <span className="text-hive">Alisson.</span>
+
+          <div className="mt-8 reveal">
+            <div className="rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
+              <Bolt size={120} className="absolute -top-6 -right-6 opacity-10" />
+              <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] mb-3 font-bold">Somando os dois</p>
+              <div className="font-display text-5xl sm:text-7xl font-black leading-none">
+                R$ 384 <span className="text-2xl sm:text-3xl font-bold opacity-60">em vez de R$ 480</span>
+              </div>
+              <p className="mt-4 font-semibold max-w-2xl mx-auto">
+                Mais barato que a conta cheia que você paga hoje. Exemplo ilustrativo, a economia exata varia por estado e distribuidora.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ATÉ 25% — single bold stat */}
+      <section className="relative py-28 sm:py-40 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))" }}>
+        <div className="glow-purple" style={{ width: 700, height: 700, top: "50%", left: "50%", transform: "translate(-50%,-50%)", opacity: 0.45 }} />
+        <div className="container-tight relative text-center reveal">
+          <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">04 — Sua economia</p>
+          <div className="font-display font-black text-white leading-[0.85] tracking-tighter" style={{ fontSize: "clamp(5rem, 22vw, 18rem)" }}>
+            até <span className="text-gradient-hive">25%</span>
+          </div>
+          <p className="mt-8 text-xl sm:text-2xl text-white/75 max-w-2xl mx-auto font-light leading-snug">
+            de desconto na parte de energia da sua conta. A economia exata varia por estado e distribuidora, eu calculo a sua quando você me chama.
+          </p>
+          <div className="mt-10">
+            <WaButton size="lg" pulse>Calcular minha economia</WaButton>
+          </div>
+        </div>
+      </section>
+
+      {/* PARA QUEM É — two cards, editorial */}
+      <section className="relative py-24 sm:py-32 border-t" style={{ borderColor: "hsl(var(--border))", background: "#0A0710" }}>
+        <div className="container-tight">
+          <div className="reveal mb-14 max-w-3xl">
+            <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">05 — Para quem é</p>
+            <h2 className="font-display text-4xl sm:text-6xl text-white">
+              Sua casa.<br />
+              <span className="text-white/40">Seu negócio.</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Sou consultor da Hive Energy e cuido pessoalmente de cada cliente. Aqui você não fala com robô, não fica em fila de URA, não recebe mensagem automática.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Eu te explico tudo, tiro suas dúvidas com calma, faço o cálculo da sua economia e acompanho passo a passo até o desconto chegar na sua conta.
-            </p>
-            <WaButton size="lg" pulse>Falar agora com o Alisson</WaButton>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 reveal">
+            <div className="card-glass group">
+              <Home size={32} className="text-hive mb-6" />
+              <h3 className="font-display text-3xl text-white mb-3">Residências</h3>
+              <p className="text-white/65 mb-6 leading-relaxed">
+                Para casa ou apartamento. Conta acima de R$ 200 já costuma compensar muito.
+              </p>
+              <ul className="space-y-2.5 text-sm text-white/75">
+                {["Desconto todo mês na conta", "Sem mexer na fiação", "Cancele quando quiser"].map((i) => (
+                  <li key={i} className="flex items-center gap-2.5">
+                    <Bolt size={12} className="text-energy" /> {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="card-glass group">
+              <Building2 size={32} className="text-energy mb-6" />
+              <h3 className="font-display text-3xl text-white mb-3">Pequenas e médias empresas</h3>
+              <p className="text-white/65 mb-6 leading-relaxed">
+                Comércios, escritórios, clínicas, indústrias leves. Reduza um custo fixo importante.
+              </p>
+              <ul className="space-y-2.5 text-sm text-white/75">
+                {["Mais margem no seu negócio", "Energia limpa, bom pro ESG", "Sem investimento inicial"].map((i) => (
+                  <li key={i} className="flex items-center gap-2.5">
+                    <Bolt size={12} className="text-energy" /> {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEGURO / LEI */}
+      <section className="relative py-24 sm:py-32 border-t" style={{ borderColor: "hsl(var(--border))" }}>
+        <div className="container-tight">
+          <div className="reveal grid md:grid-cols-[1fr_1.2fr] gap-12 items-start">
+            <div>
+              <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">06 — É legal</p>
+              <h2 className="font-display text-4xl sm:text-5xl text-white leading-[0.9]">
+                Não é golpe.<br />
+                É <span className="text-gradient-hive">lei.</span>
+              </h2>
+            </div>
+            <div>
+              <p className="text-lg text-white/70 leading-relaxed mb-8">
+                Energia por assinatura é um modelo <strong className="text-white">regulamentado pela Lei 14.300/2022</strong>, marco da geração distribuída no Brasil. Legítimo, transparente, sem custo de adesão e sem fidelidade.
+              </p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {[
+                  { t: "Lei 14.300/2022", d: "Geração distribuída" },
+                  { t: "Sem fidelidade", d: "Cancele quando quiser" },
+                  { t: "Sem adesão", d: "Você não paga p/ entrar" },
+                ].map((item) => (
+                  <div key={item.t} className="rounded-2xl p-4 border" style={{ borderColor: "hsl(var(--border))" }}>
+                    <ShieldCheck size={18} className="text-hive mb-2" />
+                    <div className="font-display font-bold text-white text-sm">{item.t}</div>
+                    <div className="text-xs text-white/55 mt-0.5">{item.d}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ALISSON — atendimento humano */}
+      <section className="relative py-24 sm:py-32 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))", background: "#0A0710" }}>
+        <div className="glow-purple" style={{ width: 500, height: 500, top: -100, left: -100, opacity: 0.5 }} />
+        <div className="container-tight relative">
+          <div className="grid gap-12 md:grid-cols-[auto_1fr] items-center reveal">
+            <div className="relative mx-auto md:mx-0">
+              <div className="rounded-[2rem] overflow-hidden w-[260px] sm:w-[320px] relative" style={{ border: "1px solid hsl(var(--border))" }}>
+                <img
+                  src={alissonAsset.url}
+                  alt="Alisson, consultor da Hive Energy, atendimento humano por WhatsApp"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0E0A14] via-transparent to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 -right-4 rounded-2xl px-4 py-3 shadow-2xl flex items-center gap-2" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
+                <Bolt size={16} />
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider">Atendimento</div>
+                  <div className="text-base font-black leading-none">100% humano</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">07 — Quem te atende</p>
+              <h2 className="font-display text-5xl sm:text-7xl text-white mb-6">
+                Oi, eu sou o<br />
+                <span className="text-gradient-hive">Alisson.</span>
+              </h2>
+              <p className="text-lg text-white/70 leading-relaxed mb-4 max-w-xl">
+                Sou consultor da Hive Energy. Aqui você não fala com robô, não fica em fila, não recebe mensagem automática.
+              </p>
+              <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
+                Eu explico tudo com calma, faço o cálculo da sua economia e acompanho até o desconto chegar na sua conta.
+              </p>
+              <WaButton size="lg" pulse>Falar agora com o Alisson</WaButton>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-24">
-        <div className="container-x max-w-3xl">
-          <div className="text-center mb-10">
-            <p className="text-sm font-bold uppercase tracking-widest text-hive mb-3">Perguntas frequentes</p>
-            <h2 className="text-3xl sm:text-4xl" style={{ color: "hsl(var(--hive-dark))" }}>
-              Tire suas dúvidas em <span className="text-hive">30 segundos</span>
+      <section className="relative py-24 sm:py-32 border-t" style={{ borderColor: "hsl(var(--border))" }}>
+        <div className="container-tight max-w-3xl">
+          <div className="reveal mb-12">
+            <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-4">08 — FAQ</p>
+            <h2 className="font-display text-4xl sm:text-6xl text-white">
+              Dúvidas?<br />
+              <span className="text-white/40">Responde aqui.</span>
             </h2>
           </div>
-          <Faq />
+          <div className="reveal"><Faq /></div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-16 sm:py-24 bg-hive-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 grid-radial-dark pointer-events-none" />
-        <div className="container-x relative text-center max-w-3xl">
-          <div className="chip mx-auto mb-5" style={{ background: "hsl(var(--accent) / 0.2)", color: "hsl(var(--accent))" }}>
-            <Zap size={14} fill="currentColor" /> Pronto pra economizar?
-          </div>
-          <h2 className="text-4xl sm:text-5xl text-white mb-5">
-            Sua próxima conta de luz pode chegar <span className="text-energy">muito menor.</span>
+      {/* CTA FINAL — manifesto closing */}
+      <section className="relative py-28 sm:py-40 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))" }}>
+        <div className="glow-purple" style={{ width: 700, height: 700, top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+        <div className="glow-yellow" style={{ width: 300, height: 300, bottom: -50, right: -50 }} />
+
+        <div className="container-tight relative text-center reveal">
+          <Bolt size={48} className="text-energy mx-auto mb-8 float-slow" />
+          <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-[0.9]">
+            Sua próxima conta<br />
+            pode chegar <span className="text-gradient-hive">muito menor.</span>
           </h2>
-          <p className="text-lg text-white/75 mb-8">
-            Me chama no WhatsApp agora. Em poucos minutos eu calculo o quanto você pode economizar, com total transparência.
+          <p className="mt-8 text-lg sm:text-xl text-white/65 max-w-xl mx-auto">
+            Me chama no WhatsApp. Em minutos eu calculo o quanto você pode economizar.
           </p>
-          <div className="flex justify-center">
+          <div className="mt-10 flex justify-center">
             <WaButton size="lg" pulse>Quero falar com o Alisson</WaButton>
           </div>
-          <p className="mt-5 text-sm text-white/50">Sem custo, sem compromisso e sem enrolação.</p>
+          <p className="mt-6 text-sm text-white/40">Sem custo, sem compromisso, sem enrolação.</p>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-10 bg-white border-t" style={{ borderColor: "hsl(var(--border))" }}>
-        <div className="container-x flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <HiveLogo />
-            <span className="hidden sm:inline text-sm text-muted-foreground">com Alisson</span>
+      {/* FOOTER — visible compliance notice */}
+      <footer className="border-t" style={{ borderColor: "hsl(var(--border))", background: "#0A0710" }}>
+        <div className="container-x py-14">
+          <div className="grid gap-10 md:grid-cols-[1fr_auto] items-start">
+            <div>
+              <HiveLogo variant="dark" />
+              <p className="mt-4 text-sm text-white/60 max-w-md leading-relaxed">
+                Atendimento humano via WhatsApp com <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
+              </p>
+            </div>
+            <WaButton size="sm" className="!rounded-full">Falar no WhatsApp</WaButton>
           </div>
-          <div className="text-sm text-muted-foreground text-center">
-            Alisson, Consultor Hive Energy &middot; Atendimento via{" "}
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="text-hive font-semibold hover:underline">WhatsApp</a>
+
+          {/* Independent licensee notice — CLEAR AND VISIBLE */}
+          <div className="mt-10 rounded-2xl p-5 border" style={{ borderColor: "hsl(var(--accent) / 0.4)", background: "hsl(var(--accent) / 0.06)" }}>
+            <div className="flex items-start gap-3">
+              <Bolt size={18} className="text-energy mt-0.5 flex-shrink-0" />
+              <p className="text-sm sm:text-base text-white/85 leading-relaxed">
+                <strong className="text-white">Aviso de conformidade:</strong> Esta é uma página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado. <strong className="text-white">Este não é um canal oficial da Hive.</strong>
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/45" style={{ borderColor: "hsl(var(--border))" }}>
+            <p>
+              Conteúdo informativo. Economia exata varia conforme distribuidora, estado e perfil de consumo. Modelo regulamentado pela Lei 14.300/2022.
+            </p>
+            <p>© {new Date().getFullYear()}</p>
           </div>
         </div>
-        <p className="container-x mt-4 text-xs text-muted-foreground/70 text-center max-w-3xl">
-          Conteúdo informativo. Economia exata varia conforme distribuidora, estado e perfil de consumo. Modelo regulamentado pela Lei 14.300/2022. © {new Date().getFullYear()}
-        </p>
       </footer>
 
       {/* FLOATING WHATSAPP */}
