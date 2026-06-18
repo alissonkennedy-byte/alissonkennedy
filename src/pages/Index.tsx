@@ -158,10 +158,10 @@ export default function Index() {
             </div>
 
             <h1 className="font-display text-[2.75rem] sm:text-7xl lg:text-[7.5rem] text-white">
-              Sua conta de luz<br />
-              <span className="text-gradient-hive">não precisa</span><br />
-              ser <span className="relative inline-block">
-                essa.
+              Pague <span className="text-hive">menos</span> na sua<br />
+              conta de luz.<br />
+              <span className="relative inline-block">
+                Todo mês.
                 <Bolt size={48} className="text-energy absolute -top-2 -right-12 sm:-right-16 float-slow" />
               </span>
             </h1>
