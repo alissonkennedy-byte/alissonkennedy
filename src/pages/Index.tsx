@@ -284,7 +284,7 @@ export default function Index() {
               <p className="text-white/65 leading-relaxed mb-6">
                 A energia que você consumiu, já com desconto. Sem adesão e sem fidelidade.
               </p>
-              <div className="font-display text-5xl font-black text-white">R$ 264<span className="text-base text-white/40 font-medium ml-2">exemplo</span></div>
+              <div className="font-display text-2xl sm:text-3xl font-black text-white/90">Energia com desconto</div>
             </div>
           </div>
 
