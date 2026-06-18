@@ -406,7 +406,7 @@ export default function Index() {
               <div className="rounded-[2rem] overflow-hidden w-[260px] sm:w-[320px] relative" style={{ border: "1px solid hsl(var(--border))" }}>
                 <img
                   src={alissonAsset.url}
-                  alt="Alisson, consultor da Hive Energy, atendimento humano por WhatsApp"
+                  alt="Alisson, Licenciado Hive Energy, atendimento humano por WhatsApp"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
@@ -427,7 +427,7 @@ export default function Index() {
                 <span className="text-gradient-hive">Alisson.</span>
               </h2>
               <p className="text-lg text-white/70 leading-relaxed mb-4 max-w-xl">
-                Sou consultor da Hive Energy. Aqui você não fala com robô, não fica em fila, não recebe mensagem automática.
+                Sou Licenciado da Hive Energy. Aqui você não fala com robô, não fica em fila, não recebe mensagem automática.
               </p>
               <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
                 Eu explico tudo com calma, faço o cálculo da sua economia e acompanho até o desconto chegar na sua conta.
