@@ -488,7 +488,7 @@ export default function Index() {
             <div className="flex items-start gap-3">
               <Bolt size={18} className="text-energy mt-0.5 flex-shrink-0" />
               <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-                <strong className="text-white">Aviso de conformidade:</strong> Esta é uma página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado. <strong className="text-white">Este não é um canal oficial da Hive.</strong>
+                <strong className="text-white">Aviso de conformidade:</strong> Esta é uma página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
               </p>
             </div>
           </div>
