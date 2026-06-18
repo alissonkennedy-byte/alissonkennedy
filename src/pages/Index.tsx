@@ -292,11 +292,11 @@ export default function Index() {
             <div className="rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden" style={{ background: "hsl(var(--accent))", color: "hsl(var(--hive-dark))" }}>
               <Bolt size={120} className="absolute -top-6 -right-6 opacity-10" />
               <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] mb-3 font-bold">Somando os dois</p>
-              <div className="font-display text-5xl sm:text-7xl font-black leading-none">
-                R$ 384 <span className="text-2xl sm:text-3xl font-bold opacity-60">em vez de R$ 480</span>
+              <div className="font-display text-3xl sm:text-5xl font-black leading-none max-w-3xl mx-auto">
+                Os dois boletos juntos saem menos do que a sua conta cheia de hoje.
               </div>
               <p className="mt-4 font-semibold max-w-2xl mx-auto">
-                Mais barato que a conta cheia que você paga hoje. Exemplo ilustrativo, a economia exata varia por estado e distribuidora.
+                A economia exata varia por estado, distribuidora e perfil de consumo. Eu calculo a sua quando você me chamar no WhatsApp.
               </p>
             </div>
           </div>
