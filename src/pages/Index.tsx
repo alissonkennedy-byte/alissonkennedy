@@ -303,16 +303,16 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ATÉ 25% — single bold stat */}
+      {/* ECONOMIA — no big numbers, just clarity */}
       <section className="relative py-28 sm:py-40 border-t overflow-hidden" style={{ borderColor: "hsl(var(--border))" }}>
         <div className="glow-purple" style={{ width: 700, height: 700, top: "50%", left: "50%", transform: "translate(-50%,-50%)", opacity: 0.45 }} />
         <div className="container-tight relative text-center reveal">
           <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-6">04 — Sua economia</p>
-          <div className="font-display font-black text-white leading-[0.85] tracking-tighter" style={{ fontSize: "clamp(5rem, 22vw, 18rem)" }}>
-            até <span className="text-gradient-hive">25%</span>
-          </div>
+          <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl text-white max-w-4xl mx-auto leading-[0.95]">
+            Você pode pagar menos na parte de energia da sua conta, <span className="text-gradient-hive">todo mês.</span>
+          </h2>
           <p className="mt-8 text-xl sm:text-2xl text-white/75 max-w-2xl mx-auto font-light leading-snug">
-            de desconto na parte de energia da sua conta. A economia exata varia por estado e distribuidora, eu calculo a sua quando você me chama.
+            A economia é de até 25%, mas varia conforme sua distribuidora, estado e perfil de consumo. O cálculo exato a gente faz juntos, de forma transparente, no WhatsApp.
           </p>
           <div className="mt-10">
             <WaButton size="lg" pulse>Calcular minha economia</WaButton>
