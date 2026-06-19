@@ -141,8 +141,8 @@ export default function Index() {
       <div className="w-full text-[14px] font-medium text-white border-b" style={{ background: "#1A0E2E", borderColor: "hsl(var(--border))" }}>
         <div className="container-x py-2.5 flex items-center justify-center gap-2 text-center">
           <Bolt size={14} className="text-energy flex-shrink-0" />
-          <span>
-            Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
+          <span className="flex items-center gap-2">
+            ⚡ Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
           </span>
         </div>
       </div>
@@ -180,7 +180,7 @@ export default function Index() {
         </div>
 
         <div className="container-x relative z-10 pt-20 pb-24 sm:pt-28 sm:pb-32 lg:pt-32 lg:pb-40 w-full">
-          <div className="reveal max-w-5xl">
+          <div className="max-w-5xl">
             <div className="chip mb-8" style={{ background: "rgba(127,96,253,0.18)", color: "white", border: "1px solid rgba(127,96,253,0.45)", backdropFilter: "blur(10px)" }}>
               <Bolt size={12} className="text-energy" /> Energia por assinatura, Lei 14.300/2022
             </div>
@@ -572,7 +572,7 @@ export default function Index() {
             <div className="flex items-start gap-3">
               <Bolt size={18} className="text-energy mt-0.5 flex-shrink-0" />
               <p className="text-[14px] sm:text-base text-white leading-relaxed">
-                <strong>Aviso de conformidade:</strong> Esta é uma página independente de <strong>{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
+                <strong>Aviso de conformidade:</strong> Esta página é operada de forma independente por <strong>{LICENSEE_NAME}</strong>, Licenciado autorizado pela Hive Global.
               </p>
             </div>
           </div>

@@ -7,7 +7,7 @@ export function HiveLogo({ variant = "light", className = "" }: { variant?: "lig
       <div className="flex flex-col items-start leading-none">
         <span
           className="text-[10px] font-bold tracking-wide"
-          style={{ color: isLight ? "hsl(252 98% 68%)" : "hsl(45 87% 62%)" }}
+          style={{ color: isLight ? "hsl(252 98% 68%)" : "hsl(45 86% 62%)" }}
         >
           hive
         </span>
@@ -20,8 +20,8 @@ export function HiveLogo({ variant = "light", className = "" }: { variant?: "lig
       </div>
       <Zap
         size={22}
-        fill="hsl(45 87% 62%)"
-        stroke="hsl(45 87% 62%)"
+        fill="hsl(45 86% 62%)"
+        stroke="hsl(45 86% 62%)"
         className="mb-1"
       />
     </div>
