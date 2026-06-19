@@ -18,8 +18,8 @@ const LICENSEE_NAME = "Alisson";
 /* Unsplash, gratuito. Tratamento de cor unificado aplicado via overlays + filtros CSS. */
 const IMG = {
   hero: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=70", // painéis solares + céu
-  pme: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=70",      // pequeno comércio brasileiro
-  casa: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=70",      // pessoa em casa olhando conta
+  pme: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1400&q=70",   // mercadinho de bairro
+  casa: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1400&q=70",     // comerciante à mesa fazendo contas (calculadora + boletos)
   ctaBg: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=70", // linha de transmissão entardecer
 };
 
@@ -300,7 +300,7 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-stretch reveal">
             <div className="relative rounded-3xl overflow-hidden min-h-[320px] lg:min-h-0" style={{ border: "1px solid hsl(var(--border))" }}>
-              <TreatedImage src={IMG.casa} alt="Pessoa em casa conferindo a conta de luz com tranquilidade" />
+              <TreatedImage src={IMG.casa} alt="Comerciante sentado à mesa fazendo contas, com calculadora e boleto da conta de luz em destaque" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(14,10,20,0.2) 0%, rgba(14,10,20,0.85) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-2">No fim do mês</p>
@@ -383,7 +383,7 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-stretch reveal">
             <div className="relative rounded-3xl overflow-hidden min-h-[380px]" style={{ border: "1px solid hsl(var(--border))" }}>
-              <TreatedImage src={IMG.pme} alt="Pequeno comércio brasileiro em funcionamento, atendido por energia por assinatura" />
+              <TreatedImage src={IMG.pme} alt="Mercadinho de bairro brasileiro em funcionamento, exemplo de pequeno comércio que paga menos com energia por assinatura" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(127,96,253,0.25) 0%, rgba(14,10,20,0.5) 60%, rgba(14,10,20,0.9) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <Bolt size={20} className="text-energy mb-3" />
