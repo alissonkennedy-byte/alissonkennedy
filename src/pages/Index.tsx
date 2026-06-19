@@ -383,7 +383,7 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-stretch reveal">
             <div className="relative rounded-3xl overflow-hidden min-h-[380px]" style={{ border: "1px solid hsl(var(--border))" }}>
-              <TreatedImage src={IMG.pme} alt="Pequeno comércio brasileiro em funcionamento, atendido por energia por assinatura" />
+              <TreatedImage src={IMG.pme} alt="Mercadinho de bairro brasileiro em funcionamento, exemplo de pequeno comércio que paga menos com energia por assinatura" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(127,96,253,0.25) 0%, rgba(14,10,20,0.5) 60%, rgba(14,10,20,0.9) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <Bolt size={20} className="text-energy mb-3" />
