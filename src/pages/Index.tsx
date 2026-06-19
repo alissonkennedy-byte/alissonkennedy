@@ -300,7 +300,7 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-stretch reveal">
             <div className="relative rounded-3xl overflow-hidden min-h-[320px] lg:min-h-0" style={{ border: "1px solid hsl(var(--border))" }}>
-              <TreatedImage src={IMG.casa} alt="Pessoa em casa conferindo a conta de luz com tranquilidade" />
+              <TreatedImage src={IMG.casa} alt="Comerciante sentado à mesa fazendo contas, com calculadora e boleto da conta de luz em destaque" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(14,10,20,0.2) 0%, rgba(14,10,20,0.85) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
                 <p className="font-mono-grotesk text-xs uppercase tracking-[0.3em] text-energy mb-2">No fim do mês</p>
