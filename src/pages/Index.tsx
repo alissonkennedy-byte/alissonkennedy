@@ -18,8 +18,8 @@ const LICENSEE_NAME = "Alisson";
 /* Unsplash, gratuito. Tratamento de cor unificado aplicado via overlays + filtros CSS. */
 const IMG = {
   hero: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=70", // painéis solares + céu
-  pme: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=70",      // pequeno comércio brasileiro
-  casa: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=70",      // pessoa em casa olhando conta
+  pme: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1400&q=70",   // mercadinho de bairro
+  casa: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1400&q=70",     // comerciante à mesa fazendo contas (calculadora + boletos)
   ctaBg: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=70", // linha de transmissão entardecer
 };
 
