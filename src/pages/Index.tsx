@@ -122,21 +122,25 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-hive-darker text-white">
-      {/* COMPLIANCE BAR (independent licensee notice — discreet but legible) */}
-      <div className="w-full text-[11px] sm:text-xs font-medium text-white/70 border-b" style={{ background: "#0A0710", borderColor: "hsl(var(--border))" }}>
-        <div className="container-x py-2 flex items-center justify-center gap-2 text-center">
-          <Bolt size={12} className="text-energy flex-shrink-0" />
+      {/* COMPLIANCE BAR (independent licensee notice — ostensive and readable) */}
+      <div className="w-full text-[14px] font-medium text-white border-b" style={{ background: "#1A0E2E", borderColor: "hsl(var(--border))" }}>
+        <div className="container-x py-2.5 flex items-center justify-center gap-2 text-center">
+          <Bolt size={14} className="text-energy flex-shrink-0" />
           <span>
             Página independente de <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
           </span>
         </div>
       </div>
 
+
       {/* HEADER */}
       <header className="sticky top-0 z-40 backdrop-blur-xl border-b" style={{ background: "rgba(14,10,20,0.75)", borderColor: "hsl(var(--border))" }}>
         <div className="container-x flex h-16 sm:h-20 items-center justify-between">
-          <a href="#top" aria-label="hive Energy">
+          <a href="#top" className="flex flex-col" aria-label="hive Energy">
             <HiveLogo variant="dark" />
+            <span className="text-[11px] sm:text-xs font-semibold text-white tracking-wide mt-0.5 leading-none">
+              Licenciado Independente Autorizado
+            </span>
           </a>
           <WaButton size="sm" className="!rounded-full">
             <span className="hidden sm:inline">Falar no WhatsApp</span>
@@ -144,6 +148,7 @@ export default function Index() {
           </WaButton>
         </div>
       </header>
+
 
       {/* HERO — editorial, massive typography */}
       <section id="top" ref={heroRef} className="relative overflow-hidden">
@@ -478,13 +483,19 @@ export default function Index() {
         <div className="container-x py-14">
           <div className="grid gap-10 md:grid-cols-[1fr_auto] items-start">
             <div>
-              <HiveLogo variant="dark" />
+              <div className="flex flex-col">
+                <HiveLogo variant="dark" />
+                <span className="text-xs sm:text-sm font-semibold text-white/90 tracking-wide mt-1 leading-none">
+                  Licenciado Independente Autorizado
+                </span>
+              </div>
               <p className="mt-4 text-sm text-white/60 max-w-md leading-relaxed">
                 Atendimento humano via WhatsApp com <strong className="text-white">{LICENSEE_NAME}</strong>, Licenciado Hive Global autorizado.
               </p>
             </div>
             <WaButton size="sm" className="!rounded-full">Falar no WhatsApp</WaButton>
           </div>
+
 
           {/* Independent licensee notice — CLEAR AND VISIBLE */}
           <div className="mt-10 rounded-2xl p-5 border" style={{ borderColor: "hsl(var(--accent) / 0.4)", background: "hsl(var(--accent) / 0.06)" }}>
