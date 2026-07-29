@@ -68,8 +68,7 @@ export default function Index() {
             </p>
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Ajudo empresas e empresários a resolver problemas complexos conectando estratégia,
-              negociação e execução.
+              Conecto estratégia, negociação e execução.
             </p>
 
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
