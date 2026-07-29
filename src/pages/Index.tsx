@@ -58,7 +58,7 @@ export default function Index() {
               <br />
               não admitem
               <br />
-              <span className="italic text-accent">improviso.</span>
+              <span className="text-accent">improviso.</span>
             </h1>
 
             <p className="mt-10 display text-2xl leading-tight text-foreground/90 md:text-3xl">
@@ -90,7 +90,7 @@ export default function Index() {
           </div>
 
           <div className="md:col-span-5">
-            <Tilt3D intensity={7}>
+            <Tilt3D intensity={12}>
               <div className="photo-frame grain aspect-[4/5] w-full">
                 <img
                   src={foto3}
@@ -110,7 +110,7 @@ export default function Index() {
           <div className="md:col-span-4">
             <p className="eyebrow">Sobre</p>
             <Depth range={40} className="mt-10 hidden md:block">
-              <Tilt3D intensity={5}>
+              <Tilt3D intensity={9}>
                 <div className="photo-frame grain aspect-[3/4]">
                   <img
                     src={foto2}
@@ -212,7 +212,7 @@ export default function Index() {
           <p className="display max-w-2xl text-2xl leading-tight md:text-4xl">
             Um interlocutor.
             <br />
-            <span className="text-accent italic">Uma responsabilidade.</span>
+            <span className="text-accent">Uma responsabilidade.</span>
           </p>
         </div>
       </section>
@@ -266,7 +266,7 @@ export default function Index() {
               <h2 className="mt-10 display text-4xl leading-[1.03] md:text-[3.6rem]">
                 Me conte o que precisa
                 <br />
-                <span className="italic text-accent">acontecer.</span>
+                <span className="text-accent">acontecer.</span>
               </h2>
             </Reveal>
             <p className="mt-8 max-w-md text-lg leading-relaxed text-muted-foreground">
@@ -309,7 +309,7 @@ export default function Index() {
           </div>
 
           <div className="md:col-span-5 md:col-start-8">
-            <Tilt3D intensity={6}>
+            <Tilt3D intensity={10}>
               <div className="photo-frame grain aspect-[4/5]">
                 <img
                   src={foto4}
