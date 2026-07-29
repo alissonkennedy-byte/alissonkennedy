@@ -1,5 +1,13 @@
-import { useRef, ReactNode } from "react";
-import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
+import { useRef, useEffect, useState, ReactNode } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useScroll,
+  useInView,
+  animate,
+} from "framer-motion";
 
 /** Subtle real 3D: pointer-driven rotation on a perspective scene. */
 export function Tilt3D({
