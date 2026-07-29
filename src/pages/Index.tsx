@@ -68,8 +68,7 @@ export default function Index() {
             </p>
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Ajudo empresas e empresários a resolver problemas complexos conectando estratégia,
-              negociação e execução.
+              Conecto estratégia, negociação e execução.
             </p>
 
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
@@ -184,7 +183,7 @@ export default function Index() {
                       ))}
                     </ul>
                     {a.note && (
-                      <p className="mt-6 max-w-md text-xs leading-relaxed text-muted-foreground/70">
+                      <p className="mt-6 max-w-md whitespace-pre-line text-xs leading-relaxed text-muted-foreground/70">
                         {a.note}
                       </p>
                     )}
@@ -230,9 +229,11 @@ export default function Index() {
 
           <div className="mt-20 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {resultados.map((r, i) => (
-              <Reveal key={r.k} delay={i * 0.05} className="bg-background">
-                <div className="flex h-full flex-col justify-between p-8 md:p-10">
-                  <span className="display text-5xl text-accent md:text-6xl">{r.k}</span>
+              <Reveal key={r.label ?? r.k} delay={i * 0.05} className="bg-background">
+                <div className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-secondary md:p-10">
+                  <span className="display text-5xl text-accent md:text-6xl">
+                    {r.k !== null ? <Count value={r.k} suffix={r.suffix} /> : r.label}
+                  </span>
                   <p className="mt-8 text-sm leading-relaxed text-muted-foreground">{r.d}</p>
                 </div>
               </Reveal>
