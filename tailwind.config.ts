@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter Tight', 'system-ui', 'sans-serif'],
-        display: ['Instrument Serif', 'Georgia', 'serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
         body: ['Inter Tight', 'system-ui', 'sans-serif'],
       },
       colors: {

@@ -1,4 +1,4 @@
-import { Tilt3D, Depth, Reveal } from "@/components/ak/Motion3D";
+import { Tilt3D, Depth, Reveal, Count } from "@/components/ak/Motion3D";
 import Nav from "@/components/ak/Nav";
 import foto1 from "@/assets/FOTO_1.jpeg";
 import foto2 from "@/assets/FOTO_2.jpg";
@@ -16,13 +16,13 @@ const areas = [
   {
     n: "01",
     title: "Redução de custos",
-    items: ["Energia", "Previdenciário*", "Tributário*", "Negociação", "Eficiência operacional"],
-    note: "* Empresas acima de 50 colaboradores. Faturamento anual superior a R$ 30 milhões.",
+    items: ["Energia", "Previdenciário*", "Tributário**", "Negociação", "Eficiência operacional"],
+    note: "* Empresas acima de 50 colaboradores.\n** Faturamento anual a partir de 30 milhões.",
   },
   {
     n: "02",
     title: "Mobilidade",
-    items: ["Deslocamentos executivos", "Operações especiais", "Projetos de mobilidade"],
+    items: ["Deslocamentos agendados e emergenciais", "Operações especiais", "Projetos de mobilidade"],
   },
   {
     n: "03",
@@ -37,11 +37,11 @@ const areas = [
 ];
 
 const resultados = [
-  { k: "270", d: "eventos entregues em um ano." },
-  { k: "60%", d: "de redução de custos com fornecedores." },
-  { k: "140%", d: "de aumento de ticket." },
-  { k: "C-Level", d: "relacionamento direto com decisores." },
-];
+  { k: 310, suffix: "", d: "eventos entregues em um ano." },
+  { k: 60, suffix: "%", d: "de redução de custos com fornecedores." },
+  { k: 140, suffix: "%", d: "de aumento de ticket." },
+  { k: null, label: "C-Level", d: "relacionamento direto com decisores." },
+] as { k: number | null; suffix?: string; label?: string; d: string }[];
 
 export default function Index() {
   return (
@@ -58,7 +58,7 @@ export default function Index() {
               <br />
               não admitem
               <br />
-              <span className="italic text-accent">improviso.</span>
+              <span className="text-accent">improviso.</span>
             </h1>
 
             <p className="mt-10 display text-2xl leading-tight text-foreground/90 md:text-3xl">
@@ -68,8 +68,7 @@ export default function Index() {
             </p>
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Ajudo empresas e empresários a resolver problemas complexos conectando estratégia,
-              negociação e execução.
+              Conecto estratégia, negociação e execução.
             </p>
 
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
@@ -91,7 +90,7 @@ export default function Index() {
           </div>
 
           <div className="md:col-span-5">
-            <Tilt3D intensity={7}>
+            <Tilt3D intensity={12}>
               <div className="photo-frame grain aspect-[4/5] w-full">
                 <img
                   src={foto3}
@@ -111,7 +110,7 @@ export default function Index() {
           <div className="md:col-span-4">
             <p className="eyebrow">Sobre</p>
             <Depth range={40} className="mt-10 hidden md:block">
-              <Tilt3D intensity={5}>
+              <Tilt3D intensity={9}>
                 <div className="photo-frame grain aspect-[3/4]">
                   <img
                     src={foto2}
@@ -184,7 +183,7 @@ export default function Index() {
                       ))}
                     </ul>
                     {a.note && (
-                      <p className="mt-6 max-w-md text-xs leading-relaxed text-muted-foreground/70">
+                      <p className="mt-6 max-w-md whitespace-pre-line text-xs leading-relaxed text-muted-foreground/70">
                         {a.note}
                       </p>
                     )}
@@ -213,7 +212,7 @@ export default function Index() {
           <p className="display max-w-2xl text-2xl leading-tight md:text-4xl">
             Um interlocutor.
             <br />
-            <span className="text-accent italic">Uma responsabilidade.</span>
+            <span className="text-accent">Uma responsabilidade.</span>
           </p>
         </div>
       </section>
@@ -230,9 +229,11 @@ export default function Index() {
 
           <div className="mt-20 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {resultados.map((r, i) => (
-              <Reveal key={r.k} delay={i * 0.05} className="bg-background">
-                <div className="flex h-full flex-col justify-between p-8 md:p-10">
-                  <span className="display text-5xl text-accent md:text-6xl">{r.k}</span>
+              <Reveal key={r.label ?? r.k} delay={i * 0.05} className="bg-background">
+                <div className="group flex h-full flex-col justify-between p-8 transition-colors duration-500 hover:bg-secondary md:p-10">
+                  <span className="display text-5xl text-accent md:text-6xl">
+                    {r.k !== null ? <Count value={r.k} suffix={r.suffix} /> : r.label}
+                  </span>
                   <p className="mt-8 text-sm leading-relaxed text-muted-foreground">{r.d}</p>
                 </div>
               </Reveal>
@@ -265,7 +266,7 @@ export default function Index() {
               <h2 className="mt-10 display text-4xl leading-[1.03] md:text-[3.6rem]">
                 Me conte o que precisa
                 <br />
-                <span className="italic text-accent">acontecer.</span>
+                <span className="text-accent">acontecer.</span>
               </h2>
             </Reveal>
             <p className="mt-8 max-w-md text-lg leading-relaxed text-muted-foreground">
@@ -308,7 +309,7 @@ export default function Index() {
           </div>
 
           <div className="md:col-span-5 md:col-start-8">
-            <Tilt3D intensity={6}>
+            <Tilt3D intensity={10}>
               <div className="photo-frame grain aspect-[4/5]">
                 <img
                   src={foto4}
