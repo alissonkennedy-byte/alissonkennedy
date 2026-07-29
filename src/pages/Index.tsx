@@ -1,4 +1,4 @@
-import { Tilt3D, Depth, Reveal } from "@/components/ak/Motion3D";
+import { Tilt3D, Depth, Reveal, Count } from "@/components/ak/Motion3D";
 import Nav from "@/components/ak/Nav";
 import foto1 from "@/assets/FOTO_1.jpeg";
 import foto2 from "@/assets/FOTO_2.jpg";
@@ -16,13 +16,13 @@ const areas = [
   {
     n: "01",
     title: "Redução de custos",
-    items: ["Energia", "Previdenciário*", "Tributário*", "Negociação", "Eficiência operacional"],
-    note: "* Empresas acima de 50 colaboradores. Faturamento anual superior a R$ 30 milhões.",
+    items: ["Energia", "Previdenciário*", "Tributário**", "Negociação", "Eficiência operacional"],
+    note: "* Empresas acima de 50 colaboradores.\n** Faturamento anual a partir de 30 milhões.",
   },
   {
     n: "02",
     title: "Mobilidade",
-    items: ["Deslocamentos executivos", "Operações especiais", "Projetos de mobilidade"],
+    items: ["Deslocamentos agendados e emergenciais", "Operações especiais", "Projetos de mobilidade"],
   },
   {
     n: "03",
@@ -37,11 +37,11 @@ const areas = [
 ];
 
 const resultados = [
-  { k: "270", d: "eventos entregues em um ano." },
-  { k: "60%", d: "de redução de custos com fornecedores." },
-  { k: "140%", d: "de aumento de ticket." },
-  { k: "C-Level", d: "relacionamento direto com decisores." },
-];
+  { k: 310, suffix: "", d: "eventos entregues em um ano." },
+  { k: 60, suffix: "%", d: "de redução de custos com fornecedores." },
+  { k: 140, suffix: "%", d: "de aumento de ticket." },
+  { k: null, label: "C-Level", d: "relacionamento direto com decisores." },
+] as { k: number | null; suffix?: string; label?: string; d: string }[];
 
 export default function Index() {
   return (
