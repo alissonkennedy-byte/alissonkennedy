@@ -94,7 +94,7 @@ export default function Index() {
             <Tilt3D intensity={7}>
               <div className="photo-frame grain aspect-[4/5] w-full">
                 <img
-                  src={foto3.url}
+                  src={foto3}
                   alt="Alisson Kennedy observando a cidade a partir de um escritório corporativo"
                   className="h-full w-full object-cover"
                   loading="eager"
@@ -114,7 +114,7 @@ export default function Index() {
               <Tilt3D intensity={5}>
                 <div className="photo-frame grain aspect-[3/4]">
                   <img
-                    src={foto2.url}
+                    src={foto2}
                     alt="Alisson Kennedy em ambiente corporativo"
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -201,7 +201,7 @@ export default function Index() {
         <Depth range={70}>
           <div className="photo-frame grain h-[55vh] w-full md:h-[80vh]">
             <img
-              src={foto1.url}
+              src={foto1}
               alt="Alisson Kennedy em retrato corporativo"
               className="h-full w-full scale-110 object-cover object-top"
               loading="lazy"
@@ -311,7 +311,7 @@ export default function Index() {
             <Tilt3D intensity={6}>
               <div className="photo-frame grain aspect-[4/5]">
                 <img
-                  src={foto4.url}
+                  src={foto4}
                   alt="Retrato de Alisson Kennedy"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -325,7 +325,7 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="border-t border-border py-14">
         <div className="container-ak flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          <img src={logoBranco.url} alt="Alisson Kennedy" className="h-12 w-auto object-contain" />
+          <img src={logoBranco} alt="Alisson Kennedy" className="h-12 w-auto object-contain" />
           <div className="flex flex-wrap gap-8 text-[0.72rem] uppercase tracking-[0.2em] text-muted-foreground">
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="link-underline">
               WhatsApp

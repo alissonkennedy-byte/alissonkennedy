@@ -73,7 +73,7 @@ export default function Nav() {
             transition={{ duration: 0.4 }}
           >
             <div className="container-ak flex h-[72px] items-center justify-between">
-              <img src={logoBranco.url} alt="Alisson Kennedy" className="h-9 w-auto object-contain" />
+              <img src={logoBranco} alt="Alisson Kennedy" className="h-9 w-auto object-contain" />
               <button
                 className="text-[0.75rem] uppercase tracking-[0.2em] text-muted-foreground"
                 onClick={() => setOpen(false)}
