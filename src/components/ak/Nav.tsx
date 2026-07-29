@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoBranco from "@/assets/LOGO_AK_BRANCO.png.asset.json";
+import logoBranco from "@/assets/LOGO_AK_BRANCO.png";
 
 const links = [
   { id: "sobre", label: "Sobre" },

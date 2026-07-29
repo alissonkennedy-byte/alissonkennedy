@@ -1,10 +1,10 @@
 import { Tilt3D, Depth, Reveal } from "@/components/ak/Motion3D";
 import Nav from "@/components/ak/Nav";
-import foto1 from "@/assets/FOTO_1.jpeg.asset.json";
-import foto2 from "@/assets/FOTO_2.jpg.asset.json";
-import foto3 from "@/assets/FOTO_3.jpg.asset.json";
-import foto4 from "@/assets/FOTO_4.jpg.asset.json";
-import logoBranco from "@/assets/LOGO_AK_BRANCO.png.asset.json";
+import foto1 from "@/assets/FOTO_1.jpeg";
+import foto2 from "@/assets/FOTO_2.jpg";
+import foto3 from "@/assets/FOTO_3.jpg";
+import foto4 from "@/assets/FOTO_4.jpg";
+import logoBranco from "@/assets/LOGO_AK_BRANCO.png";
 
 const WHATSAPP =
   "https://wa.me/5511934698384?text=" +
