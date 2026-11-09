@@ -88,5 +88,22 @@ function boot() {
     listeners.push((y) => api.setScroll(Math.min(1, y / innerHeight)));
   }).catch(() => { /* fallback CSS permanece */ });
 }
-const idle = (cb: () => void) => ("requestIdleCallback" in window ? (window as any).requestIdleCallback(cb, { timeout: 2500 }) : setTimeout(cb, 1200));
-if (document.readyState === "complete") idle(boot); else addEventListener("load", () => idle(boot), { once: true });
+// O fallback visual já está no HTML/CSS; o 3D só é necessário quando há interação real.
+// Evita que a inicialização pesada de WebGL concorra com LCP e com a primeira leitura.
+let sphereQueued = false;
+function queueSphere() {
+  if (sphereQueued || reduce) return;
+  sphereQueued = true;
+  removeEventListener("scroll", queueSphere);
+  removeEventListener("pointermove", queueSphere);
+  removeEventListener("touchstart", queueSphere);
+  removeEventListener("keydown", queueSphere);
+  const start = () => { if ("requestIdleCallback" in window) (window as any).requestIdleCallback(boot, { timeout: 2000 }); else setTimeout(boot, 150); };
+  if (document.readyState === "complete") start(); else addEventListener("load", start, { once: true });
+}
+if (!reduce) {
+  addEventListener("scroll", queueSphere, { passive: true });
+  addEventListener("pointermove", queueSphere, { passive: true });
+  addEventListener("touchstart", queueSphere, { passive: true });
+  addEventListener("keydown", queueSphere);
+}
