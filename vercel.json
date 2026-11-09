@@ -3,62 +3,62 @@
     {
       "source": "/sobre-alisson-kennedy",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/sobre-alisson-kennedy/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/cases",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/cases/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/desenvolvimento-de-negocios",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/desenvolvimento-de-negocios/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/prospeccao-b2b",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/prospeccao-b2b/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/expansao-comercial",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/expansao-comercial/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/parcerias-estrategicas",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/parcerias-estrategicas/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
