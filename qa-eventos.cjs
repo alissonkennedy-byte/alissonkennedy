@@ -14,7 +14,7 @@ const assert=(cond,msg)=>{if(!cond)results.issues.push(msg)};
    await page.screenshot({path:'qa-results/screen-'+width+'.png',fullPage:true});
    const metrics=await page.evaluate(()=>{
      const h1=document.querySelectorAll('h1').length;
-     const missingImages=[...document.images].filter(x=>!x.complete||x.naturalWidth===0).map(x=>x.src);
+     const missingImages=[...document.images].filter(x=>x.complete&&x.naturalWidth===0).map(x=>x.src);
      return {h1,title:document.title,docWidth:document.documentElement.scrollWidth,innerWidth:innerWidth,links:[...document.querySelectorAll('a[href]')].length,images:document.images.length,missingImages,bodyText:document.body.innerText.length};
    });
    results.sizes.push({width,status:response.status(),...metrics,pageErrors:errors});
@@ -23,6 +23,10 @@ const assert=(cond,msg)=>{if(!cond)results.issues.push(msg)};
    assert(metrics.docWidth<=metrics.innerWidth+1,'Horizontal overflow at '+width+' ('+metrics.docWidth+')');
    assert(metrics.bodyText>2200,'Incomplete text body at '+width);
    assert(metrics.missingImages.length===0,'Broken image at '+width+': '+metrics.missingImages);
+   for (const image of await page.locator('img').all()) {
+     const src=await image.getAttribute('src');
+     if(src){const response=await page.request.get(new URL(src,base).href);assert(response.ok(),'Image URL '+src+' returned '+response.status()+' at '+width);}
+   }
    assert(errors.length===0,'Page JS error at '+width+': '+errors);
    await page.close();
  }
@@ -30,7 +34,7 @@ const assert=(cond,msg)=>{if(!cond)results.issues.push(msg)};
  await noJS.goto(base,{waitUntil:'load'});await noJS.screenshot({path:'qa-results/no-js-mobile.png',fullPage:true});
  const noText=await noJS.locator('body').innerText();results.other.noJSLength=noText.length;
  assert(noText.length>2200,'JS disabled: text missing');
- assert(noText.includes('Alisson')&&noText.includes('Trajetória'),'JS disabled: key sections missing');
+ assert(noText.includes('Alisson')&&await noJS.locator('#trajetoria').count()===1,'JS disabled: key sections missing');
  await noJS.close();
  const reduced=await browser.newPage({viewport:{width:390,height:850},reducedMotion:'reduce'});
  await reduced.goto(base,{waitUntil:'networkidle'});await reduced.screenshot({path:'qa-results/reduced-motion-mobile.png',fullPage:true});results.other.reduced=await reduced.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);await reduced.close();
