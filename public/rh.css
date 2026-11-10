@@ -29,3 +29,16 @@ html{scroll-padding-top:70px}.site-head{height:68px;padding-inline:22px}.brand{f
 }
 @media(max-width:390px){.hero h1>span{font-size:14.9vw}.hero h1 em{font-size:16.5vw}.hero{min-height:max(800px,100svh)}.hero-content{min-height:max(800px,100svh)}.hero-type{padding-top:185px}.hero-photo{height:495px;width:75%}.hero-buttons{margin-top:22px}.editorial-body h2,.experience-body h2{font-size:10.6vw}.contact h2{font-size:12vw}}
 @media(hover:hover) and (pointer:fine){.hero-photo img{will-change:transform}.expertise-item:hover .expertise-mark{transform:translate(3px,-3px)}.timeline li:hover .timeline-arrow{transform:translate(3px,-3px)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.hero-photo img{transform:none}.sticky-contact{transition:none}}
+
+/* Revisão de direção de arte e acessibilidade */
+@media(min-width:761px){
+  .site-head:not(.scrolled) .desktop-nav a{color:#f5f3ee;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+  .site-head.scrolled .desktop-nav a{color:var(--ink);text-shadow:none}
+}
+.photo-stamp{display:none}
+.section-intro>p{color:#414848}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1>span{animation:hero-type-in .7s var(--ease) both}
+  .hero h1 em{animation:hero-type-in .83s .09s var(--ease) both}
+  @keyframes hero-type-in{from{transform:translateY(13px)}to{transform:translateY(0)}}
+}
