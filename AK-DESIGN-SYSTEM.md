@@ -31,7 +31,7 @@ CTA principal: conversa direta pelo WhatsApp `https://wa.me/5511967385924`, text
 ## Conteúdo: fatos permitidos
 - Alisson Kennedy, São Paulo/SP; produção, operações, comercial e patrocínios.
 - Mais de mil eventos na carreira; média de 270/ano em uma função; NPS acima de 80.
-- Festa junina com déficit anterior de R$ 15 mil; faturamento bruto posterior de R$ 96 mil, custo de R$ 100 mil e diferença negativa de R$ 4 mil. Nunca chamar de lucro.
+- **Não exibir o estudo de caso da festa junina nem seus dados financeiros neste site.** O usuário optou por reservar esse exemplo para conversas de entrevista.
 - Carreira sem nomes de empregadores: SDR 11/2025–08/2026; especialista marketing/eventos 2022–2025; analista patrocínios/eventos 2021–2022; assistente eventos 2020–2021.
 - Relações Públicas concluída; MBA Marketing USP/ESALQ em andamento, conclusão prevista julho/2027; inglês intermediário B1.
 - No site, não citar nomes de empregadores, depoimentos inventados, premiações ou ferramentas irrelevantes.
@@ -48,3 +48,6 @@ Em futuros links ou sites da marca pessoal AK, manter a linguagem de tipografia 
 - Branch: `rh-editorial-candidatura-2026-11-10`, deploy apenas na prévia da Vercel
 
 **Não substituir o domínio principal sem validação visual do usuário.**
+
+## Revisão de acabamento (10/11/2026)
+O caso da festa junina foi retirado a pedido do usuário. Não o reintroduzir no conteúdo público. Todo travessão deve ser substituído por pontuação regular ou pelo conectivo “a” nos intervalos de datas. Priorizar títulos completos, com quebra entre palavras e passagem integral para a linha seguinte quando necessário, em mobile e desktop.
