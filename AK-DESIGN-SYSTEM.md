@@ -1,39 +1,50 @@
-# AK — Clareza em Movimento | Sistema de identidade v2
+# AK / Identidade digital pessoal — edição profissional
 
-## Propósito
-Identidade-mãe para presença digital pessoal, microsites, links, apresentações e páginas de projetos do Alisson Kennedy. A marca é o monograma **AK.**; não usar marcas de clientes nem outras empresas no site pessoal. O objetivo primário da landing é **uma conversa direta no WhatsApp**. Versão criada sob demanda do usuário em 09/11/2026.
+**Conceito:** clareza, escala, presença e discrição. Uma identidade editorial de alguém que já executou operações complexas. Não é uma marca de aplicativo, nem uma agência de tecnologia.
 
-## Fundamentos visuais
-- Fundo: preto grafite `#090B0B` (contraste e respiro)
-- Fundo secundário: `#111717`, painéis `#18201E`
-- Texto claro: `#F2F0E9`, texto escuro `#090B0B`
-- Cor de conversão exclusiva: `#C3F35B` (verde-limão editorial)
-- Off-white: `#F2F0E9`
-- Grids finos geométricos + tipografia de impacto. Não copiar imagens de referência nem interfaces idênticas.
-- Elementos gráficos recorrentes: ponto final verde, órbitas 3D wireframe, índice numérico da seção, divisões 01/05, monograma AK. e ritmo de linhas.
-- Tipografia: Space Grotesk local com fallback sans, hierarquia em caixa alta, espaçamento negativo nos headlines; evitar fontes externas de terceiros no carregamento crítico.
+## Premissa de recrutamento
+Em uma primeira visita o recrutador deve identificar, sem rolagem:
+- nome e rosto reais;
+- especialidades em produção de eventos, operações, comercial e patrocínios;
+- comprovação objetiva de experiência (1.000+ eventos);
+- um meio imediato e funcional de contato.
 
-## Componentes replicáveis
-O arquivo `public/brand/ak-system.css` concentra paleta, tipografia e CTAs, e deve ser levado para novos projetos. `public/brand/ak-interactions.js` implementa progressão, menu acessível, camada 3D leve, consentimento e analytics; seu uso é opcional nos próximos sites.
+Depois da primeira dobra a página responde: qual sua escala de entrega? o que já resolveu na prática? que funções desempenhou? onde atuaria em minha equipe? Só então enfatiza formação e dados complementares.
 
-## Mobile
-A página nasce em 390px mas também precisa funcionar em 320, 360 e 430px, 768px e desktop. Primeira dobra com foto real, uma frase clara e ação direta. CTA inferior aparece após a pessoa rolar parte do hero, sem sequestrar a tela. Não usar hover-only, som, zoom de rolagem forçado ou carrossel com autoplay.
+## Sistema visual
+- Fundo editorial: `#F3F0E9` (papel)
+- Fundo claro de contraste: `#FCFAF5`
+- Texto e superfícies escuras: `#171B1C`
+- Apoio grafite: `#394041`
+- Destaque controlado, não neon: `#7F353E` (vinho queimado)
+- Linhas: `#D1CEC4`
+- Fotografia documental em preto e branco, sem recriar rostos. Imagem já presente no repositório.
+- Tipos: Space Grotesk local para interface e dados; Georgia itálica editorial somente em destaques conceituais. Sem SVG 3D, esferas, glow, glassmorphism ou cards por decoração.
+- Grid de largura editorial variável; colunas assimétricas, divisores finos e grandes áreas de respiro. Um número de seção e uma palavra-guia para orientar a leitura.
 
-## Motion / 3D
-Órbitas CSS em perspectiva 3D, transformações compostas, parallax curto com requestAnimationFrame, até quatro elementos animados continuamente na primeira dobra e desativação com `prefers-reduced-motion`. Nenhum bundle WebGL ou biblioteca 3D bloqueando LCP. Conteúdo crítico está no HTML para funcionar sem JS.
+## Movimento
+Texto crítico existe no HTML inicial e não depende de JS. Movimento apenas de imagem na entrada, título deslocando poucos pixels, marcação de rolagem e entrada das grandes seções sem ocultação. Deixar `prefers-reduced-motion` estático. Todos os efeitos precisam preservar legibilidade e não sequestrar scroll.
 
 ## Conversão
-WhatsApp `https://wa.me/5511967385924` é a ação primária nos locais hero, manifesto, case, sobre e encerramento, além da barra móvel condicional. E-mail e LinkedIn são alternativas secundárias. O site não expõe nomes de empregadores nem os arquivos PDF originais que os contenham.
+CTA principal: conversa direta pelo WhatsApp `https://wa.me/5511967385924`, texto de abertura relacionado a uma oportunidade profissional. E-mail e LinkedIn no encerramento. O botão fixo no celular aparece após a primeira dobra e some quando o CTA final está visível. Nada de formulário obrigatório nem de popups.
 
-## Integridade editorial
-- +1.000 eventos na carreira; média de 270/ano; NPS acima de 80
-- Case: déficit anterior de R$ 15 mil. Resultado novo: faturamento bruto R$ 96 mil, custos R$ 100 mil, déficit R$ 4 mil; nunca chamar de lucro
-- Funções e períodos profissionais estão derivados do currículo, sem nomes de empresas
-- MBA em Marketing em andamento, previsão 07/2027. Graduação em Relações Públicas concluída. Inglês B1.
-- Evitar afirmações comerciais ou prêmios não comprovados.
+## Conteúdo: fatos permitidos
+- Alisson Kennedy, São Paulo/SP; produção, operações, comercial e patrocínios.
+- Mais de mil eventos na carreira; média de 270/ano em uma função; NPS acima de 80.
+- Festa junina com déficit anterior de R$ 15 mil; faturamento bruto posterior de R$ 96 mil, custo de R$ 100 mil e diferença negativa de R$ 4 mil. Nunca chamar de lucro.
+- Carreira sem nomes de empregadores: SDR 11/2025–08/2026; especialista marketing/eventos 2022–2025; analista patrocínios/eventos 2021–2022; assistente eventos 2020–2021.
+- Relações Públicas concluída; MBA Marketing USP/ESALQ em andamento, conclusão prevista julho/2027; inglês intermediário B1.
+- No site, não citar nomes de empregadores, depoimentos inventados, premiações ou ferramentas irrelevantes.
 
-## Métricas e SEO
-HTML completo sem JavaScript, `<h1>` único, `Person` + `ProfilePage` JSON-LD, metas OG, canonical, sitemap, fotos WebP do usuário, `robots` indexável. GTM `GTM-MBM785PR` é carregado apenas após consentimento opcional. Em qualquer mudança de hospedagem, validar redirects 301 reais, robots, canonical e HTTPS.
+## Variações
+Em futuros links ou sites da marca pessoal AK, manter a linguagem de tipografia e grid, a fotografia autêntica, o mesmo monograma e a hierarquia de informação. Não copiar integralmente a home; cada página precisa ter um objetivo próprio, alterando apenas a grade e os componentes necessários.
 
-## Releases
-Branch de trabalho: `redesign-conversao-mobile-2026-11-09`. Branch anterior: `redesign-editorial-eventos-2026-11-09`. A publicação do domínio principal só deve ocorrer depois da revisão visual e validação, sem promover prévia automaticamente.
+## Arquivos
+- `index.html`: HTML estático, conteúdo indexável
+- `public/rh.css`: implementação visual da edição profissional
+- `public/rh.js`: pequenas interações sem biblioteca externa
+- `public/brand/ak-system.css`: tokens exportáveis para próximos projetos
+- `qa-rh.cjs` e `.github/workflows/qa-rh.yml`: validação em 7 larguras e Lighthouse
+- Branch: `rh-editorial-candidatura-2026-11-10`, deploy apenas na prévia da Vercel
+
+**Não substituir o domínio principal sem validação visual do usuário.**
