@@ -1,0 +1,60 @@
+name: QA do redesign editorial
+on:
+  push:
+    branches: [redesign-editorial-eventos-2026-11-09]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Dependencies
+        run: |
+          npm install --no-fund --no-audit
+          npm install --no-save --no-fund --no-audit playwright@1.55.0 lighthouse@12
+          npx playwright install --with-deps chromium
+      - name: Static build
+        run: npm run build
+      - name: Serve build
+        run: |
+          nohup python3 -m http.server 4173 --bind 127.0.0.1 --directory dist >/tmp/editorial-server.log 2>&1 &
+          sleep 3
+          curl -fsS http://127.0.0.1:4173/ >/dev/null
+      - name: Responsiveness, no-JS, links and screenshots
+        run: node qa-editorial.cjs
+      - name: Mobile Lighthouse
+        continue-on-error: true
+        run: |
+          CHROME_PATH=$(node -e "console.log(require('playwright').chromium.executablePath())")
+          npx lighthouse http://127.0.0.1:4173/ --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path=qa-report/lighthouse-mobile.json --only-categories=performance,accessibility,best-practices,seo --quiet
+      - name: Desktop Lighthouse
+        continue-on-error: true
+        run: |
+          CHROME_PATH=$(node -e "console.log(require('playwright').chromium.executablePath())")
+          npx lighthouse http://127.0.0.1:4173/ --preset=desktop --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path=qa-report/lighthouse-desktop.json --only-categories=performance,accessibility,best-practices,seo --quiet
+      - name: Print Lighthouse scores
+        if: always()
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          for(const t of ['mobile','desktop']){
+            try{
+              const x=JSON.parse(fs.readFileSync('qa-report/lighthouse-'+t+'.json'));
+              console.log(t,JSON.stringify({scores:Object.fromEntries(Object.entries(x.categories).map(([k,v])=>[k,Math.round(v.score*100)])),lcp:x.audits['largest-contentful-paint']?.numericValue,cls:x.audits['cumulative-layout-shift']?.numericValue}));
+            }catch(e){console.log('Lighthouse '+t+' failed: '+e.message);}
+          }
+          NODE
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: redesign-editorial-evidencias
+          path: qa-report/
+          retention-days: 7
