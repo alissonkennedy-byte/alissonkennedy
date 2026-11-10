@@ -360,3 +360,11 @@
  .ring,.card-orbit span{animation:none!important}
  .hero-orbit{transition:none}
 }
+/* Visible by default; JavaScript only adds short transform-based movement. */
+@media(prefers-reduced-motion:no-preference){
+ .motion-enabled .motion-target{transform:translateY(17px);opacity:.83;transition:transform .8s var(--ak-ease),opacity .7s var(--ak-ease)}
+ .motion-enabled .motion-target.is-revealed{transform:translateY(0);opacity:1}
+ .motion-enabled .case-graph:not(.graph-active) .graph-fill{transform:scaleX(.12)}
+ .motion-enabled .case-graph.graph-active .graph-fill{transform:scaleX(1);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+ .motion-enabled .perspective-card.is-revealed:hover{transform:perspective(780px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+}
