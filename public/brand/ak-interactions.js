@@ -80,9 +80,12 @@
     if(event.key==="Escape" && mobileMenu?.open){mobileMenu.open=false;mobileMenu.querySelector("summary")?.focus()}
   });
 
-  // Compositor-only entrance and progressive bar animation. Text stays legible.
-  if(!reduced && "IntersectionObserver" in window){
-    root.classList.add("motion-enabled");
+  // Entradas decorativas são inicializadas apenas quando necessárias.
+  // No mobile, a primeira rolagem/toque ativa o sistema e as órbitas CSS 3D.
+  let revealsReady=false;
+  function setupReveals(){
+    if(revealsReady||reduced||!("IntersectionObserver" in window))return;
+    revealsReady=true;root.classList.add("motion-enabled");
     const targets=doc.querySelectorAll(".manifesto-copy,.practice-heading,.practice-card,.case-lead,.case-board,.case-steps article,.journey-top,.journey-list li,.about-content,.closing-wrap>h2");
     targets.forEach(x=>x.classList.add("motion-target"));
     const io=new IntersectionObserver(entries=>{
@@ -97,6 +100,14 @@
       chartIO.observe(caseBoard);
     }
   }
+  if(matchMedia("(max-width:800px)").matches && !reduced){
+    const engage=()=>{root.classList.add("site-interacted");setupReveals()};
+    addEventListener("scroll",engage,{once:true,passive:true});
+    addEventListener("pointerdown",engage,{once:true,passive:true});
+  }else{
+    setupReveals();
+  }
+
   // Depth follows pointer only on devices with an actual mouse. Touch works without hover.
   if(!reduced && fine){
     hero?.addEventListener("pointermove",e=>{
