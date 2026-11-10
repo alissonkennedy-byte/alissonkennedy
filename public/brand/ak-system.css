@@ -1,0 +1,49 @@
+@font-face{font-family:"Space Grotesk";src:url("/fonts/space-grotesk-500.woff2") format("woff2");font-display:swap;font-weight:500}
+@font-face{font-family:"Space Grotesk";src:url("/fonts/space-grotesk-700.woff2") format("woff2");font-display:swap;font-weight:700}
+:root{
+  --ak-black:#090b0b;--ak-ink:#111717;--ak-panel:#18201e;--ak-panel-2:#202a27;
+  --ak-ivory:#f2f0e9;--ak-white:#fbfaf6;--ak-stone:#deded4;--ak-mid:#9ca6a0;
+  --ak-accent:#c3f35b;--ak-accent-rgb:195,243,91;
+  --ak-rule:rgba(255,255,255,.16);--ak-rule-dark:rgba(9,11,11,.15);
+  --ak-display:"Space Grotesk","Arial Narrow",Arial,sans-serif;
+  --ak-text:"Space Grotesk",Arial,Helvetica,sans-serif;
+  --ak-measure:1460px;--ak-gutter:clamp(20px,4.5vw,80px);
+  --ak-radius:3px;--ak-ease:cubic-bezier(.2,.8,.2,1);
+  --ak-surface:var(--ak-black);--ak-fg:var(--ak-ivory);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;min-width:320px;background:var(--ak-black);color:var(--ak-ivory);font:500 16px/1.55 var(--ak-text);-webkit-font-smoothing:antialiased;font-synthesis:none}
+a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
+h1,h2,h3,p,blockquote{margin:0}ul,ol{margin:0;padding:0}strong{font-weight:700}
+::selection{background:var(--ak-accent);color:var(--ak-black)}
+:focus-visible{outline:3px solid var(--ak-accent);outline-offset:4px}
+.wrap{max-width:var(--ak-measure);margin-inline:auto;padding-inline:var(--ak-gutter)}
+.skip-link{position:fixed;left:14px;top:-90px;z-index:600;background:var(--ak-accent);color:var(--ak-black);padding:14px 20px;border:2px solid var(--ak-black)}
+.skip-link:focus{top:14px}
+.section-dark{background:var(--ak-black);color:var(--ak-ivory)}
+.section-light{background:var(--ak-ivory);color:var(--ak-black)}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.13em;display:inline-flex;gap:13px;align-items:center}
+.label-mark{font-size:20px;line-height:.7;color:var(--ak-accent)}
+.section-light .label-mark{color:#526c1f}
+.section-topline{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:26px;border-bottom:1px solid var(--ak-rule)}
+.section-light .section-topline{border-color:var(--ak-rule-dark)}
+.topline-right{font-size:10px;font-weight:700;letter-spacing:.11em;color:var(--ak-mid);text-align:right}
+.section-light .topline-right{color:#606662}
+.display-title{font-family:var(--ak-display);font-size:clamp(55px,8.2vw,145px);line-height:.98;font-weight:700;letter-spacing:-.085em}
+.display-title em{font-family:Georgia,serif;font-size:.83em;letter-spacing:-.07em;font-weight:400;line-height:1}
+.underlined-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:11px;border-bottom:2px solid currentColor;font-size:12px;font-weight:700;letter-spacing:.075em;min-height:45px}
+.underlined-cta:hover{color:#5a7227}
+.action{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:58px;font-size:12px;font-weight:700;letter-spacing:.045em;transition:transform .25s var(--ak-ease),background .25s var(--ak-ease)}
+.action:hover{transform:translateY(-3px)}
+.action-accent{background:var(--ak-accent);color:var(--ak-black);padding:0 9px 0 22px;min-width:275px}
+.action-accent:hover{background:#e0ff9c}
+.action-arrow{display:grid;place-items:center;width:41px;height:41px;border:1px solid rgba(0,0,0,.25);font-size:22px;line-height:1}
+.action-text{padding:0 3px;min-width:147px;border-bottom:1px solid rgba(255,255,255,.42);color:var(--ak-ivory)}
+.action-text span{font-size:22px}
+.read-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:530;pointer-events:none}
+.read-progress span{display:block;height:100%;background:var(--ak-accent);transform-origin:left;transform:scaleX(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
