@@ -16,7 +16,7 @@ const bad=x=>report.issues.push(x);
     const m=await page.evaluate(()=>{
       const h=document.querySelector('h1').getBoundingClientRect();
       const c=document.querySelector('.hero-actions .action-accent').getBoundingClientRect();
-      return {docW:document.documentElement.scrollWidth,viewportW:innerWidth,bodyLen:document.body.innerText.length,mainLen:document.querySelector('main')?.innerText.length,h1:document.querySelectorAll('h1').length,heroHeadline:{left:Math.round(h.left),right:Math.round(h.right),height:Math.round(h.height)},cta:{top:Math.round(c.top),bottom:Math.round(c.bottom),width:Math.round(c.width)},wa:document.querySelectorAll('a[href*="wa.me/"]').length,images:[...document.images].map(x=>x.getAttribute('src')),title:document.title}};
+      return {docW:document.documentElement.scrollWidth,viewportW:innerWidth,bodyLen:document.body.innerText.length,mainLen:document.querySelector('main')?.innerText.length,h1:document.querySelectorAll('h1').length,heroHeadline:{left:Math.round(h.left),right:Math.round(h.right),height:Math.round(h.height)},cta:{top:Math.round(c.top),bottom:Math.round(c.bottom),width:Math.round(c.width)},wa:document.querySelectorAll('a[href*="wa.me/"]').length,images:[...document.images].map(x=>x.getAttribute('src')),title:document.title};});
     const images=[];
     for(const src of m.images){const rr=await page.request.get(new URL(src,BASE).href);if(!rr.ok())images.push({src,status:rr.status()})}
     report.screens.push({width,height,status:res.status(),...m,brokenImages:images,jsErrors:errors});
