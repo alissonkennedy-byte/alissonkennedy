@@ -55,6 +55,9 @@
 @media(max-width:600px){.container{width:calc(100% - 36px)}.section-pad{padding:80px 0}.logo{font-size:29px}.logo-caption{font-size:9px}.hero{overflow:hidden}.hero-copy{padding:61px 0 41px}.hero-meta{font-size:9px;gap:8px;letter-spacing:.08em}.meta-divider{width:10px}.hero h1{font-size:clamp(44px,10.9vw,64px);margin:39px 0 22px;letter-spacing:-.067em;line-height:1.13}.hero h1 em{white-space:normal}.hero-lead{font-size:16px;line-height:1.75}.hero-buttons{width:100%;margin-top:31px}.button{font-size:12px;min-height:55px}.button-primary{width:100%}.button-outline{width:100%}.hero-footnote{padding-top:34px;line-height:1.6;font-size:9px}.hero-visual{height:460px;width:calc(100% - 22px)}.hero-photo{border-radius:150px 150px 0 0}.visual-stamp{right:-12px;top:40%;width:106px;height:106px;font-size:9px}.stamp-symbol{font-size:28px}.hero-bottom{font-size:9px}.hero-bottom span:first-child{max-width:180px;line-height:1.5}.metrics-inner{gap:26px;padding:55px 0}.metrics-grid{grid-template-columns:1fr;gap:0}.metric{padding:27px 0 25px;border-left:0;border-top:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:30px}.metric strong{font-size:59px;min-width:145px}.metric p{font-size:13px;margin:0}.metric-title h2{font-size:34px}.about-main h2{font-size:clamp(37px,9.5vw,53px);line-height:1.2}.about-below{grid-template-columns:1fr;gap:18px;margin-top:31px}.about-below p{font-size:15px;line-height:1.84}.text-arrow{margin-top:18px}.case-tiny-line{margin:34px 0 24px}.case-intro h2{font-size:clamp(43px,10vw,56px)}.case-desc{font-size:16px;margin-top:23px}.case-compare{margin-top:33px;padding:26px 0;grid-template-columns:1fr 21px 1fr;gap:7px}.compare-item strong{font-size:clamp(19px,5vw,28px)}.compare-item>span{font-size:9px}.compare-arrow{font-size:19px}.decision{grid-template-columns:27px 1fr 20px;gap:11px}.decision h3{font-size:23px}.decision p{font-size:14px}.case-decisions blockquote{font-size:21px}.section-header{display:block;padding-bottom:35px}.section-header h2{font-size:clamp(45px,11vw,62px)}.section-header>p{margin-top:25px;font-size:14px}.career{grid-template-columns:1fr 19px;gap:6px;padding:38px 0}.career-time{grid-column:1/-1;gap:20px;padding:0;margin-bottom:18px}.career-body{grid-column:1}.career-mark{grid-column:2;grid-row:2;font-size:22px}.career h3{font-size:clamp(26px,7vw,36px)}.career-body>p:last-child{font-size:14px;line-height:1.8}.career-company{font-size:13px}.skills-side{display:block}.skills-side h2{font-size:clamp(40px,11vw,58px);margin-bottom:28px}.skills-side picture{width:100%;height:245px;aspect-ratio:auto}.skill-row{gap:9px;grid-template-columns:22px 1fr 20px;padding:23px 0}.skill-row h3{font-size:20px}.education h2{font-size:clamp(41px,10.8vw,57px)}.education-row{grid-template-columns:1fr;gap:12px;padding:23px 0}.education-row h3{font-size:20px}.contact{padding-top:58px}.contact-topline{font-size:9px}.contact-topline span:last-child{max-width:160px;text-align:right;line-height:1.45}.contact-main{display:block;padding:57px 0 38px}.contact h2{font-size:clamp(41px,10vw,57px)}.contact-main p{font-size:14px;margin-top:21px}.contact-photo{max-width:270px;height:280px;margin-top:45px}.contact-links{grid-template-columns:1fr 1fr}.contact-links a{padding:21px 12px;border-bottom:1px solid rgba(255,255,255,.2);min-height:73px;font-size:14px}.contact-links a:first-child{padding-left:0}.contact-links a:nth-child(2){border-right:0}.contact-links a:nth-child(3){padding-left:0}.contact-links a:last-child{border-right:0}.footer-bottom{height:auto;padding:28px 0 30px;font-size:9px;gap:15px;flex-wrap:wrap}.consent{align-items:stretch;gap:13px;flex-direction:column}.consent p{max-width:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
+
+/* Stronger contrast for small labels on warm paper backgrounds */
+.case-overline,.compare-item>span,.compare-item small,.case-note,.decisions-label,.decision-num,.career-time>span,.career-tag,.career-company span,.competencies .section-kicker,.skills-side h2 em,.skill-row>span:first-child,.education-row>span{color:#55382d!important}
 </style>
   <!-- Google Consent Mode v2 / GTM container preserved from original site -->
   <script>
@@ -94,7 +97,7 @@
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header" id="inicio">
     <div class="container header-inner">
-      <a href="#inicio" class="logo" aria-label="Alisson Kennedy, início">AK<span class="logo-star">✳</span><span class="logo-caption">ALISSON KENNEDY</span></a>
+      <a href="#inicio" class="logo">AK<span class="logo-star">✳</span><span class="logo-caption">ALISSON KENNEDY</span></a>
       <nav class="desktop-nav" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
         <a href="#resultados">Resultados</a>
@@ -123,8 +126,8 @@
         </div>
         <div class="hero-visual">
           <picture>
-            <source type="image/webp" srcset="/img/foto_2-480.webp 480w, /img/foto_2-800.webp 800w, /img/foto_2-800.webp 1024w" sizes="(max-width: 800px) 100vw, 42vw">
-            <img class="hero-photo" src="/img/foto_2-800.webp" alt="Alisson Kennedy sentado em ambiente de trabalho com luz natural" width="883" height="1024" fetchpriority="high">
+            <source type="image/webp" srcset="/img/foto_2-480.webp 480w, /img/foto_2-800.webp 800w, /img/foto_2-1024.webp 1024w" sizes="(max-width: 800px) 100vw, 42vw">
+            <img class="hero-photo" src="/img/foto_2-1024.webp" alt="Alisson Kennedy sentado em ambiente de trabalho com luz natural" width="883" height="1024" fetchpriority="high">
           </picture>
           <div class="photo-index">FIG. 01 <span>／</span> ALISSON KENNEDY</div>
           <div class="visual-stamp" aria-hidden="true"><span>EVENTOS</span><span class="stamp-symbol">↗</span><span>DO INÍCIO<br>AO FIM.</span></div>
