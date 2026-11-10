@@ -1,0 +1,61 @@
+name: QA editorial RH
+on:
+  push:
+    branches: [rh-editorial-candidatura-2026-11-10]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node LTS
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Instalar dependências
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund playwright@1.55.0 lighthouse@12
+          npx playwright install --with-deps chromium
+      - name: Compilar
+        run: npm run build
+      - name: Servir build
+        run: |
+          nohup python3 -m http.server 4173 --bind 127.0.0.1 --directory dist >/tmp/rh-server.log 2>&1 &
+          sleep 3
+          curl -fsS http://127.0.0.1:4173/ >/dev/null
+      - name: Auditoria responsiva
+        run: node qa-rh.cjs
+      - name: Lighthouse mobile
+        continue-on-error: true
+        run: |
+          CHROME_PATH=$(node -e "console.log(require('playwright').chromium.executablePath())")
+          npx lighthouse http://127.0.0.1:4173/ --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path=qa-rh/lighthouse-mobile.json --only-categories=performance,accessibility,best-practices,seo --quiet
+      - name: Lighthouse desktop
+        continue-on-error: true
+        run: |
+          CHROME_PATH=$(node -e "console.log(require('playwright').chromium.executablePath())")
+          npx lighthouse http://127.0.0.1:4173/ --preset=desktop --chrome-path="$CHROME_PATH" --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --output=json --output-path=qa-rh/lighthouse-desktop.json --only-categories=performance,accessibility,best-practices,seo --quiet
+      - name: Exibir notas
+        if: always()
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          for(const t of ['mobile','desktop']){
+            try{const a=JSON.parse(fs.readFileSync('qa-rh/lighthouse-'+t+'.json'));
+            console.log(t,JSON.stringify({scores:Object.fromEntries(Object.entries(a.categories).map(([k,v])=>[k,Math.round(v.score*100)])),lcp:a.audits['largest-contentful-paint']?.numericValue,cls:a.audits['cumulative-layout-shift']?.numericValue}));
+            }catch(e){console.log(t,e.message)}
+          }
+          NODE
+      - name: Evidências
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rh-editorial-evidencias
+          path: qa-rh/
+          retention-days: 7
