@@ -36,6 +36,18 @@ const bad=x=>report.issues.push(x);
        await page.waitForTimeout(450);
        const shown=await page.locator('#mobile-conversion').evaluate(x=>x.classList.contains('is-visible'));
        report.links.mobileStickyCTA=shown;if(!shown)bad('Sticky CTA not shown after hero');
+       // Scroll-driven lazy imagery: verify the actual user experience, not only URL responses.
+       for(const [name,selector] of [['interval','.photo-interval img'],['portrait','.about-portrait img']]){
+         const pic=page.locator(selector);
+         await pic.scrollIntoViewIfNeeded();
+         await pic.evaluate(async img=>{try{await img.decode()}catch(_){}});
+         const loaded=await pic.evaluate(img=>img.complete&&img.naturalWidth>0);
+         report.links[name+'ImageLoaded']=loaded;
+         if(!loaded)bad('Lazy image failed to load: '+name);
+         await page.screenshot({path:'qa-ak/'+name+'-scrolled-mobile.png',fullPage:false,animations:'disabled'});
+       }
+       await page.evaluate(()=>scrollTo(0,0));
+       await page.screenshot({path:'qa-ak/ak-390-loaded.png',fullPage:true,animations:'disabled'});
     }
     await page.close();
   }
