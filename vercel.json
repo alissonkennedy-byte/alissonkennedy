@@ -1,0 +1,64 @@
+{
+  "redirects": [
+    {
+      "source": "/sobre-alisson-kennedy",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sobre-alisson-kennedy/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cases/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/desenvolvimento-de-negocios",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/desenvolvimento-de-negocios/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prospeccao-b2b",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prospeccao-b2b/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/expansao-comercial",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/expansao-comercial/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/parcerias-estrategicas",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/parcerias-estrategicas/",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
+}
