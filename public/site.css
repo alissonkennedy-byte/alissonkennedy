@@ -368,3 +368,14 @@
  .motion-enabled .case-graph.graph-active .graph-fill{transform:scaleX(1);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
  .motion-enabled .perspective-card.is-revealed:hover{transform:perspective(780px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
 }
+
+/* Budget de animação: nada que esteja fora da viewport precisa gastar CPU/GPU. */
+.card-orbit span{animation-play-state:paused}
+.practice-card.is-revealed .card-orbit span{animation-play-state:running}
+@media(max-width:800px){
+  .hero-visual img{animation:none;transform:scale(1.04)}
+  .hero-orbit .ring{animation-play-state:paused}
+  .site-interacted .hero-orbit .ring{animation-play-state:running}
+  .practice-card .card-orbit span{animation-play-state:paused}
+  .practice-card.is-revealed .card-orbit span{animation-play-state:running}
+}
